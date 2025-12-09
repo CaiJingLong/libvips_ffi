@@ -28,10 +28,6 @@ migrate_working_dir/
 .dart_tool/
 build/
 
-# Native libraries (should be downloaded separately)
-android/src/main/jniLibs/**/*.so
-ios/Frameworks/*.xcframework/
-
 # Keep README files
 !android/src/main/jniLibs/README.md
 !ios/Frameworks/README.md

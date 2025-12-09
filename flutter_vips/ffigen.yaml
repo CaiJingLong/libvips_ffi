@@ -1,0 +1,71 @@
+# Run with `dart run ffigen --config ffigen.yaml`.
+name: VipsBindings
+description: |
+  Auto-generated FFI bindings for libvips.
+
+  Regenerate bindings with `dart run ffigen --config ffigen.yaml`.
+output: 'lib/src/bindings/vips_bindings_generated.dart'
+
+headers:
+  entry-points:
+    - 'third_party/include/vips/vips.h'
+  include-directives:
+    - '**vips/**'
+    - '**glib-2.0/glib/**'
+    - '**glib-2.0/gobject/**'
+
+compiler-opts:
+  - '-Ithird_party/include'
+  - '-Ithird_party/include/glib-2.0'
+  - '-Ithird_party/include/gio-unix-2.0'
+  - '-DVIPS_DISABLE_COMPAT'
+  - '-DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_56'
+  - '-DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_56'
+
+functions:
+  include:
+    - 'vips_.*'
+    - 'g_object_unref'
+    - 'g_object_ref'
+    - 'g_free'
+    - 'g_malloc'
+    - 'g_malloc0'
+  exclude:
+    - '.*_get_type$'
+    - 'vips_g_.*'
+
+structs:
+  dependency-only: opaque
+
+enums:
+  include:
+    - 'Vips.*'
+
+globals:
+  exclude:
+    - '.*'
+
+macros:
+  exclude:
+    - '.*'
+
+use-supported-typedefs: true
+
+preamble: |
+  // ignore_for_file: always_specify_types
+  // ignore_for_file: camel_case_types
+  // ignore_for_file: non_constant_identifier_names
+  // ignore_for_file: unused_field
+  // ignore_for_file: unused_element
+  //
+  // Auto-generated FFI bindings for libvips
+  // DO NOT EDIT MANUALLY
+
+comments:
+  style: any
+  length: full
+
+sort: true
+
+ignore-source-errors: true
+silence-enum-warning: true

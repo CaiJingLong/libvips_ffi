@@ -763,8 +763,13 @@ class VipsException implements Exception {
 class VipsImageWrapper {
   final ffi.Pointer<VipsImage> _pointer;
   bool _disposed = false;
+  
+  /// Buffer pointer that must be kept alive for the lifetime of the image.
+  /// This is needed because vips_image_new_from_buffer does lazy loading
+  /// and requires the buffer to remain valid until the image is disposed.
+  ffi.Pointer<ffi.Uint8>? _bufferPtr;
 
-  VipsImageWrapper._(this._pointer);
+  VipsImageWrapper._(this._pointer, [this._bufferPtr]);
 
   /// Whether this image has been disposed.
   bool get isDisposed => _disposed;
@@ -836,14 +841,20 @@ class VipsImageWrapper {
       );
 
       if (imagePtr == ffi.nullptr) {
+        // Free buffer on error
+        calloc.free(dataPtr);
         throw VipsException(
           'Failed to load image from buffer. ${getVipsError() ?? "Unknown error"}',
         );
       }
 
-      return VipsImageWrapper._(imagePtr);
+      // IMPORTANT: Do NOT free dataPtr here!
+      // vips_image_new_from_buffer does lazy loading and requires the buffer
+      // to remain valid until the image is disposed. The buffer will be freed
+      // in dispose().
+      return VipsImageWrapper._(imagePtr, dataPtr);
     } finally {
-      calloc.free(dataPtr);
+      // Only free optionPtr, NOT dataPtr - it must stay alive for lazy loading
       calloc.free(optionPtr);
     }
   }
@@ -1121,14 +1132,20 @@ class VipsImageWrapper {
       );
 
       if (result != 0) {
+        // Free buffer on error
+        calloc.free(dataPtr);
         throw VipsException(
           'Failed to create thumbnail from buffer. ${getVipsError() ?? "Unknown error"}',
         );
       }
 
-      return VipsImageWrapper._(outPtr.value);
+      // IMPORTANT: Do NOT free dataPtr here!
+      // vips_thumbnail_buffer does lazy loading and requires the buffer
+      // to remain valid until the image is disposed. The buffer will be freed
+      // in dispose().
+      return VipsImageWrapper._(outPtr.value, dataPtr);
     } finally {
-      calloc.free(dataPtr);
+      // Only free outPtr, NOT dataPtr - it must stay alive for lazy loading
       calloc.free(outPtr);
     }
   }
@@ -1504,6 +1521,11 @@ class VipsImageWrapper {
   void dispose() {
     if (_disposed) return;
     _bindings.g_object_unref(_pointer.cast());
+    // Free the buffer pointer if it was allocated (from fromBuffer constructor)
+    if (_bufferPtr != null) {
+      calloc.free(_bufferPtr!);
+      _bufferPtr = null;
+    }
     _disposed = true;
   }
 

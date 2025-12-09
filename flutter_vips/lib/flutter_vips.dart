@@ -36,12 +36,20 @@ export 'src/vips_image.dart'
     show
         VipsImageWrapper,
         VipsException,
+        VipsDirection,
+        VipsInterpretation,
         initVips,
         shutdownVips,
         getVipsError,
         clearVipsError,
         vipsVersion,
         vipsVersionString;
+
+// Export async API for running operations in isolate
+export 'src/vips_isolate.dart' show VipsImageAsync, VipsImageData;
+
+// Export compute-based async API (simpler, uses Flutter's compute)
+export 'src/vips_compute.dart' show VipsCompute, VipsComputeResult;
 
 // Export raw bindings for advanced users
 export 'src/bindings/vips_bindings_generated.dart' show VipsBindings;

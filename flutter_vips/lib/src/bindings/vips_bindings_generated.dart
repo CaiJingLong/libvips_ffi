@@ -3,6 +3,8 @@
 // ignore_for_file: non_constant_identifier_names
 // ignore_for_file: unused_field
 // ignore_for_file: unused_element
+// ignore_for_file: todo
+// ignore_for_file: fixme
 //
 // Auto-generated FFI bindings for libvips
 // DO NOT EDIT MANUALLY

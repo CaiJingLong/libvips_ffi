@@ -48,13 +48,13 @@ typedef _VipsImageWriteToBufferDart = int Function(
 typedef _VipsImageNewFromBufferNative = ffi.Pointer<VipsImage> Function(
   ffi.Pointer<ffi.Void> buf,
   ffi.Size len,
-  ffi.Pointer<ffi.Char> option_string,
+  ffi.Pointer<ffi.Char> optionString,
   ffi.Pointer<ffi.Void> terminator, // NULL terminator
 );
 typedef _VipsImageNewFromBufferDart = ffi.Pointer<VipsImage> Function(
   ffi.Pointer<ffi.Void> buf,
   int len,
-  ffi.Pointer<ffi.Char> option_string,
+  ffi.Pointer<ffi.Char> optionString,
   ffi.Pointer<ffi.Void> terminator,
 );
 
@@ -141,6 +141,209 @@ typedef _VipsThumbnailBufferDart = int Function(
   int len,
   ffi.Pointer<ffi.Pointer<VipsImage>> out,
   int width,
+  ffi.Pointer<ffi.Void> terminator,
+);
+
+typedef _VipsFlipNative = ffi.Int Function(
+  ffi.Pointer<VipsImage> in1,
+  ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  ffi.Int direction,
+  ffi.Pointer<ffi.Void> terminator,
+);
+typedef _VipsFlipDart = int Function(
+  ffi.Pointer<VipsImage> in1,
+  ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  int direction,
+  ffi.Pointer<ffi.Void> terminator,
+);
+
+typedef _VipsGaussblurNative = ffi.Int Function(
+  ffi.Pointer<VipsImage> in1,
+  ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  ffi.Double sigma,
+  ffi.Pointer<ffi.Void> terminator,
+);
+typedef _VipsGaussblurDart = int Function(
+  ffi.Pointer<VipsImage> in1,
+  ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  double sigma,
+  ffi.Pointer<ffi.Void> terminator,
+);
+
+typedef _VipsSharpenNative = ffi.Int Function(
+  ffi.Pointer<VipsImage> in1,
+  ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  ffi.Pointer<ffi.Void> terminator,
+);
+typedef _VipsSharpenDart = int Function(
+  ffi.Pointer<VipsImage> in1,
+  ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  ffi.Pointer<ffi.Void> terminator,
+);
+
+typedef _VipsInvertNative = ffi.Int Function(
+  ffi.Pointer<VipsImage> in1,
+  ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  ffi.Pointer<ffi.Void> terminator,
+);
+typedef _VipsInvertDart = int Function(
+  ffi.Pointer<VipsImage> in1,
+  ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  ffi.Pointer<ffi.Void> terminator,
+);
+
+typedef _VipsFlattenNative = ffi.Int Function(
+  ffi.Pointer<VipsImage> in1,
+  ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  ffi.Pointer<ffi.Void> terminator,
+);
+typedef _VipsFlattenDart = int Function(
+  ffi.Pointer<VipsImage> in1,
+  ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  ffi.Pointer<ffi.Void> terminator,
+);
+
+typedef _VipsGammaNative = ffi.Int Function(
+  ffi.Pointer<VipsImage> in1,
+  ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  ffi.Pointer<ffi.Void> terminator,
+);
+typedef _VipsGammaDart = int Function(
+  ffi.Pointer<VipsImage> in1,
+  ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  ffi.Pointer<ffi.Void> terminator,
+);
+
+typedef _VipsAutorotNative = ffi.Int Function(
+  ffi.Pointer<VipsImage> in1,
+  ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  ffi.Pointer<ffi.Void> terminator,
+);
+typedef _VipsAutorotDart = int Function(
+  ffi.Pointer<VipsImage> in1,
+  ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  ffi.Pointer<ffi.Void> terminator,
+);
+
+typedef _VipsSmartcropNative = ffi.Int Function(
+  ffi.Pointer<VipsImage> in1,
+  ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  ffi.Int width,
+  ffi.Int height,
+  ffi.Pointer<ffi.Void> terminator,
+);
+typedef _VipsSmartcropDart = int Function(
+  ffi.Pointer<VipsImage> in1,
+  ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  int width,
+  int height,
+  ffi.Pointer<ffi.Void> terminator,
+);
+
+typedef _VipsGravityNative = ffi.Int Function(
+  ffi.Pointer<VipsImage> in1,
+  ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  ffi.Int direction,
+  ffi.Int width,
+  ffi.Int height,
+  ffi.Pointer<ffi.Void> terminator,
+);
+typedef _VipsGravityDart = int Function(
+  ffi.Pointer<VipsImage> in1,
+  ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  int direction,
+  int width,
+  int height,
+  ffi.Pointer<ffi.Void> terminator,
+);
+
+typedef _VipsEmbedNative = ffi.Int Function(
+  ffi.Pointer<VipsImage> in1,
+  ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  ffi.Int x,
+  ffi.Int y,
+  ffi.Int width,
+  ffi.Int height,
+  ffi.Pointer<ffi.Void> terminator,
+);
+typedef _VipsEmbedDart = int Function(
+  ffi.Pointer<VipsImage> in1,
+  ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  int x,
+  int y,
+  int width,
+  int height,
+  ffi.Pointer<ffi.Void> terminator,
+);
+
+typedef _VipsExtractAreaNative = ffi.Int Function(
+  ffi.Pointer<VipsImage> in1,
+  ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  ffi.Int left,
+  ffi.Int top,
+  ffi.Int width,
+  ffi.Int height,
+  ffi.Pointer<ffi.Void> terminator,
+);
+typedef _VipsExtractAreaDart = int Function(
+  ffi.Pointer<VipsImage> in1,
+  ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  int left,
+  int top,
+  int width,
+  int height,
+  ffi.Pointer<ffi.Void> terminator,
+);
+
+typedef _VipsColourspaceNative = ffi.Int Function(
+  ffi.Pointer<VipsImage> in1,
+  ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  ffi.Int space,
+  ffi.Pointer<ffi.Void> terminator,
+);
+typedef _VipsColourspaceDart = int Function(
+  ffi.Pointer<VipsImage> in1,
+  ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  int space,
+  ffi.Pointer<ffi.Void> terminator,
+);
+
+typedef _VipsCastNative = ffi.Int Function(
+  ffi.Pointer<VipsImage> in1,
+  ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  ffi.Int format,
+  ffi.Pointer<ffi.Void> terminator,
+);
+typedef _VipsCastDart = int Function(
+  ffi.Pointer<VipsImage> in1,
+  ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  int format,
+  ffi.Pointer<ffi.Void> terminator,
+);
+
+typedef _VipsCopyNative = ffi.Int Function(
+  ffi.Pointer<VipsImage> in1,
+  ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  ffi.Pointer<ffi.Void> terminator,
+);
+typedef _VipsCopyDart = int Function(
+  ffi.Pointer<VipsImage> in1,
+  ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  ffi.Pointer<ffi.Void> terminator,
+);
+
+typedef _VipsLinear1Native = ffi.Int Function(
+  ffi.Pointer<VipsImage> in1,
+  ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  ffi.Double a,
+  ffi.Double b,
+  ffi.Pointer<ffi.Void> terminator,
+);
+typedef _VipsLinear1Dart = int Function(
+  ffi.Pointer<VipsImage> in1,
+  ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  double a,
+  double b,
   ffi.Pointer<ffi.Void> terminator,
 );
 
@@ -265,6 +468,192 @@ class _VipsVariadicBindings {
     int width,
   ) {
     return _vipsThumbnailBuffer(buf, len, out, width, ffi.nullptr);
+  }
+  
+  // Additional image processing functions
+  
+  late final _vipsFlip = _lib
+      .lookup<ffi.NativeFunction<_VipsFlipNative>>('vips_flip')
+      .asFunction<_VipsFlipDart>();
+  
+  late final _vipsGaussblur = _lib
+      .lookup<ffi.NativeFunction<_VipsGaussblurNative>>('vips_gaussblur')
+      .asFunction<_VipsGaussblurDart>();
+  
+  late final _vipsSharpen = _lib
+      .lookup<ffi.NativeFunction<_VipsSharpenNative>>('vips_sharpen')
+      .asFunction<_VipsSharpenDart>();
+  
+  late final _vipsInvert = _lib
+      .lookup<ffi.NativeFunction<_VipsInvertNative>>('vips_invert')
+      .asFunction<_VipsInvertDart>();
+  
+  late final _vipsFlatten = _lib
+      .lookup<ffi.NativeFunction<_VipsFlattenNative>>('vips_flatten')
+      .asFunction<_VipsFlattenDart>();
+  
+  late final _vipsGamma = _lib
+      .lookup<ffi.NativeFunction<_VipsGammaNative>>('vips_gamma')
+      .asFunction<_VipsGammaDart>();
+  
+  late final _vipsAutorot = _lib
+      .lookup<ffi.NativeFunction<_VipsAutorotNative>>('vips_autorot')
+      .asFunction<_VipsAutorotDart>();
+  
+  late final _vipsSmartcrop = _lib
+      .lookup<ffi.NativeFunction<_VipsSmartcropNative>>('vips_smartcrop')
+      .asFunction<_VipsSmartcropDart>();
+  
+  late final _vipsGravity = _lib
+      .lookup<ffi.NativeFunction<_VipsGravityNative>>('vips_gravity')
+      .asFunction<_VipsGravityDart>();
+  
+  late final _vipsEmbed = _lib
+      .lookup<ffi.NativeFunction<_VipsEmbedNative>>('vips_embed')
+      .asFunction<_VipsEmbedDart>();
+  
+  late final _vipsExtractArea = _lib
+      .lookup<ffi.NativeFunction<_VipsExtractAreaNative>>('vips_extract_area')
+      .asFunction<_VipsExtractAreaDart>();
+  
+  late final _vipsColourspace = _lib
+      .lookup<ffi.NativeFunction<_VipsColourspaceNative>>('vips_colourspace')
+      .asFunction<_VipsColourspaceDart>();
+  
+  late final _vipsCast = _lib
+      .lookup<ffi.NativeFunction<_VipsCastNative>>('vips_cast')
+      .asFunction<_VipsCastDart>();
+  
+  late final _vipsCopy = _lib
+      .lookup<ffi.NativeFunction<_VipsCopyNative>>('vips_copy')
+      .asFunction<_VipsCopyDart>();
+  
+  late final _vipsLinear1 = _lib
+      .lookup<ffi.NativeFunction<_VipsLinear1Native>>('vips_linear1')
+      .asFunction<_VipsLinear1Dart>();
+  
+  int flip(
+    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<ffi.Pointer<VipsImage>> out,
+    int direction,
+  ) {
+    return _vipsFlip(in1, out, direction, ffi.nullptr);
+  }
+  
+  int gaussblur(
+    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<ffi.Pointer<VipsImage>> out,
+    double sigma,
+  ) {
+    return _vipsGaussblur(in1, out, sigma, ffi.nullptr);
+  }
+  
+  int sharpen(
+    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  ) {
+    return _vipsSharpen(in1, out, ffi.nullptr);
+  }
+  
+  int invert(
+    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  ) {
+    return _vipsInvert(in1, out, ffi.nullptr);
+  }
+  
+  int flatten(
+    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  ) {
+    return _vipsFlatten(in1, out, ffi.nullptr);
+  }
+  
+  int gamma(
+    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  ) {
+    return _vipsGamma(in1, out, ffi.nullptr);
+  }
+  
+  int autorot(
+    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  ) {
+    return _vipsAutorot(in1, out, ffi.nullptr);
+  }
+  
+  int smartcrop(
+    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<ffi.Pointer<VipsImage>> out,
+    int width,
+    int height,
+  ) {
+    return _vipsSmartcrop(in1, out, width, height, ffi.nullptr);
+  }
+  
+  int gravity(
+    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<ffi.Pointer<VipsImage>> out,
+    int direction,
+    int width,
+    int height,
+  ) {
+    return _vipsGravity(in1, out, direction, width, height, ffi.nullptr);
+  }
+  
+  int embed(
+    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<ffi.Pointer<VipsImage>> out,
+    int x,
+    int y,
+    int width,
+    int height,
+  ) {
+    return _vipsEmbed(in1, out, x, y, width, height, ffi.nullptr);
+  }
+  
+  int extractArea(
+    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<ffi.Pointer<VipsImage>> out,
+    int left,
+    int top,
+    int width,
+    int height,
+  ) {
+    return _vipsExtractArea(in1, out, left, top, width, height, ffi.nullptr);
+  }
+  
+  int colourspace(
+    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<ffi.Pointer<VipsImage>> out,
+    int space,
+  ) {
+    return _vipsColourspace(in1, out, space, ffi.nullptr);
+  }
+  
+  int cast(
+    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<ffi.Pointer<VipsImage>> out,
+    int format,
+  ) {
+    return _vipsCast(in1, out, format, ffi.nullptr);
+  }
+  
+  int copy(
+    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<ffi.Pointer<VipsImage>> out,
+  ) {
+    return _vipsCopy(in1, out, ffi.nullptr);
+  }
+  
+  int linear1(
+    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<ffi.Pointer<VipsImage>> out,
+    double a,
+    double b,
+  ) {
+    return _vipsLinear1(in1, out, a, b, ffi.nullptr);
   }
 }
 
@@ -744,6 +1133,371 @@ class VipsImageWrapper {
     }
   }
 
+  // ============ Additional Image Processing Operations ============
+
+  /// Flip the image horizontally or vertically.
+  ///
+  /// [direction] determines the flip direction:
+  /// - [VipsDirection.horizontal] (0): flip left-right
+  /// - [VipsDirection.vertical] (1): flip top-bottom
+  ///
+  /// Returns a new [VipsImageWrapper]. Remember to dispose it when done.
+  /// Throws [VipsException] if the operation fails.
+  VipsImageWrapper flip(VipsDirection direction) {
+    _checkDisposed();
+    clearVipsError();
+
+    final outPtr = calloc<ffi.Pointer<VipsImage>>();
+    try {
+      final result = _variadicBindings.flip(_pointer, outPtr, direction.index);
+
+      if (result != 0) {
+        throw VipsException(
+          'Failed to flip image. ${getVipsError() ?? "Unknown error"}',
+        );
+      }
+
+      return VipsImageWrapper._(outPtr.value);
+    } finally {
+      calloc.free(outPtr);
+    }
+  }
+
+  /// Apply Gaussian blur to the image.
+  ///
+  /// [sigma] is the standard deviation of the Gaussian (larger = more blur).
+  /// Typical values are 1.0 to 10.0.
+  ///
+  /// Returns a new [VipsImageWrapper]. Remember to dispose it when done.
+  /// Throws [VipsException] if the operation fails.
+  VipsImageWrapper gaussianBlur(double sigma) {
+    _checkDisposed();
+    clearVipsError();
+
+    final outPtr = calloc<ffi.Pointer<VipsImage>>();
+    try {
+      final result = _variadicBindings.gaussblur(_pointer, outPtr, sigma);
+
+      if (result != 0) {
+        throw VipsException(
+          'Failed to blur image. ${getVipsError() ?? "Unknown error"}',
+        );
+      }
+
+      return VipsImageWrapper._(outPtr.value);
+    } finally {
+      calloc.free(outPtr);
+    }
+  }
+
+  /// Sharpen the image using unsharp masking.
+  ///
+  /// Returns a new [VipsImageWrapper]. Remember to dispose it when done.
+  /// Throws [VipsException] if the operation fails.
+  VipsImageWrapper sharpen() {
+    _checkDisposed();
+    clearVipsError();
+
+    final outPtr = calloc<ffi.Pointer<VipsImage>>();
+    try {
+      final result = _variadicBindings.sharpen(_pointer, outPtr);
+
+      if (result != 0) {
+        throw VipsException(
+          'Failed to sharpen image. ${getVipsError() ?? "Unknown error"}',
+        );
+      }
+
+      return VipsImageWrapper._(outPtr.value);
+    } finally {
+      calloc.free(outPtr);
+    }
+  }
+
+  /// Invert the image colors (create a negative).
+  ///
+  /// Returns a new [VipsImageWrapper]. Remember to dispose it when done.
+  /// Throws [VipsException] if the operation fails.
+  VipsImageWrapper invert() {
+    _checkDisposed();
+    clearVipsError();
+
+    final outPtr = calloc<ffi.Pointer<VipsImage>>();
+    try {
+      final result = _variadicBindings.invert(_pointer, outPtr);
+
+      if (result != 0) {
+        throw VipsException(
+          'Failed to invert image. ${getVipsError() ?? "Unknown error"}',
+        );
+      }
+
+      return VipsImageWrapper._(outPtr.value);
+    } finally {
+      calloc.free(outPtr);
+    }
+  }
+
+  /// Flatten an image with alpha channel to RGB.
+  ///
+  /// The alpha channel is removed and the image is composited against
+  /// a white background.
+  ///
+  /// Returns a new [VipsImageWrapper]. Remember to dispose it when done.
+  /// Throws [VipsException] if the operation fails.
+  VipsImageWrapper flatten() {
+    _checkDisposed();
+    clearVipsError();
+
+    final outPtr = calloc<ffi.Pointer<VipsImage>>();
+    try {
+      final result = _variadicBindings.flatten(_pointer, outPtr);
+
+      if (result != 0) {
+        throw VipsException(
+          'Failed to flatten image. ${getVipsError() ?? "Unknown error"}',
+        );
+      }
+
+      return VipsImageWrapper._(outPtr.value);
+    } finally {
+      calloc.free(outPtr);
+    }
+  }
+
+  /// Apply gamma correction to the image.
+  ///
+  /// Returns a new [VipsImageWrapper]. Remember to dispose it when done.
+  /// Throws [VipsException] if the operation fails.
+  VipsImageWrapper gamma() {
+    _checkDisposed();
+    clearVipsError();
+
+    final outPtr = calloc<ffi.Pointer<VipsImage>>();
+    try {
+      final result = _variadicBindings.gamma(_pointer, outPtr);
+
+      if (result != 0) {
+        throw VipsException(
+          'Failed to apply gamma. ${getVipsError() ?? "Unknown error"}',
+        );
+      }
+
+      return VipsImageWrapper._(outPtr.value);
+    } finally {
+      calloc.free(outPtr);
+    }
+  }
+
+  /// Auto-rotate the image based on EXIF orientation tag.
+  ///
+  /// Returns a new [VipsImageWrapper]. Remember to dispose it when done.
+  /// Throws [VipsException] if the operation fails.
+  VipsImageWrapper autoRotate() {
+    _checkDisposed();
+    clearVipsError();
+
+    final outPtr = calloc<ffi.Pointer<VipsImage>>();
+    try {
+      final result = _variadicBindings.autorot(_pointer, outPtr);
+
+      if (result != 0) {
+        throw VipsException(
+          'Failed to auto-rotate image. ${getVipsError() ?? "Unknown error"}',
+        );
+      }
+
+      return VipsImageWrapper._(outPtr.value);
+    } finally {
+      calloc.free(outPtr);
+    }
+  }
+
+  /// Smart crop the image to the specified size.
+  ///
+  /// Uses attention-based cropping to find the most interesting part
+  /// of the image.
+  ///
+  /// [width], [height] specify the target size.
+  ///
+  /// Returns a new [VipsImageWrapper]. Remember to dispose it when done.
+  /// Throws [VipsException] if the operation fails.
+  VipsImageWrapper smartCrop(int width, int height) {
+    _checkDisposed();
+    clearVipsError();
+
+    final outPtr = calloc<ffi.Pointer<VipsImage>>();
+    try {
+      final result = _variadicBindings.smartcrop(_pointer, outPtr, width, height);
+
+      if (result != 0) {
+        throw VipsException(
+          'Failed to smart crop image. ${getVipsError() ?? "Unknown error"}',
+        );
+      }
+
+      return VipsImageWrapper._(outPtr.value);
+    } finally {
+      calloc.free(outPtr);
+    }
+  }
+
+  /// Embed the image in a larger canvas.
+  ///
+  /// [x], [y] specify the position of the image in the new canvas.
+  /// [width], [height] specify the size of the new canvas.
+  ///
+  /// Returns a new [VipsImageWrapper]. Remember to dispose it when done.
+  /// Throws [VipsException] if the operation fails.
+  VipsImageWrapper embed(int x, int y, int width, int height) {
+    _checkDisposed();
+    clearVipsError();
+
+    final outPtr = calloc<ffi.Pointer<VipsImage>>();
+    try {
+      final result = _variadicBindings.embed(_pointer, outPtr, x, y, width, height);
+
+      if (result != 0) {
+        throw VipsException(
+          'Failed to embed image. ${getVipsError() ?? "Unknown error"}',
+        );
+      }
+
+      return VipsImageWrapper._(outPtr.value);
+    } finally {
+      calloc.free(outPtr);
+    }
+  }
+
+  /// Extract an area from the image (alias for crop).
+  ///
+  /// [left], [top] specify the top-left corner.
+  /// [width], [height] specify the size of the area.
+  ///
+  /// Returns a new [VipsImageWrapper]. Remember to dispose it when done.
+  /// Throws [VipsException] if the operation fails.
+  VipsImageWrapper extractArea(int left, int top, int width, int height) {
+    _checkDisposed();
+    clearVipsError();
+
+    final outPtr = calloc<ffi.Pointer<VipsImage>>();
+    try {
+      final result = _variadicBindings.extractArea(_pointer, outPtr, left, top, width, height);
+
+      if (result != 0) {
+        throw VipsException(
+          'Failed to extract area. ${getVipsError() ?? "Unknown error"}',
+        );
+      }
+
+      return VipsImageWrapper._(outPtr.value);
+    } finally {
+      calloc.free(outPtr);
+    }
+  }
+
+  /// Convert the image to a different colour space.
+  ///
+  /// [space] is the target colour space (see [VipsInterpretation]).
+  ///
+  /// Returns a new [VipsImageWrapper]. Remember to dispose it when done.
+  /// Throws [VipsException] if the operation fails.
+  VipsImageWrapper colourspace(VipsInterpretation space) {
+    _checkDisposed();
+    clearVipsError();
+
+    final outPtr = calloc<ffi.Pointer<VipsImage>>();
+    try {
+      final result = _variadicBindings.colourspace(_pointer, outPtr, space.value);
+
+      if (result != 0) {
+        throw VipsException(
+          'Failed to convert colour space. ${getVipsError() ?? "Unknown error"}',
+        );
+      }
+
+      return VipsImageWrapper._(outPtr.value);
+    } finally {
+      calloc.free(outPtr);
+    }
+  }
+
+  /// Apply a linear transformation to the image: out = in * a + b.
+  ///
+  /// [a] is the multiplier (e.g., 1.2 for 20% brighter).
+  /// [b] is the offset (e.g., 10 to add brightness).
+  ///
+  /// Returns a new [VipsImageWrapper]. Remember to dispose it when done.
+  /// Throws [VipsException] if the operation fails.
+  VipsImageWrapper linear(double a, double b) {
+    _checkDisposed();
+    clearVipsError();
+
+    final outPtr = calloc<ffi.Pointer<VipsImage>>();
+    try {
+      final result = _variadicBindings.linear1(_pointer, outPtr, a, b);
+
+      if (result != 0) {
+        throw VipsException(
+          'Failed to apply linear transformation. ${getVipsError() ?? "Unknown error"}',
+        );
+      }
+
+      return VipsImageWrapper._(outPtr.value);
+    } finally {
+      calloc.free(outPtr);
+    }
+  }
+
+  /// Adjust brightness of the image.
+  ///
+  /// [factor] is the brightness factor:
+  /// - 1.0 = no change
+  /// - > 1.0 = brighter
+  /// - < 1.0 = darker
+  ///
+  /// Returns a new [VipsImageWrapper]. Remember to dispose it when done.
+  VipsImageWrapper brightness(double factor) {
+    return linear(factor, 0);
+  }
+
+  /// Adjust contrast of the image.
+  ///
+  /// [factor] is the contrast factor:
+  /// - 1.0 = no change
+  /// - > 1.0 = more contrast
+  /// - < 1.0 = less contrast
+  ///
+  /// Returns a new [VipsImageWrapper]. Remember to dispose it when done.
+  VipsImageWrapper contrast(double factor) {
+    // Contrast adjustment: out = (in - 128) * factor + 128
+    return linear(factor, 128 * (1 - factor));
+  }
+
+  /// Create a copy of the image.
+  ///
+  /// Returns a new [VipsImageWrapper]. Remember to dispose it when done.
+  /// Throws [VipsException] if the operation fails.
+  VipsImageWrapper copy() {
+    _checkDisposed();
+    clearVipsError();
+
+    final outPtr = calloc<ffi.Pointer<VipsImage>>();
+    try {
+      final result = _variadicBindings.copy(_pointer, outPtr);
+
+      if (result != 0) {
+        throw VipsException(
+          'Failed to copy image. ${getVipsError() ?? "Unknown error"}',
+        );
+      }
+
+      return VipsImageWrapper._(outPtr.value);
+    } finally {
+      calloc.free(outPtr);
+    }
+  }
+
   /// Release the image resources.
   ///
   /// After calling dispose, this object should not be used anymore.
@@ -758,4 +1512,59 @@ class VipsImageWrapper {
       throw StateError('VipsImage has been disposed');
     }
   }
+}
+
+/// Direction for flip operations.
+enum VipsDirection {
+  /// Flip left-right (horizontal).
+  horizontal,
+  /// Flip top-bottom (vertical).
+  vertical,
+}
+
+/// Colour space / interpretation.
+enum VipsInterpretation {
+  /// Error value.
+  error(-1),
+  /// Many-band image.
+  multiband(0),
+  /// Some kind of single-band image.
+  bw(1),
+  /// Histogram or lookup table.
+  histogram(10),
+  /// The first three bands are CIE XYZ.
+  xyz(12),
+  /// Pixels are in CIE Lab space.
+  lab(13),
+  /// The first four bands are in CMYK space.
+  cmyk(15),
+  /// Pixels are in CIE LCh space.
+  labq(16),
+  /// Pixels are sRGB.
+  srgb(22),
+  /// Pixels are CIE Yxy.
+  yxy(23),
+  /// Image is in fourier space.
+  fourier(24),
+  /// Generic RGB space.
+  rgb(25),
+  /// A generic single-channel image.
+  grey16(27),
+  /// A generic many-band image.
+  matrix(28),
+  /// Pixels are scRGB.
+  scrgb(29),
+  /// Pixels are HSV.
+  hsv(30),
+  /// Pixels are in CIE LCh space.
+  lch(31),
+  /// CIE CMC(l:c).
+  cmc(32),
+  /// Pixels are in CIE Labs space.
+  labs(33),
+  /// Pixels are sRGB with alpha.
+  srgba(34);
+
+  const VipsInterpretation(this.value);
+  final int value;
 }

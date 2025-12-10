@@ -6,10 +6,21 @@
 
 Flutter FFI 方式集成 [libvips](https://www.libvips.org/) —— 一个高性能的图像处理库。
 
+## 版本说明
+
+版本格式：`<插件版本>+<libvips版本>`
+
+- 插件版本遵循 [语义化版本规范](https://semver.org/lang/zh-CN/)
+- 构建元数据（如 `+8.16.0`）表示预编译的 libvips 版本
+
+示例：`0.0.1+8.16.0` 表示插件版本 0.0.1，内置 libvips 8.16.0
+
 ## 特性
 
 - **高性能图像处理**：基于 libvips，实现高效的图像处理能力
-- **跨平台支持**：支持 Android 和 iOS
+- **跨平台支持**：
+  - Android: arm64-v8a, armeabi-v7a, x86_64（64位库已支持 Android 15+ 的 16KB 对齐）
+  - iOS: arm64 真机和模拟器（iOS 12.0+，仅支持 Apple Silicon Mac 模拟器）
 - **Dart 友好的 API**：易于在 Flutter 项目中集成和使用
 - **自动生成 FFI 绑定**：通过 ffigen 自动生成绑定代码
 - **平台特定库加载自动处理**：根据平台自动加载对应原生库
@@ -102,6 +113,16 @@ dart run ffigen --config ffigen.yaml
   以及 CocoaPods 规范文件：  
   `libvips_ffi/ios/libvips_ffi.podspec`  
   这些文件是 iOS 集成所依赖的预编译二进制和元数据。
+
+## 免责声明
+
+**本项目按"原样"提供，不提供任何形式的保证。** 维护者不保证任何维护周期、Bug 修复或功能更新。使用风险自负。
+
+- 不保证对 Issue 或 Pull Request 的响应时间
+- 不保证与未来 Flutter/Dart 版本的兼容性
+- 不保证预编译原生库的安全更新
+
+请在生产环境使用前自行评估风险。
 
 ## 许可证（License）
 

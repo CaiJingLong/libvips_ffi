@@ -6,10 +6,21 @@ This is the English README for the libvips_ffi package.
 
 Flutter FFI bindings for [libvips](https://www.libvips.org/) - a fast image processing library.
 
+## Version
+
+Version format: `<plugin_version>+<libvips_version>`
+
+- Plugin version follows [Semantic Versioning](https://semver.org/)
+- Build metadata (e.g., `+8.16.0`) indicates the bundled libvips version
+
+Example: `0.0.1+8.16.0` means plugin version 0.0.1 with libvips 8.16.0
+
 ## Features
 
 - High-performance image processing using libvips
-- Cross-platform support (Android & iOS)
+- Cross-platform support:
+  - Android: arm64-v8a, armeabi-v7a, x86_64 (16KB aligned for Android 15+)
+  - iOS: arm64 device & simulator (iOS 12.0+, Apple Silicon Mac simulator only)
 - Simple, Dart-friendly API
 - Auto-generated FFI bindings using ffigen
 - Platform-specific library loading handled automatically
@@ -102,6 +113,16 @@ Upstream build repository links:
   along with the CocoaPods specification file:  
   `libvips_ffi/ios/libvips_ffi.podspec`  
   These are the prebuilt binaries and metadata used for iOS integration.
+
+## Disclaimer
+
+**This project is provided "as is" without warranty of any kind.** The maintainer does not guarantee any maintenance schedule, bug fixes, or feature updates. Use at your own risk.
+
+- No guaranteed response time for issues or pull requests
+- No guaranteed compatibility with future Flutter/Dart versions
+- No guaranteed security updates for bundled native libraries
+
+Please evaluate the risks before using this library in production environments.
 
 ## License
 

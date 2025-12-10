@@ -4,8 +4,8 @@
 
 | 平台 | 来源 |
 |------|------|
-| Android | https://github.com/CaiJingLong/libvips-demo-android/tree/main/app/src/main/include |
-| iOS | https://github.com/CaiJingLong/libvips_precompile_mobile/releases/download/ios-2025-11-29-3/libvips-ios-ios-2025-11-29-3.tar.xz |
+| Android | https://github.com/MobiPkg/Compile/actions/runs/20085520935 |
+| iOS | https://github.com/CaiJingLong/libvips_precompile_mobile/actions/runs/19779932583 |
 
 ## 总体对比结果
 

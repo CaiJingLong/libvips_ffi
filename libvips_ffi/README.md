@@ -1,5 +1,9 @@
 # libvips_ffi
 
+This is the English README for the libvips_ffi package.
+中文文档请参见：
+[README_CN.md](https://github.com/CaiJingLong/libvips_ffi/blob/main/libvips_ffi/README_CN.md)
+
 Flutter FFI bindings for [libvips](https://www.libvips.org/) - a fast image processing library.
 
 ## Features
@@ -22,35 +26,6 @@ dependencies:
       url: https://github.com/CaiJingLong/libvips_ffi
       path: libvips_ffi
 ```
-
-### Platform Setup
-
-#### Android
-
-Place precompiled libvips `.so` files in `android/src/main/jniLibs/`:
-
-```text
-android/src/main/jniLibs/
-├── arm64-v8a/
-│   └── libvips.so
-├── armeabi-v7a/
-│   └── libvips.so
-└── x86_64/
-    └── libvips.so
-```
-
-Download from: <https://github.com/AiHrt/libvips-android-build/releases>
-
-#### iOS
-
-Place `vips.xcframework` in `ios/Frameworks/`:
-
-```text
-ios/Frameworks/
-└── vips.xcframework/
-```
-
-Download from: <https://github.com/CaiJingLong/libvips_precompile_mobile/releases>
 
 ## Usage
 
@@ -107,6 +82,29 @@ If you need to regenerate the FFI bindings:
 dart run ffigen --config ffigen.yaml
 ```
 
+## Native binaries locations (Android / iOS)
+
+For transparency, the original build / prebuilt locations of the native libraries are listed below.
+These precompiled binaries are built and published via GitHub Actions in the linked repositories above.
+
+Upstream build repository links:
+- Android: [MobiPkg/Compile build run](https://github.com/MobiPkg/Compile/actions/runs/20085520935)
+- iOS: [libvips_precompile_mobile build run](https://github.com/CaiJingLong/libvips_precompile_mobile/actions/runs/19779932583)
+
+- **Android**  
+  The original Android build artifacts and related build configuration are located under:  
+  `libvips_ffi/android/`  
+  This includes the Gradle configuration and sources used to produce the Android native libraries.
+
+- **iOS**  
+  The precompiled iOS frameworks and related configuration are located under:  
+  `libvips_ffi/ios/Frameworks/`  
+  along with the CocoaPods specification file:  
+  `libvips_ffi/ios/libvips_ffi.podspec`  
+  These are the prebuilt binaries and metadata used for iOS integration.
+
 ## License
 
-LGPL-2.1 (same as libvips)
+The main code in this project is provided under the Apache License 2.0.
+Parts of the codebase are derived from upstream projects and continue to be governed by their original licenses.
+Please refer to the corresponding upstream source files and bundled license texts for the exact terms that apply to those components.

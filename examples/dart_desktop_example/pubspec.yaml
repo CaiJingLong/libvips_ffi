@@ -1,0 +1,10 @@
+name: dart_desktop_example
+description: Example of using libvips_ffi with pure Dart on desktop.
+publish_to: 'none'
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  libvips_ffi_system:
+    path: ../../packages/libvips_ffi_system

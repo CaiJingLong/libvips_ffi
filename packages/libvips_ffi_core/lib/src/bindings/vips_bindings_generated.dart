@@ -3,8 +3,6 @@
 // ignore_for_file: non_constant_identifier_names
 // ignore_for_file: unused_field
 // ignore_for_file: unused_element
-// ignore_for_file: todo
-// ignore_for_file: fixme
 //
 // Auto-generated FFI bindings for libvips
 // DO NOT EDIT MANUALLY
@@ -71,6 +69,26 @@ class VipsBindings {
       _lookup<ffi.NativeFunction<gpointer Function(gsize)>>('g_malloc0');
   late final _g_malloc0 = _g_malloc0Ptr.asFunction<gpointer Function(int)>();
 
+  void g_object_get_property(
+    ffi.Pointer<GObject> object,
+    ffi.Pointer<gchar> property_name,
+    ffi.Pointer<GValue> value,
+  ) {
+    return _g_object_get_property(
+      object,
+      property_name,
+      value,
+    );
+  }
+
+  late final _g_object_get_propertyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GObject>, ffi.Pointer<gchar>,
+              ffi.Pointer<GValue>)>>('g_object_get_property');
+  late final _g_object_get_property = _g_object_get_propertyPtr.asFunction<
+      void Function(
+          ffi.Pointer<GObject>, ffi.Pointer<gchar>, ffi.Pointer<GValue>)>();
+
   gpointer g_object_ref(
     gpointer object,
   ) {
@@ -83,6 +101,26 @@ class VipsBindings {
       _lookup<ffi.NativeFunction<gpointer Function(gpointer)>>('g_object_ref');
   late final _g_object_ref =
       _g_object_refPtr.asFunction<gpointer Function(gpointer)>();
+
+  void g_object_set_property(
+    ffi.Pointer<GObject> object,
+    ffi.Pointer<gchar> property_name,
+    ffi.Pointer<GValue> value,
+  ) {
+    return _g_object_set_property(
+      object,
+      property_name,
+      value,
+    );
+  }
+
+  late final _g_object_set_propertyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GObject>, ffi.Pointer<gchar>,
+              ffi.Pointer<GValue>)>>('g_object_set_property');
+  late final _g_object_set_property = _g_object_set_propertyPtr.asFunction<
+      void Function(
+          ffi.Pointer<GObject>, ffi.Pointer<gchar>, ffi.Pointer<GValue>)>();
 
   void g_object_unref(
     gpointer object,
@@ -98,12 +136,165 @@ class VipsBindings {
   late final _g_object_unref =
       _g_object_unrefPtr.asFunction<void Function(gpointer)>();
 
+  double g_value_get_double(
+    ffi.Pointer<GValue> value,
+  ) {
+    return _g_value_get_double(
+      value,
+    );
+  }
+
+  late final _g_value_get_doublePtr =
+      _lookup<ffi.NativeFunction<gdouble Function(ffi.Pointer<GValue>)>>(
+          'g_value_get_double');
+  late final _g_value_get_double =
+      _g_value_get_doublePtr.asFunction<double Function(ffi.Pointer<GValue>)>();
+
+  int g_value_get_int(
+    ffi.Pointer<GValue> value,
+  ) {
+    return _g_value_get_int(
+      value,
+    );
+  }
+
+  late final _g_value_get_intPtr =
+      _lookup<ffi.NativeFunction<gint Function(ffi.Pointer<GValue>)>>(
+          'g_value_get_int');
+  late final _g_value_get_int =
+      _g_value_get_intPtr.asFunction<int Function(ffi.Pointer<GValue>)>();
+
+  gpointer g_value_get_object(
+    ffi.Pointer<GValue> value,
+  ) {
+    return _g_value_get_object(
+      value,
+    );
+  }
+
+  late final _g_value_get_objectPtr =
+      _lookup<ffi.NativeFunction<gpointer Function(ffi.Pointer<GValue>)>>(
+          'g_value_get_object');
+  late final _g_value_get_object = _g_value_get_objectPtr
+      .asFunction<gpointer Function(ffi.Pointer<GValue>)>();
+
+  ffi.Pointer<gchar> g_value_get_string(
+    ffi.Pointer<GValue> value,
+  ) {
+    return _g_value_get_string(
+      value,
+    );
+  }
+
+  late final _g_value_get_stringPtr = _lookup<
+          ffi.NativeFunction<ffi.Pointer<gchar> Function(ffi.Pointer<GValue>)>>(
+      'g_value_get_string');
+  late final _g_value_get_string = _g_value_get_stringPtr
+      .asFunction<ffi.Pointer<gchar> Function(ffi.Pointer<GValue>)>();
+
+  /// --- prototypes ---
+  ffi.Pointer<GValue> g_value_init(
+    ffi.Pointer<GValue> value,
+    int g_type,
+  ) {
+    return _g_value_init(
+      value,
+      g_type,
+    );
+  }
+
+  late final _g_value_initPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GValue> Function(
+              ffi.Pointer<GValue>, GType)>>('g_value_init');
+  late final _g_value_init = _g_value_initPtr
+      .asFunction<ffi.Pointer<GValue> Function(ffi.Pointer<GValue>, int)>();
+
+  void g_value_set_double(
+    ffi.Pointer<GValue> value,
+    double v_double,
+  ) {
+    return _g_value_set_double(
+      value,
+      v_double,
+    );
+  }
+
+  late final _g_value_set_doublePtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<GValue>, gdouble)>>(
+      'g_value_set_double');
+  late final _g_value_set_double = _g_value_set_doublePtr
+      .asFunction<void Function(ffi.Pointer<GValue>, double)>();
+
+  void g_value_set_int(
+    ffi.Pointer<GValue> value,
+    int v_int,
+  ) {
+    return _g_value_set_int(
+      value,
+      v_int,
+    );
+  }
+
+  late final _g_value_set_intPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<GValue>, gint)>>(
+          'g_value_set_int');
+  late final _g_value_set_int =
+      _g_value_set_intPtr.asFunction<void Function(ffi.Pointer<GValue>, int)>();
+
+  void g_value_set_object(
+    ffi.Pointer<GValue> value,
+    gpointer v_object,
+  ) {
+    return _g_value_set_object(
+      value,
+      v_object,
+    );
+  }
+
+  late final _g_value_set_objectPtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<GValue>, gpointer)>>(
+      'g_value_set_object');
+  late final _g_value_set_object = _g_value_set_objectPtr
+      .asFunction<void Function(ffi.Pointer<GValue>, gpointer)>();
+
+  void g_value_set_string(
+    ffi.Pointer<GValue> value,
+    ffi.Pointer<gchar> v_string,
+  ) {
+    return _g_value_set_string(
+      value,
+      v_string,
+    );
+  }
+
+  late final _g_value_set_stringPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GValue>, ffi.Pointer<gchar>)>>('g_value_set_string');
+  late final _g_value_set_string = _g_value_set_stringPtr
+      .asFunction<void Function(ffi.Pointer<GValue>, ffi.Pointer<gchar>)>();
+
+  void g_value_unset(
+    ffi.Pointer<GValue> value,
+  ) {
+    return _g_value_unset(
+      value,
+    );
+  }
+
+  late final _g_value_unsetPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<GValue>)>>(
+          'g_value_unset');
+  late final _g_value_unset =
+      _g_value_unsetPtr.asFunction<void Function(ffi.Pointer<GValue>)>();
+
   int vips_CMC2LCh(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_CMC2LCh(
-      in1,
+      in$,
       out,
     );
   }
@@ -117,11 +308,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_CMC2XYZ(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_CMC2XYZ(
-      in1,
+      in$,
       out,
     );
   }
@@ -135,11 +326,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_CMYK2XYZ(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_CMYK2XYZ(
-      in1,
+      in$,
       out,
     );
   }
@@ -153,11 +344,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_HSV2sRGB(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_HSV2sRGB(
-      in1,
+      in$,
       out,
     );
   }
@@ -171,11 +362,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_LCh2CMC(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_LCh2CMC(
-      in1,
+      in$,
       out,
     );
   }
@@ -189,11 +380,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_LCh2Lab(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_LCh2Lab(
-      in1,
+      in$,
       out,
     );
   }
@@ -207,11 +398,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_Lab2LCh(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_Lab2LCh(
-      in1,
+      in$,
       out,
     );
   }
@@ -225,11 +416,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_Lab2LabQ(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_Lab2LabQ(
-      in1,
+      in$,
       out,
     );
   }
@@ -243,11 +434,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_Lab2LabS(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_Lab2LabS(
-      in1,
+      in$,
       out,
     );
   }
@@ -261,11 +452,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_Lab2XYZ(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_Lab2XYZ(
-      in1,
+      in$,
       out,
     );
   }
@@ -279,11 +470,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_LabQ2Lab(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_LabQ2Lab(
-      in1,
+      in$,
       out,
     );
   }
@@ -297,11 +488,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_LabQ2LabS(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_LabQ2LabS(
-      in1,
+      in$,
       out,
     );
   }
@@ -315,11 +506,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_LabQ2sRGB(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_LabQ2sRGB(
-      in1,
+      in$,
       out,
     );
   }
@@ -333,11 +524,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_LabS2Lab(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_LabS2Lab(
-      in1,
+      in$,
       out,
     );
   }
@@ -351,11 +542,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_LabS2LabQ(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_LabS2LabQ(
-      in1,
+      in$,
       out,
     );
   }
@@ -369,11 +560,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_XYZ2CMYK(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_XYZ2CMYK(
-      in1,
+      in$,
       out,
     );
   }
@@ -387,11 +578,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_XYZ2Lab(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_XYZ2Lab(
-      in1,
+      in$,
       out,
     );
   }
@@ -405,11 +596,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_XYZ2Yxy(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_XYZ2Yxy(
-      in1,
+      in$,
       out,
     );
   }
@@ -423,11 +614,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_XYZ2scRGB(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_XYZ2scRGB(
-      in1,
+      in$,
       out,
     );
   }
@@ -441,11 +632,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_Yxy2Lab(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_Yxy2Lab(
-      in1,
+      in$,
       out,
     );
   }
@@ -459,11 +650,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_Yxy2XYZ(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_Yxy2XYZ(
-      in1,
+      in$,
       out,
     );
   }
@@ -550,12 +741,12 @@ class VipsBindings {
   void vips__demand_hint_array(
     ffi.Pointer<_VipsImage> image,
     int hint,
-    ffi.Pointer<ffi.Pointer<_VipsImage>> in1,
+    ffi.Pointer<ffi.Pointer<_VipsImage>> in$,
   ) {
     return _vips__demand_hint_array(
       image,
       hint,
-      in1,
+      in$,
     );
   }
 
@@ -876,11 +1067,11 @@ class VipsBindings {
 
   int vips__image_copy_fields_array(
     ffi.Pointer<_VipsImage> out,
-    ffi.Pointer<ffi.Pointer<_VipsImage>> in1,
+    ffi.Pointer<ffi.Pointer<_VipsImage>> in$,
   ) {
     return _vips__image_copy_fields_array(
       out,
-      in1,
+      in$,
     );
   }
 
@@ -1384,11 +1575,11 @@ class VipsBindings {
       .asFunction<int Function(int, ffi.Pointer<ffi.Void>, int)>();
 
   int vips_abs(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_abs(
-      in1,
+      in$,
       out,
     );
   }
@@ -1401,12 +1592,21 @@ class VipsBindings {
       int Function(
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
+  int vips_access_get_type() {
+    return _vips_access_get_type();
+  }
+
+  late final _vips_access_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_access_get_type');
+  late final _vips_access_get_type =
+      _vips_access_get_typePtr.asFunction<int Function()>();
+
   int vips_acos(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_acos(
-      in1,
+      in$,
       out,
     );
   }
@@ -1420,11 +1620,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_acosh(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_acosh(
-      in1,
+      in$,
       out,
     );
   }
@@ -1472,11 +1672,11 @@ class VipsBindings {
       .asFunction<void Function(ffi.Pointer<GOptionGroup>)>();
 
   int vips_addalpha(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_addalpha(
-      in1,
+      in$,
       out,
     );
   }
@@ -1490,7 +1690,7 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_affine(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     double a,
     double b,
@@ -1498,7 +1698,7 @@ class VipsBindings {
     double d,
   ) {
     return _vips_affine(
-      in1,
+      in$,
       out,
       a,
       b,
@@ -1519,6 +1719,15 @@ class VipsBindings {
   late final _vips_affine = _vips_affinePtr.asFunction<
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>,
           double, double, double, double)>();
+
+  int vips_align_get_type() {
+    return _vips_align_get_type();
+  }
+
+  late final _vips_align_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_align_get_type');
+  late final _vips_align_get_type =
+      _vips_align_get_typePtr.asFunction<int Function()>();
 
   ffi.Pointer<ffi.Pointer<VipsImage>> vips_allocate_input_array(
     ffi.Pointer<VipsImage> out,
@@ -1585,13 +1794,13 @@ class VipsBindings {
           ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_andimage_const(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     ffi.Pointer<ffi.Double> c,
     int n,
   ) {
     return _vips_andimage_const(
-      in1,
+      in$,
       out,
       c,
       n,
@@ -1610,12 +1819,12 @@ class VipsBindings {
           ffi.Pointer<ffi.Double>, int)>();
 
   int vips_andimage_const1(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     double c,
   ) {
     return _vips_andimage_const1(
-      in1,
+      in$,
       out,
       c,
     );
@@ -1630,6 +1839,24 @@ class VipsBindings {
   late final _vips_andimage_const1 = _vips_andimage_const1Ptr.asFunction<
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>,
           double)>();
+
+  int vips_angle45_get_type() {
+    return _vips_angle45_get_type();
+  }
+
+  late final _vips_angle45_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_angle45_get_type');
+  late final _vips_angle45_get_type =
+      _vips_angle45_get_typePtr.asFunction<int Function()>();
+
+  int vips_angle_get_type() {
+    return _vips_angle_get_type();
+  }
+
+  late final _vips_angle_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_angle_get_type');
+  late final _vips_angle_get_type =
+      _vips_angle_get_typePtr.asFunction<int Function()>();
 
   ffi.Pointer<VipsArea> vips_area_copy(
     ffi.Pointer<VipsArea> area,
@@ -1694,6 +1921,15 @@ class VipsBindings {
           ffi.Pointer<ffi.Int>,
           ffi.Pointer<GType>,
           ffi.Pointer<ffi.Size>)>();
+
+  int vips_area_get_type() {
+    return _vips_area_get_type();
+  }
+
+  late final _vips_area_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_area_get_type');
+  late final _vips_area_get_type =
+      _vips_area_get_typePtr.asFunction<int Function()>();
 
   ffi.Pointer<VipsArea> vips_area_new(
     VipsCallbackFn free_fn,
@@ -1803,6 +2039,17 @@ class VipsBindings {
       _vips_argument_class_needsstringPtr
           .asFunction<int Function(ffi.Pointer<VipsArgumentClass>)>();
 
+  /// enumerations from "object.h"
+  int vips_argument_flags_get_type() {
+    return _vips_argument_flags_get_type();
+  }
+
+  late final _vips_argument_flags_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_argument_flags_get_type');
+  late final _vips_argument_flags_get_type =
+      _vips_argument_flags_get_typePtr.asFunction<int Function()>();
+
   int vips_argument_get_id() {
     return _vips_argument_get_id();
   }
@@ -1854,6 +2101,16 @@ class VipsBindings {
   late final _vips_array_double_get = _vips_array_double_getPtr.asFunction<
       ffi.Pointer<ffi.Double> Function(
           ffi.Pointer<VipsArrayDouble>, ffi.Pointer<ffi.Int>)>();
+
+  int vips_array_double_get_type() {
+    return _vips_array_double_get_type();
+  }
+
+  late final _vips_array_double_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_array_double_get_type');
+  late final _vips_array_double_get_type =
+      _vips_array_double_get_typePtr.asFunction<int Function()>();
 
   ffi.Pointer<VipsArrayDouble> vips_array_double_new(
     ffi.Pointer<ffi.Double> array,
@@ -1933,6 +2190,18 @@ class VipsBindings {
       ffi.Pointer<ffi.Pointer<VipsImage>> Function(
           ffi.Pointer<VipsArrayImage>, ffi.Pointer<ffi.Int>)>();
 
+  /// See image.h for vips_array_image_new() etc., they need to be declared after
+  /// VipsImage.
+  int vips_array_image_get_type() {
+    return _vips_array_image_get_type();
+  }
+
+  late final _vips_array_image_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_array_image_get_type');
+  late final _vips_array_image_get_type =
+      _vips_array_image_get_typePtr.asFunction<int Function()>();
+
   /// Defined in type.c but declared here, since they use VipsImage.
   ffi.Pointer<VipsArrayImage> vips_array_image_new(
     ffi.Pointer<ffi.Pointer<VipsImage>> array,
@@ -2003,6 +2272,15 @@ class VipsBindings {
       ffi.Pointer<ffi.Int> Function(
           ffi.Pointer<VipsArrayInt>, ffi.Pointer<ffi.Int>)>();
 
+  int vips_array_int_get_type() {
+    return _vips_array_int_get_type();
+  }
+
+  late final _vips_array_int_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_array_int_get_type');
+  late final _vips_array_int_get_type =
+      _vips_array_int_get_typePtr.asFunction<int Function()>();
+
   ffi.Pointer<VipsArrayInt> vips_array_int_new(
     ffi.Pointer<ffi.Int> array,
     int n,
@@ -2035,12 +2313,12 @@ class VipsBindings {
       .asFunction<ffi.Pointer<VipsArrayInt> Function(int)>();
 
   int vips_arrayjoin(
-    ffi.Pointer<ffi.Pointer<VipsImage>> in1,
+    ffi.Pointer<ffi.Pointer<VipsImage>> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     int n,
   ) {
     return _vips_arrayjoin(
-      in1,
+      in$,
       out,
       n,
     );
@@ -2055,11 +2333,11 @@ class VipsBindings {
           ffi.Pointer<ffi.Pointer<VipsImage>>, int)>();
 
   int vips_asin(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_asin(
-      in1,
+      in$,
       out,
     );
   }
@@ -2073,11 +2351,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_asinh(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_asinh(
-      in1,
+      in$,
       out,
     );
   }
@@ -2091,11 +2369,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_atan(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_atan(
-      in1,
+      in$,
       out,
     );
   }
@@ -2129,13 +2407,13 @@ class VipsBindings {
           ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_atan2_const(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     ffi.Pointer<ffi.Double> c,
     int n,
   ) {
     return _vips_atan2_const(
-      in1,
+      in$,
       out,
       c,
       n,
@@ -2154,12 +2432,12 @@ class VipsBindings {
           ffi.Pointer<ffi.Double>, int)>();
 
   int vips_atan2_const1(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     double c,
   ) {
     return _vips_atan2_const1(
-      in1,
+      in$,
       out,
       c,
     );
@@ -2176,11 +2454,11 @@ class VipsBindings {
           double)>();
 
   int vips_atanh(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_atanh(
-      in1,
+      in$,
       out,
     );
   }
@@ -2194,11 +2472,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_autorot(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_autorot(
-      in1,
+      in$,
       out,
     );
   }
@@ -2226,11 +2504,11 @@ class VipsBindings {
       .asFunction<void Function(ffi.Pointer<VipsImage>)>();
 
   int vips_avg(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Double> out,
   ) {
     return _vips_avg(
-      in1,
+      in$,
       out,
     );
   }
@@ -2241,6 +2519,16 @@ class VipsBindings {
               ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Double>)>>('vips_avg');
   late final _vips_avg = _vips_avgPtr.asFunction<
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Double>)>();
+
+  int vips_band_format_get_type() {
+    return _vips_band_format_get_type();
+  }
+
+  late final _vips_band_format_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_band_format_get_type');
+  late final _vips_band_format_get_type =
+      _vips_band_format_get_typePtr.asFunction<int Function()>();
 
   Dartgint vips_band_format_is8bit(
     VipsBandFormat format,
@@ -2313,11 +2601,11 @@ class VipsBindings {
       _vips_band_format_isuintPtr.asFunction<int Function(int)>();
 
   int vips_bandand(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_bandand(
-      in1,
+      in$,
       out,
     );
   }
@@ -2331,12 +2619,12 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_bandbool(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     VipsOperationBoolean boolean,
   ) {
     return _vips_bandbool(
-      in1,
+      in$,
       out,
       boolean.value,
     );
@@ -2353,11 +2641,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>, int)>();
 
   int vips_bandeor(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_bandeor(
-      in1,
+      in$,
       out,
     );
   }
@@ -2371,11 +2659,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_bandfold(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_bandfold(
-      in1,
+      in$,
       out,
     );
   }
@@ -2389,12 +2677,12 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_bandjoin(
-    ffi.Pointer<ffi.Pointer<VipsImage>> in1,
+    ffi.Pointer<ffi.Pointer<VipsImage>> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     int n,
   ) {
     return _vips_bandjoin(
-      in1,
+      in$,
       out,
       n,
     );
@@ -2429,13 +2717,13 @@ class VipsBindings {
           ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_bandjoin_const(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     ffi.Pointer<ffi.Double> c,
     int n,
   ) {
     return _vips_bandjoin_const(
-      in1,
+      in$,
       out,
       c,
       n,
@@ -2454,12 +2742,12 @@ class VipsBindings {
           ffi.Pointer<ffi.Double>, int)>();
 
   int vips_bandjoin_const1(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     double c,
   ) {
     return _vips_bandjoin_const1(
-      in1,
+      in$,
       out,
       c,
     );
@@ -2476,11 +2764,11 @@ class VipsBindings {
           double)>();
 
   int vips_bandmean(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_bandmean(
-      in1,
+      in$,
       out,
     );
   }
@@ -2494,11 +2782,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_bandor(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_bandor(
-      in1,
+      in$,
       out,
     );
   }
@@ -2512,12 +2800,12 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_bandrank(
-    ffi.Pointer<ffi.Pointer<VipsImage>> in1,
+    ffi.Pointer<ffi.Pointer<VipsImage>> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     int n,
   ) {
     return _vips_bandrank(
-      in1,
+      in$,
       out,
       n,
     );
@@ -2532,11 +2820,11 @@ class VipsBindings {
           ffi.Pointer<ffi.Pointer<VipsImage>>, int)>();
 
   int vips_bandunfold(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_bandunfold(
-      in1,
+      in$,
       out,
     );
   }
@@ -2567,6 +2855,15 @@ class VipsBindings {
               ffi.Int)>>('vips_black');
   late final _vips_black = _vips_blackPtr.asFunction<
       int Function(ffi.Pointer<ffi.Pointer<VipsImage>>, int, int)>();
+
+  int vips_blend_mode_get_type() {
+    return _vips_blend_mode_get_type();
+  }
+
+  late final _vips_blend_mode_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_blend_mode_get_type');
+  late final _vips_blend_mode_get_type =
+      _vips_blend_mode_get_typePtr.asFunction<int Function()>();
 
   ffi.Pointer<VipsBlob> vips_blob_copy(
     ffi.Pointer<ffi.Void> data,
@@ -2602,6 +2899,15 @@ class VipsBindings {
   late final _vips_blob_get = _vips_blob_getPtr.asFunction<
       ffi.Pointer<ffi.Void> Function(
           ffi.Pointer<VipsBlob>, ffi.Pointer<ffi.Size>)>();
+
+  int vips_blob_get_type() {
+    return _vips_blob_get_type();
+  }
+
+  late final _vips_blob_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_blob_get_type');
+  late final _vips_blob_get_type =
+      _vips_blob_get_typePtr.asFunction<int Function()>();
 
   ffi.Pointer<VipsBlob> vips_blob_new(
     VipsCallbackFn free_fn,
@@ -2685,14 +2991,14 @@ class VipsBindings {
           ffi.Pointer<ffi.Pointer<VipsImage>>, int)>();
 
   int vips_boolean_const(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     VipsOperationBoolean boolean,
     ffi.Pointer<ffi.Double> c,
     int n,
   ) {
     return _vips_boolean_const(
-      in1,
+      in$,
       out,
       boolean.value,
       c,
@@ -2713,13 +3019,13 @@ class VipsBindings {
           int, ffi.Pointer<ffi.Double>, int)>();
 
   int vips_boolean_const1(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     VipsOperationBoolean boolean,
     double c,
   ) {
     return _vips_boolean_const1(
-      in1,
+      in$,
       out,
       boolean.value,
       c,
@@ -3257,11 +3563,11 @@ class VipsBindings {
           ffi.Pointer<_VipsImage>, ffi.Pointer<VipsRect>)>();
 
   int vips_buildlut(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_buildlut(
-      in1,
+      in$,
       out,
     );
   }
@@ -3275,11 +3581,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_byteswap(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_byteswap(
-      in1,
+      in$,
       out,
     );
   }
@@ -3502,12 +3808,12 @@ class VipsBindings {
 
   int vips_call_required_optional(
     ffi.Pointer<ffi.Pointer<VipsOperation>> operation,
-    va_list required1,
+    va_list required$,
     va_list optional,
   ) {
     return _vips_call_required_optional(
       operation,
-      required1,
+      required$,
       optional,
     );
   }
@@ -3559,11 +3865,11 @@ class VipsBindings {
               ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, va_list)>();
 
   int vips_canny(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_canny(
-      in1,
+      in$,
       out,
     );
   }
@@ -3602,12 +3908,12 @@ class VipsBindings {
           ffi.Pointer<ffi.Pointer<VipsImage>>, int)>();
 
   int vips_cast(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     VipsBandFormat format,
   ) {
     return _vips_cast(
-      in1,
+      in$,
       out,
       format.value,
     );
@@ -3622,11 +3928,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>, int)>();
 
   int vips_cast_char(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_cast_char(
-      in1,
+      in$,
       out,
     );
   }
@@ -3640,11 +3946,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_cast_complex(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_cast_complex(
-      in1,
+      in$,
       out,
     );
   }
@@ -3658,11 +3964,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_cast_double(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_cast_double(
-      in1,
+      in$,
       out,
     );
   }
@@ -3676,11 +3982,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_cast_dpcomplex(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_cast_dpcomplex(
-      in1,
+      in$,
       out,
     );
   }
@@ -3694,11 +4000,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_cast_float(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_cast_float(
-      in1,
+      in$,
       out,
     );
   }
@@ -3712,11 +4018,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_cast_int(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_cast_int(
-      in1,
+      in$,
       out,
     );
   }
@@ -3730,11 +4036,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_cast_short(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_cast_short(
-      in1,
+      in$,
       out,
     );
   }
@@ -3748,11 +4054,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_cast_uchar(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_cast_uchar(
-      in1,
+      in$,
       out,
     );
   }
@@ -3766,11 +4072,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_cast_uint(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_cast_uint(
-      in1,
+      in$,
       out,
     );
   }
@@ -3784,11 +4090,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_cast_ushort(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_cast_ushort(
-      in1,
+      in$,
       out,
     );
   }
@@ -3802,11 +4108,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_ceil(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_ceil(
-      in1,
+      in$,
       out,
     );
   }
@@ -4402,11 +4708,11 @@ class VipsBindings {
       .asFunction<int Function(ffi.Pointer<ffi.Char>, int, int)>();
 
   int vips_clamp(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_clamp(
-      in1,
+      in$,
       out,
     );
   }
@@ -4456,6 +4762,15 @@ class VipsBindings {
   late final _vips_class_map_all = _vips_class_map_allPtr.asFunction<
       ffi.Pointer<ffi.Void> Function(
           int, VipsClassMapFn, ffi.Pointer<ffi.Void>)>();
+
+  int vips_coding_get_type() {
+    return _vips_coding_get_type();
+  }
+
+  late final _vips_coding_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_coding_get_type');
+  late final _vips_coding_get_type =
+      _vips_coding_get_typePtr.asFunction<int Function()>();
 
   double vips_col_C2Ccmc(
     double C,
@@ -5015,12 +5330,12 @@ class VipsBindings {
           ffi.Pointer<ffi.Int>, ffi.Pointer<ffi.Int>, ffi.Pointer<ffi.Int>)>();
 
   int vips_colourspace(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     VipsInterpretation space,
   ) {
     return _vips_colourspace(
-      in1,
+      in$,
       out,
       space.value,
     );
@@ -5050,13 +5365,34 @@ class VipsBindings {
   late final _vips_colourspace_issupported = _vips_colourspace_issupportedPtr
       .asFunction<int Function(ffi.Pointer<VipsImage>)>();
 
+  /// enumerations from "convolution.h"
+  int vips_combine_get_type() {
+    return _vips_combine_get_type();
+  }
+
+  late final _vips_combine_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_combine_get_type');
+  late final _vips_combine_get_type =
+      _vips_combine_get_typePtr.asFunction<int Function()>();
+
+  /// enumerations from "draw.h"
+  int vips_combine_mode_get_type() {
+    return _vips_combine_mode_get_type();
+  }
+
+  late final _vips_combine_mode_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_combine_mode_get_type');
+  late final _vips_combine_mode_get_type =
+      _vips_combine_mode_get_typePtr.asFunction<int Function()>();
+
   int vips_compass(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     ffi.Pointer<VipsImage> mask,
   ) {
     return _vips_compass(
-      in1,
+      in$,
       out,
       mask,
     );
@@ -5072,13 +5408,23 @@ class VipsBindings {
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>,
           ffi.Pointer<VipsImage>)>();
 
+  int vips_compass_direction_get_type() {
+    return _vips_compass_direction_get_type();
+  }
+
+  late final _vips_compass_direction_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_compass_direction_get_type');
+  late final _vips_compass_direction_get_type =
+      _vips_compass_direction_get_typePtr.asFunction<int Function()>();
+
   int vips_complex(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     VipsOperationComplex cmplx,
   ) {
     return _vips_complex(
-      in1,
+      in$,
       out,
       cmplx.value,
     );
@@ -5140,14 +5486,14 @@ class VipsBindings {
           ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_complexget(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
-    VipsOperationComplexget get1,
+    VipsOperationComplexget get$,
   ) {
     return _vips_complexget(
-      in1,
+      in$,
       out,
-      get1.value,
+      get$.value,
     );
   }
 
@@ -5162,13 +5508,13 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>, int)>();
 
   int vips_composite(
-    ffi.Pointer<ffi.Pointer<VipsImage>> in1,
+    ffi.Pointer<ffi.Pointer<VipsImage>> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     int n,
     ffi.Pointer<ffi.Int> mode,
   ) {
     return _vips_composite(
-      in1,
+      in$,
       out,
       n,
       mode,
@@ -5237,11 +5583,11 @@ class VipsBindings {
       _vips_concurrency_setPtr.asFunction<void Function(int)>();
 
   int vips_conj(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_conj(
-      in1,
+      in$,
       out,
     );
   }
@@ -5270,6 +5616,15 @@ class VipsBindings {
       _vips_connection_filenamePtr.asFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<VipsConnection>)>();
 
+  int vips_connection_get_type() {
+    return _vips_connection_get_type();
+  }
+
+  late final _vips_connection_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_connection_get_type');
+  late final _vips_connection_get_type =
+      _vips_connection_get_typePtr.asFunction<int Function()>();
+
   ffi.Pointer<ffi.Char> vips_connection_nick(
     ffi.Pointer<VipsConnection> connection,
   ) {
@@ -5286,12 +5641,12 @@ class VipsBindings {
       ffi.Pointer<ffi.Char> Function(ffi.Pointer<VipsConnection>)>();
 
   int vips_conv(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     ffi.Pointer<VipsImage> mask,
   ) {
     return _vips_conv(
-      in1,
+      in$,
       out,
       mask,
     );
@@ -5308,12 +5663,12 @@ class VipsBindings {
           ffi.Pointer<VipsImage>)>();
 
   int vips_conva(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     ffi.Pointer<VipsImage> mask,
   ) {
     return _vips_conva(
-      in1,
+      in$,
       out,
       mask,
     );
@@ -5330,12 +5685,12 @@ class VipsBindings {
           ffi.Pointer<VipsImage>)>();
 
   int vips_convasep(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     ffi.Pointer<VipsImage> mask,
   ) {
     return _vips_convasep(
-      in1,
+      in$,
       out,
       mask,
     );
@@ -5352,12 +5707,12 @@ class VipsBindings {
           ffi.Pointer<VipsImage>)>();
 
   int vips_convf(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     ffi.Pointer<VipsImage> mask,
   ) {
     return _vips_convf(
-      in1,
+      in$,
       out,
       mask,
     );
@@ -5374,12 +5729,12 @@ class VipsBindings {
           ffi.Pointer<VipsImage>)>();
 
   int vips_convi(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     ffi.Pointer<VipsImage> mask,
   ) {
     return _vips_convi(
-      in1,
+      in$,
       out,
       mask,
     );
@@ -5396,12 +5751,12 @@ class VipsBindings {
           ffi.Pointer<VipsImage>)>();
 
   int vips_convsep(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     ffi.Pointer<VipsImage> mask,
   ) {
     return _vips_convsep(
-      in1,
+      in$,
       out,
       mask,
     );
@@ -5418,11 +5773,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>)>();
 
   int vips_copy(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_copy(
-      in1,
+      in$,
       out,
     );
   }
@@ -5436,11 +5791,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_copy_file(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_copy_file(
-      in1,
+      in$,
       out,
     );
   }
@@ -5454,11 +5809,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_cos(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_cos(
-      in1,
+      in$,
       out,
     );
   }
@@ -5472,11 +5827,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_cosh(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_cosh(
-      in1,
+      in$,
       out,
     );
   }
@@ -5490,12 +5845,12 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_countlines(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Double> nolines,
     VipsDirection direction,
   ) {
     return _vips_countlines(
-      in1,
+      in$,
       nolines,
       direction.value,
     );
@@ -5509,7 +5864,7 @@ class VipsBindings {
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Double>, int)>();
 
   int vips_crop(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     int left,
     int top,
@@ -5517,7 +5872,7 @@ class VipsBindings {
     int height,
   ) {
     return _vips_crop(
-      in1,
+      in$,
       out,
       left,
       top,
@@ -5596,11 +5951,11 @@ class VipsBindings {
           ffi.Pointer<VipsSource>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_csvsave(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Char> filename,
   ) {
     return _vips_csvsave(
-      in1,
+      in$,
       filename,
     );
   }
@@ -5613,11 +5968,11 @@ class VipsBindings {
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Char>)>();
 
   int vips_csvsave_target(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<VipsTarget> target,
   ) {
     return _vips_csvsave_target(
-      in1,
+      in$,
       target,
     );
   }
@@ -5940,12 +6295,23 @@ class VipsBindings {
   late final _vips_dbuf_writef = _vips_dbuf_writefPtr
       .asFunction<int Function(ffi.Pointer<VipsDbuf>, ffi.Pointer<ffi.Char>)>();
 
+  /// enumerations from "image.h"
+  int vips_demand_style_get_type() {
+    return _vips_demand_style_get_type();
+  }
+
+  late final _vips_demand_style_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_demand_style_get_type');
+  late final _vips_demand_style_get_type =
+      _vips_demand_style_get_typePtr.asFunction<int Function()>();
+
   int vips_deviate(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Double> out,
   ) {
     return _vips_deviate(
-      in1,
+      in$,
       out,
     );
   }
@@ -5956,6 +6322,15 @@ class VipsBindings {
               ffi.Pointer<ffi.Double>)>>('vips_deviate');
   late final _vips_deviate = _vips_deviatePtr.asFunction<
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Double>)>();
+
+  int vips_direction_get_type() {
+    return _vips_direction_get_type();
+  }
+
+  late final _vips_direction_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_direction_get_type');
+  late final _vips_direction_get_type =
+      _vips_direction_get_typePtr.asFunction<int Function()>();
 
   int vips_divide(
     ffi.Pointer<VipsImage> left,
@@ -6322,11 +6697,11 @@ class VipsBindings {
       .asFunction<int Function(ffi.Pointer<VipsImage>, int, int, int, int)>();
 
   int vips_dzsave(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Char> name,
   ) {
     return _vips_dzsave(
-      in1,
+      in$,
       name,
     );
   }
@@ -6339,12 +6714,12 @@ class VipsBindings {
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Char>)>();
 
   int vips_dzsave_buffer(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<ffi.Void>> buf,
     ffi.Pointer<ffi.Size> len,
   ) {
     return _vips_dzsave_buffer(
-      in1,
+      in$,
       buf,
       len,
     );
@@ -6361,11 +6736,11 @@ class VipsBindings {
           ffi.Pointer<ffi.Size>)>();
 
   int vips_dzsave_target(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<VipsTarget> target,
   ) {
     return _vips_dzsave_target(
-      in1,
+      in$,
       target,
     );
   }
@@ -6378,7 +6753,7 @@ class VipsBindings {
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<VipsTarget>)>();
 
   int vips_embed(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     int x,
     int y,
@@ -6386,7 +6761,7 @@ class VipsBindings {
     int height,
   ) {
     return _vips_embed(
-      in1,
+      in$,
       out,
       x,
       y,
@@ -6480,13 +6855,13 @@ class VipsBindings {
           ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_eorimage_const(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     ffi.Pointer<ffi.Double> c,
     int n,
   ) {
     return _vips_eorimage_const(
-      in1,
+      in$,
       out,
       c,
       n,
@@ -6505,12 +6880,12 @@ class VipsBindings {
           ffi.Pointer<ffi.Double>, int)>();
 
   int vips_eorimage_const1(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     double c,
   ) {
     return _vips_eorimage_const1(
-      in1,
+      in$,
       out,
       c,
     );
@@ -6547,13 +6922,13 @@ class VipsBindings {
           ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_equal_const(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     ffi.Pointer<ffi.Double> c,
     int n,
   ) {
     return _vips_equal_const(
-      in1,
+      in$,
       out,
       c,
       n,
@@ -6572,12 +6947,12 @@ class VipsBindings {
           ffi.Pointer<ffi.Double>, int)>();
 
   int vips_equal_const1(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     double c,
   ) {
     return _vips_equal_const1(
-      in1,
+      in$,
       out,
       c,
     );
@@ -6719,11 +7094,11 @@ class VipsBindings {
       _vips_existsfPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
 
   int vips_exp(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_exp(
-      in1,
+      in$,
       out,
     );
   }
@@ -6737,11 +7112,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_exp10(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_exp10(
-      in1,
+      in$,
       out,
     );
   }
@@ -6754,8 +7129,18 @@ class VipsBindings {
       int Function(
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
+  /// enumerations from "conversion.h"
+  int vips_extend_get_type() {
+    return _vips_extend_get_type();
+  }
+
+  late final _vips_extend_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_extend_get_type');
+  late final _vips_extend_get_type =
+      _vips_extend_get_typePtr.asFunction<int Function()>();
+
   int vips_extract_area(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     int left,
     int top,
@@ -6763,7 +7148,7 @@ class VipsBindings {
     int height,
   ) {
     return _vips_extract_area(
-      in1,
+      in$,
       out,
       left,
       top,
@@ -6786,12 +7171,12 @@ class VipsBindings {
           int, int, int, int)>();
 
   int vips_extract_band(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     int band,
   ) {
     return _vips_extract_band(
-      in1,
+      in$,
       out,
       band,
     );
@@ -6826,12 +7211,21 @@ class VipsBindings {
   late final _vips_eye = _vips_eyePtr.asFunction<
       int Function(ffi.Pointer<ffi.Pointer<VipsImage>>, int, int)>();
 
+  int vips_fail_on_get_type() {
+    return _vips_fail_on_get_type();
+  }
+
+  late final _vips_fail_on_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_fail_on_get_type');
+  late final _vips_fail_on_get_type =
+      _vips_fail_on_get_typePtr.asFunction<int Function()>();
+
   int vips_falsecolour(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_falsecolour(
-      in1,
+      in$,
       out,
     );
   }
@@ -6845,12 +7239,12 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_fastcor(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<VipsImage> ref,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_fastcor(
-      in1,
+      in$,
       ref,
       out,
     );
@@ -6928,11 +7322,11 @@ class VipsBindings {
               ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
 
   int vips_fill_nearest(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_fill_nearest(
-      in1,
+      in$,
       out,
     );
   }
@@ -6946,14 +7340,14 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_find_trim(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Int> left,
     ffi.Pointer<ffi.Int> top,
     ffi.Pointer<ffi.Int> width,
     ffi.Pointer<ffi.Int> height,
   ) {
     return _vips_find_trim(
-      in1,
+      in$,
       left,
       top,
       width,
@@ -6992,11 +7386,11 @@ class VipsBindings {
           ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_fitssave(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Char> filename,
   ) {
     return _vips_fitssave(
-      in1,
+      in$,
       filename,
     );
   }
@@ -7028,11 +7422,11 @@ class VipsBindings {
       int Function(ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Char>)>();
 
   int vips_flatten(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_flatten(
-      in1,
+      in$,
       out,
     );
   }
@@ -7046,12 +7440,12 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_flip(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     VipsDirection direction,
   ) {
     return _vips_flip(
-      in1,
+      in$,
       out,
       direction.value,
     );
@@ -7068,11 +7462,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>, int)>();
 
   int vips_float2rad(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_float2rad(
-      in1,
+      in$,
       out,
     );
   }
@@ -7086,11 +7480,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_floor(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_floor(
-      in1,
+      in$,
       out,
     );
   }
@@ -7102,6 +7496,36 @@ class VipsBindings {
   late final _vips_floor = _vips_floorPtr.asFunction<
       int Function(
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
+
+  int vips_foreign_dz_container_get_type() {
+    return _vips_foreign_dz_container_get_type();
+  }
+
+  late final _vips_foreign_dz_container_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_foreign_dz_container_get_type');
+  late final _vips_foreign_dz_container_get_type =
+      _vips_foreign_dz_container_get_typePtr.asFunction<int Function()>();
+
+  int vips_foreign_dz_depth_get_type() {
+    return _vips_foreign_dz_depth_get_type();
+  }
+
+  late final _vips_foreign_dz_depth_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_foreign_dz_depth_get_type');
+  late final _vips_foreign_dz_depth_get_type =
+      _vips_foreign_dz_depth_get_typePtr.asFunction<int Function()>();
+
+  int vips_foreign_dz_layout_get_type() {
+    return _vips_foreign_dz_layout_get_type();
+  }
+
+  late final _vips_foreign_dz_layout_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_foreign_dz_layout_get_type');
+  late final _vips_foreign_dz_layout_get_type =
+      _vips_foreign_dz_layout_get_typePtr.asFunction<int Function()>();
 
   ffi.Pointer<ffi.Char> vips_foreign_find_load(
     ffi.Pointer<ffi.Char> filename,
@@ -7212,6 +7636,17 @@ class VipsBindings {
   late final _vips_foreign_flags = _vips_foreign_flagsPtr
       .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
+  /// enumerations from "foreign.h"
+  int vips_foreign_flags_get_type() {
+    return _vips_foreign_flags_get_type();
+  }
+
+  late final _vips_foreign_flags_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_foreign_flags_get_type');
+  late final _vips_foreign_flags_get_type =
+      _vips_foreign_flags_get_typePtr.asFunction<int Function()>();
+
   ffi.Pointer<ffi.Pointer<gchar>> vips_foreign_get_suffixes() {
     return _vips_foreign_get_suffixes();
   }
@@ -7221,6 +7656,36 @@ class VipsBindings {
           'vips_foreign_get_suffixes');
   late final _vips_foreign_get_suffixes = _vips_foreign_get_suffixesPtr
       .asFunction<ffi.Pointer<ffi.Pointer<gchar>> Function()>();
+
+  /// Don't put spaces around void here, it breaks gtk-doc.
+  int vips_foreign_get_type() {
+    return _vips_foreign_get_type();
+  }
+
+  late final _vips_foreign_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_foreign_get_type');
+  late final _vips_foreign_get_type =
+      _vips_foreign_get_typePtr.asFunction<int Function()>();
+
+  int vips_foreign_heif_compression_get_type() {
+    return _vips_foreign_heif_compression_get_type();
+  }
+
+  late final _vips_foreign_heif_compression_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_foreign_heif_compression_get_type');
+  late final _vips_foreign_heif_compression_get_type =
+      _vips_foreign_heif_compression_get_typePtr.asFunction<int Function()>();
+
+  int vips_foreign_heif_encoder_get_type() {
+    return _vips_foreign_heif_encoder_get_type();
+  }
+
+  late final _vips_foreign_heif_encoder_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_foreign_heif_encoder_get_type');
+  late final _vips_foreign_heif_encoder_get_type =
+      _vips_foreign_heif_encoder_get_typePtr.asFunction<int Function()>();
 
   int vips_foreign_is_a(
     ffi.Pointer<ffi.Char> loader,
@@ -7277,6 +7742,38 @@ class VipsBindings {
       _vips_foreign_is_a_sourcePtr.asFunction<
           int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<VipsSource>)>();
 
+  /// enumerations from "almostdeprecated.h"
+  int vips_foreign_jpeg_subsample_get_type() {
+    return _vips_foreign_jpeg_subsample_get_type();
+  }
+
+  late final _vips_foreign_jpeg_subsample_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_foreign_jpeg_subsample_get_type');
+  late final _vips_foreign_jpeg_subsample_get_type =
+      _vips_foreign_jpeg_subsample_get_typePtr.asFunction<int Function()>();
+
+  int vips_foreign_keep_get_type() {
+    return _vips_foreign_keep_get_type();
+  }
+
+  late final _vips_foreign_keep_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_foreign_keep_get_type');
+  late final _vips_foreign_keep_get_type =
+      _vips_foreign_keep_get_typePtr.asFunction<int Function()>();
+
+  /// Don't put spaces around void here, it breaks gtk-doc.
+  int vips_foreign_load_get_type() {
+    return _vips_foreign_load_get_type();
+  }
+
+  late final _vips_foreign_load_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_foreign_load_get_type');
+  late final _vips_foreign_load_get_type =
+      _vips_foreign_load_get_typePtr.asFunction<int Function()>();
+
   void vips_foreign_load_invalidate(
     ffi.Pointer<VipsImage> image,
   ) {
@@ -7317,6 +7814,87 @@ class VipsBindings {
   late final _vips_foreign_map = _vips_foreign_mapPtr.asFunction<
       ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Char>, VipsSListMap2Fn,
           ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
+
+  int vips_foreign_png_filter_get_type() {
+    return _vips_foreign_png_filter_get_type();
+  }
+
+  late final _vips_foreign_png_filter_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_foreign_png_filter_get_type');
+  late final _vips_foreign_png_filter_get_type =
+      _vips_foreign_png_filter_get_typePtr.asFunction<int Function()>();
+
+  int vips_foreign_ppm_format_get_type() {
+    return _vips_foreign_ppm_format_get_type();
+  }
+
+  late final _vips_foreign_ppm_format_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_foreign_ppm_format_get_type');
+  late final _vips_foreign_ppm_format_get_type =
+      _vips_foreign_ppm_format_get_typePtr.asFunction<int Function()>();
+
+  /// Don't put spaces around void here, it breaks gtk-doc.
+  int vips_foreign_save_get_type() {
+    return _vips_foreign_save_get_type();
+  }
+
+  late final _vips_foreign_save_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_foreign_save_get_type');
+  late final _vips_foreign_save_get_type =
+      _vips_foreign_save_get_typePtr.asFunction<int Function()>();
+
+  int vips_foreign_subsample_get_type() {
+    return _vips_foreign_subsample_get_type();
+  }
+
+  late final _vips_foreign_subsample_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_foreign_subsample_get_type');
+  late final _vips_foreign_subsample_get_type =
+      _vips_foreign_subsample_get_typePtr.asFunction<int Function()>();
+
+  int vips_foreign_tiff_compression_get_type() {
+    return _vips_foreign_tiff_compression_get_type();
+  }
+
+  late final _vips_foreign_tiff_compression_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_foreign_tiff_compression_get_type');
+  late final _vips_foreign_tiff_compression_get_type =
+      _vips_foreign_tiff_compression_get_typePtr.asFunction<int Function()>();
+
+  int vips_foreign_tiff_predictor_get_type() {
+    return _vips_foreign_tiff_predictor_get_type();
+  }
+
+  late final _vips_foreign_tiff_predictor_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_foreign_tiff_predictor_get_type');
+  late final _vips_foreign_tiff_predictor_get_type =
+      _vips_foreign_tiff_predictor_get_typePtr.asFunction<int Function()>();
+
+  int vips_foreign_tiff_resunit_get_type() {
+    return _vips_foreign_tiff_resunit_get_type();
+  }
+
+  late final _vips_foreign_tiff_resunit_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_foreign_tiff_resunit_get_type');
+  late final _vips_foreign_tiff_resunit_get_type =
+      _vips_foreign_tiff_resunit_get_typePtr.asFunction<int Function()>();
+
+  int vips_foreign_webp_preset_get_type() {
+    return _vips_foreign_webp_preset_get_type();
+  }
+
+  late final _vips_foreign_webp_preset_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_foreign_webp_preset_get_type');
+  late final _vips_foreign_webp_preset_get_type =
+      _vips_foreign_webp_preset_get_typePtr.asFunction<int Function()>();
 
   ffi.Pointer<VipsFormatClass> vips_format_for_file(
     ffi.Pointer<ffi.Char> filename,
@@ -7364,6 +7942,15 @@ class VipsBindings {
               ffi.Pointer<ffi.Char>)>>('vips_format_get_flags');
   late final _vips_format_get_flags = _vips_format_get_flagsPtr.asFunction<
       int Function(ffi.Pointer<VipsFormatClass>, ffi.Pointer<ffi.Char>)>();
+
+  int vips_format_get_type() {
+    return _vips_format_get_type();
+  }
+
+  late final _vips_format_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_format_get_type');
+  late final _vips_format_get_type =
+      _vips_format_get_typePtr.asFunction<int Function()>();
 
   /// Map over and find formats. This uses type introspection to loop over
   /// subclasses of VipsFormat.
@@ -7434,11 +8021,11 @@ class VipsBindings {
       _vips_format_sizeof_unsafePtr.asFunction<int Function(int)>();
 
   int vips_format_write(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Char> filename,
   ) {
     return _vips_format_write(
-      in1,
+      in$,
       filename,
     );
   }
@@ -7472,12 +8059,12 @@ class VipsBindings {
       int Function(ffi.Pointer<ffi.Pointer<VipsImage>>, int, int, double)>();
 
   int vips_freqmult(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<VipsImage> mask,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_freqmult(
-      in1,
+      in$,
       mask,
       out,
     );
@@ -7492,11 +8079,11 @@ class VipsBindings {
           ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_fwfft(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_fwfft(
-      in1,
+      in$,
       out,
     );
   }
@@ -7510,11 +8097,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_gamma(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_gamma(
-      in1,
+      in$,
       out,
     );
   }
@@ -7528,12 +8115,12 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_gaussblur(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     double sigma,
   ) {
     return _vips_gaussblur(
-      in1,
+      in$,
       out,
       sigma,
     );
@@ -7643,14 +8230,14 @@ class VipsBindings {
           ffi.Pointer<ffi.Int>, ffi.Pointer<ffi.Int>)>();
 
   int vips_getpoint(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<ffi.Double>> vector,
     ffi.Pointer<ffi.Int> n,
     int x,
     int y,
   ) {
     return _vips_getpoint(
-      in1,
+      in$,
       vector,
       n,
       x,
@@ -7727,11 +8314,11 @@ class VipsBindings {
           ffi.Pointer<VipsSource>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_gifsave(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Char> filename,
   ) {
     return _vips_gifsave(
-      in1,
+      in$,
       filename,
     );
   }
@@ -7744,12 +8331,12 @@ class VipsBindings {
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Char>)>();
 
   int vips_gifsave_buffer(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<ffi.Void>> buf,
     ffi.Pointer<ffi.Size> len,
   ) {
     return _vips_gifsave_buffer(
-      in1,
+      in$,
       buf,
       len,
     );
@@ -7766,11 +8353,11 @@ class VipsBindings {
           ffi.Pointer<ffi.Size>)>();
 
   int vips_gifsave_target(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<VipsTarget> target,
   ) {
     return _vips_gifsave_target(
-      in1,
+      in$,
       target,
     );
   }
@@ -7783,11 +8370,11 @@ class VipsBindings {
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<VipsTarget>)>();
 
   int vips_globalbalance(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_globalbalance(
-      in1,
+      in$,
       out,
     );
   }
@@ -7801,14 +8388,14 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_gravity(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     VipsCompassDirection direction,
     int width,
     int height,
   ) {
     return _vips_gravity(
-      in1,
+      in$,
       out,
       direction.value,
       width,
@@ -7848,14 +8435,14 @@ class VipsBindings {
       int Function(ffi.Pointer<ffi.Pointer<VipsImage>>, int, int)>();
 
   int vips_grid(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     int tile_height,
     int across,
     int down,
   ) {
     return _vips_grid(
-      in1,
+      in$,
       out,
       tile_height,
       across,
@@ -7993,11 +8580,11 @@ class VipsBindings {
           ffi.Pointer<VipsSource>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_heifsave(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Char> filename,
   ) {
     return _vips_heifsave(
-      in1,
+      in$,
       filename,
     );
   }
@@ -8010,12 +8597,12 @@ class VipsBindings {
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Char>)>();
 
   int vips_heifsave_buffer(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<ffi.Void>> buf,
     ffi.Pointer<ffi.Size> len,
   ) {
     return _vips_heifsave_buffer(
-      in1,
+      in$,
       buf,
       len,
     );
@@ -8032,11 +8619,11 @@ class VipsBindings {
           ffi.Pointer<ffi.Size>)>();
 
   int vips_heifsave_target(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<VipsTarget> target,
   ) {
     return _vips_heifsave_target(
-      in1,
+      in$,
       target,
     );
   }
@@ -8049,11 +8636,11 @@ class VipsBindings {
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<VipsTarget>)>();
 
   int vips_hist_cum(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_hist_cum(
-      in1,
+      in$,
       out,
     );
   }
@@ -8067,11 +8654,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_hist_entropy(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Double> out,
   ) {
     return _vips_hist_entropy(
-      in1,
+      in$,
       out,
     );
   }
@@ -8084,11 +8671,11 @@ class VipsBindings {
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Double>)>();
 
   int vips_hist_equal(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_hist_equal(
-      in1,
+      in$,
       out,
     );
   }
@@ -8102,11 +8689,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_hist_find(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_hist_find(
-      in1,
+      in$,
       out,
     );
   }
@@ -8120,12 +8707,12 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_hist_find_indexed(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<VipsImage> index,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_hist_find_indexed(
-      in1,
+      in$,
       index,
       out,
     );
@@ -8140,11 +8727,11 @@ class VipsBindings {
           ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_hist_find_ndim(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_hist_find_ndim(
-      in1,
+      in$,
       out,
     );
   }
@@ -8158,11 +8745,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_hist_ismonotonic(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<gboolean> out,
   ) {
     return _vips_hist_ismonotonic(
-      in1,
+      in$,
       out,
     );
   }
@@ -8175,13 +8762,13 @@ class VipsBindings {
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<gboolean>)>();
 
   int vips_hist_local(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     int width,
     int height,
   ) {
     return _vips_hist_local(
-      in1,
+      in$,
       out,
       width,
       height,
@@ -8200,12 +8787,12 @@ class VipsBindings {
           int, int)>();
 
   int vips_hist_match(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<VipsImage> ref,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_hist_match(
-      in1,
+      in$,
       ref,
       out,
     );
@@ -8220,11 +8807,11 @@ class VipsBindings {
           ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_hist_norm(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_hist_norm(
-      in1,
+      in$,
       out,
     );
   }
@@ -8238,11 +8825,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_hist_plot(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_hist_plot(
-      in1,
+      in$,
       out,
     );
   }
@@ -8256,11 +8843,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_hough_circle(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_hough_circle(
-      in1,
+      in$,
       out,
     );
   }
@@ -8274,11 +8861,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_hough_line(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_hough_line(
-      in1,
+      in$,
       out,
     );
   }
@@ -8292,12 +8879,12 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_icc_ac2rc(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     ffi.Pointer<ffi.Char> profile_filename,
   ) {
     return _vips_icc_ac2rc(
-      in1,
+      in$,
       out,
       profile_filename,
     );
@@ -8314,11 +8901,11 @@ class VipsBindings {
           ffi.Pointer<ffi.Char>)>();
 
   int vips_icc_export(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_icc_export(
-      in1,
+      in$,
       out,
     );
   }
@@ -8332,11 +8919,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_icc_import(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_icc_import(
-      in1,
+      in$,
       out,
     );
   }
@@ -8379,12 +8966,12 @@ class VipsBindings {
       _vips_icc_presentPtr.asFunction<int Function()>();
 
   int vips_icc_transform(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     ffi.Pointer<ffi.Char> output_profile,
   ) {
     return _vips_icc_transform(
-      in1,
+      in$,
       out,
       output_profile,
     );
@@ -8441,11 +9028,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_imag(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_imag(
-      in1,
+      in$,
       out,
     );
   }
@@ -8474,11 +9061,11 @@ class VipsBindings {
       .asFunction<ffi.Pointer<VipsImage> Function(ffi.Pointer<VipsImage>)>();
 
   int vips_image_decode(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_image_decode(
-      in1,
+      in$,
       out,
     );
   }
@@ -8492,12 +9079,12 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_image_decode_predict(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Int> bands,
     ffi.Pointer<ffi.Int> format,
   ) {
     return _vips_image_decode_predict(
-      in1,
+      in$,
       bands,
       format,
     );
@@ -8513,12 +9100,12 @@ class VipsBindings {
               ffi.Pointer<ffi.Int>)>();
 
   int vips_image_encode(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     VipsCoding coding,
   ) {
     return _vips_image_encode(
-      in1,
+      in$,
       out,
       coding.value,
     );
@@ -9074,6 +9661,16 @@ class VipsBindings {
   late final _vips_image_get_string = _vips_image_get_stringPtr.asFunction<
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Char>,
           ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
+
+  /// Don't put spaces around void here, it breaks gtk-doc.
+  int vips_image_get_type() {
+    return _vips_image_get_type();
+  }
+
+  late final _vips_image_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_image_get_type');
+  late final _vips_image_get_type =
+      _vips_image_get_typePtr.asFunction<int Function()>();
 
   int vips_image_get_typeof(
     ffi.Pointer<VipsImage> image,
@@ -9780,12 +10377,12 @@ class VipsBindings {
   int vips_image_pipeline_array(
     ffi.Pointer<VipsImage> image,
     VipsDemandStyle hint,
-    ffi.Pointer<ffi.Pointer<VipsImage>> in1,
+    ffi.Pointer<ffi.Pointer<VipsImage>> in$,
   ) {
     return _vips_image_pipeline_array(
       image,
       hint.value,
-      in1,
+      in$,
     );
   }
 
@@ -10122,6 +10719,15 @@ class VipsBindings {
       void Function(ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Char>,
           ffi.Pointer<ffi.Char>)>();
 
+  int vips_image_type_get_type() {
+    return _vips_image_type_get_type();
+  }
+
+  late final _vips_image_type_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_image_type_get_type');
+  late final _vips_image_type_get_type =
+      _vips_image_type_get_typePtr.asFunction<int Function()>();
+
   int vips_image_wio_input(
     ffi.Pointer<VipsImage> image,
   ) {
@@ -10187,13 +10793,13 @@ class VipsBindings {
       .asFunction<int Function(ffi.Pointer<VipsImage>)>();
 
   int vips_image_write_to_buffer(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Char> suffix,
     ffi.Pointer<ffi.Pointer<ffi.Void>> buf,
     ffi.Pointer<ffi.Size> size,
   ) {
     return _vips_image_write_to_buffer(
-      in1,
+      in$,
       suffix,
       buf,
       size,
@@ -10231,11 +10837,11 @@ class VipsBindings {
           int Function(ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Char>)>();
 
   ffi.Pointer<ffi.Void> vips_image_write_to_memory(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Size> size,
   ) {
     return _vips_image_write_to_memory(
-      in1,
+      in$,
       size,
     );
   }
@@ -10250,12 +10856,12 @@ class VipsBindings {
               ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Size>)>();
 
   int vips_image_write_to_target(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Char> suffix,
     ffi.Pointer<VipsTarget> target,
   ) {
     return _vips_image_write_to_target(
-      in1,
+      in$,
       suffix,
       target,
     );
@@ -10312,17 +10918,37 @@ class VipsBindings {
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<VipsImage>,
           ffi.Pointer<ffi.Pointer<VipsImage>>, int, int)>();
 
+  /// enumerations from "colour.h"
+  int vips_intent_get_type() {
+    return _vips_intent_get_type();
+  }
+
+  late final _vips_intent_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_intent_get_type');
+  late final _vips_intent_get_type =
+      _vips_intent_get_typePtr.asFunction<int Function()>();
+
+  int vips_interesting_get_type() {
+    return _vips_interesting_get_type();
+  }
+
+  late final _vips_interesting_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_interesting_get_type');
+  late final _vips_interesting_get_type =
+      _vips_interesting_get_typePtr.asFunction<int Function()>();
+
   void vips_interpolate(
     ffi.Pointer<VipsInterpolate> interpolate,
     ffi.Pointer<ffi.Void> out,
-    ffi.Pointer<VipsRegion> in1,
+    ffi.Pointer<VipsRegion> in$,
     double x,
     double y,
   ) {
     return _vips_interpolate(
       interpolate,
       out,
-      in1,
+      in$,
       x,
       y,
     );
@@ -10366,6 +10992,17 @@ class VipsBindings {
   late final _vips_interpolate_get_method =
       _vips_interpolate_get_methodPtr.asFunction<
           VipsInterpolateMethod Function(ffi.Pointer<VipsInterpolate>)>();
+
+  /// Don't put spaces around void here, it breaks gtk-doc.
+  int vips_interpolate_get_type() {
+    return _vips_interpolate_get_type();
+  }
+
+  late final _vips_interpolate_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_interpolate_get_type');
+  late final _vips_interpolate_get_type =
+      _vips_interpolate_get_typePtr.asFunction<int Function()>();
 
   int vips_interpolate_get_window_offset(
     ffi.Pointer<VipsInterpolate> interpolate,
@@ -10426,6 +11063,16 @@ class VipsBindings {
   late final _vips_interpolate_new = _vips_interpolate_newPtr.asFunction<
       ffi.Pointer<VipsInterpolate> Function(ffi.Pointer<ffi.Char>)>();
 
+  int vips_interpretation_get_type() {
+    return _vips_interpretation_get_type();
+  }
+
+  late final _vips_interpretation_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_interpretation_get_type');
+  late final _vips_interpretation_get_type =
+      _vips_interpretation_get_typePtr.asFunction<int Function()>();
+
   double vips_interpretation_max_alpha(
     VipsInterpretation interpretation,
   ) {
@@ -10441,11 +11088,11 @@ class VipsBindings {
       _vips_interpretation_max_alphaPtr.asFunction<double Function(int)>();
 
   int vips_invert(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_invert(
-      in1,
+      in$,
       out,
     );
   }
@@ -10459,11 +11106,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_invertlut(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_invertlut(
-      in1,
+      in$,
       out,
     );
   }
@@ -10477,11 +11124,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_invfft(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_invfft(
-      in1,
+      in$,
       out,
     );
   }
@@ -10638,11 +11285,11 @@ class VipsBindings {
           ffi.Pointer<VipsSource>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_jp2ksave(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Char> filename,
   ) {
     return _vips_jp2ksave(
-      in1,
+      in$,
       filename,
     );
   }
@@ -10655,12 +11302,12 @@ class VipsBindings {
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Char>)>();
 
   int vips_jp2ksave_buffer(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<ffi.Void>> buf,
     ffi.Pointer<ffi.Size> len,
   ) {
     return _vips_jp2ksave_buffer(
-      in1,
+      in$,
       buf,
       len,
     );
@@ -10677,11 +11324,11 @@ class VipsBindings {
           ffi.Pointer<ffi.Size>)>();
 
   int vips_jp2ksave_target(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<VipsTarget> target,
   ) {
     return _vips_jp2ksave_target(
-      in1,
+      in$,
       target,
     );
   }
@@ -10750,11 +11397,11 @@ class VipsBindings {
           ffi.Pointer<VipsSource>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_jpegsave(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Char> filename,
   ) {
     return _vips_jpegsave(
-      in1,
+      in$,
       filename,
     );
   }
@@ -10767,12 +11414,12 @@ class VipsBindings {
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Char>)>();
 
   int vips_jpegsave_buffer(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<ffi.Void>> buf,
     ffi.Pointer<ffi.Size> len,
   ) {
     return _vips_jpegsave_buffer(
-      in1,
+      in$,
       buf,
       len,
     );
@@ -10789,10 +11436,10 @@ class VipsBindings {
           ffi.Pointer<ffi.Size>)>();
 
   int vips_jpegsave_mime(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
   ) {
     return _vips_jpegsave_mime(
-      in1,
+      in$,
     );
   }
 
@@ -10803,11 +11450,11 @@ class VipsBindings {
       _vips_jpegsave_mimePtr.asFunction<int Function(ffi.Pointer<VipsImage>)>();
 
   int vips_jpegsave_target(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<VipsTarget> target,
   ) {
     return _vips_jpegsave_target(
-      in1,
+      in$,
       target,
     );
   }
@@ -10876,11 +11523,11 @@ class VipsBindings {
           ffi.Pointer<VipsSource>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_jxlsave(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Char> filename,
   ) {
     return _vips_jxlsave(
-      in1,
+      in$,
       filename,
     );
   }
@@ -10893,12 +11540,12 @@ class VipsBindings {
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Char>)>();
 
   int vips_jxlsave_buffer(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<ffi.Void>> buf,
     ffi.Pointer<ffi.Size> len,
   ) {
     return _vips_jxlsave_buffer(
-      in1,
+      in$,
       buf,
       len,
     );
@@ -10915,11 +11562,11 @@ class VipsBindings {
           ffi.Pointer<ffi.Size>)>();
 
   int vips_jxlsave_target(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<VipsTarget> target,
   ) {
     return _vips_jxlsave_target(
-      in1,
+      in$,
       target,
     );
   }
@@ -10931,12 +11578,22 @@ class VipsBindings {
   late final _vips_jxlsave_target = _vips_jxlsave_targetPtr.asFunction<
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<VipsTarget>)>();
 
+  /// enumerations from "resample.h"
+  int vips_kernel_get_type() {
+    return _vips_kernel_get_type();
+  }
+
+  late final _vips_kernel_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_kernel_get_type');
+  late final _vips_kernel_get_type =
+      _vips_kernel_get_typePtr.asFunction<int Function()>();
+
   int vips_labelregions(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> mask,
   ) {
     return _vips_labelregions(
-      in1,
+      in$,
       mask,
     );
   }
@@ -10983,13 +11640,13 @@ class VipsBindings {
           ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_less_const(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     ffi.Pointer<ffi.Double> c,
     int n,
   ) {
     return _vips_less_const(
-      in1,
+      in$,
       out,
       c,
       n,
@@ -11008,12 +11665,12 @@ class VipsBindings {
           ffi.Pointer<ffi.Double>, int)>();
 
   int vips_less_const1(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     double c,
   ) {
     return _vips_less_const1(
-      in1,
+      in$,
       out,
       c,
     );
@@ -11050,13 +11707,13 @@ class VipsBindings {
           ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_lesseq_const(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     ffi.Pointer<ffi.Double> c,
     int n,
   ) {
     return _vips_lesseq_const(
-      in1,
+      in$,
       out,
       c,
       n,
@@ -11075,12 +11732,12 @@ class VipsBindings {
           ffi.Pointer<ffi.Double>, int)>();
 
   int vips_lesseq_const1(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     double c,
   ) {
     return _vips_lesseq_const1(
-      in1,
+      in$,
       out,
       c,
     );
@@ -11097,14 +11754,14 @@ class VipsBindings {
           double)>();
 
   int vips_linear(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     ffi.Pointer<ffi.Double> a,
     ffi.Pointer<ffi.Double> b,
     int n,
   ) {
     return _vips_linear(
-      in1,
+      in$,
       out,
       a,
       b,
@@ -11125,13 +11782,13 @@ class VipsBindings {
           ffi.Pointer<ffi.Double>, ffi.Pointer<ffi.Double>, int)>();
 
   int vips_linear1(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     double a,
     double b,
   ) {
     return _vips_linear1(
-      in1,
+      in$,
       out,
       a,
       b,
@@ -11150,11 +11807,11 @@ class VipsBindings {
           double, double)>();
 
   int vips_linecache(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_linecache(
-      in1,
+      in$,
       out,
     );
   }
@@ -11168,11 +11825,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_log(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_log(
-      in1,
+      in$,
       out,
     );
   }
@@ -11186,11 +11843,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_log10(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_log10(
-      in1,
+      in$,
       out,
     );
   }
@@ -11243,13 +11900,13 @@ class VipsBindings {
           ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_lshift_const(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     ffi.Pointer<ffi.Double> c,
     int n,
   ) {
     return _vips_lshift_const(
-      in1,
+      in$,
       out,
       c,
       n,
@@ -11268,12 +11925,12 @@ class VipsBindings {
           ffi.Pointer<ffi.Double>, int)>();
 
   int vips_lshift_const1(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     double c,
   ) {
     return _vips_lshift_const1(
-      in1,
+      in$,
       out,
       c,
     );
@@ -11328,11 +11985,11 @@ class VipsBindings {
           ffi.Pointer<ffi.Void>, int, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_magicksave(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Char> filename,
   ) {
     return _vips_magicksave(
-      in1,
+      in$,
       filename,
     );
   }
@@ -11345,12 +12002,12 @@ class VipsBindings {
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Char>)>();
 
   int vips_magicksave_buffer(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<ffi.Void>> buf,
     ffi.Pointer<ffi.Size> len,
   ) {
     return _vips_magicksave_buffer(
-      in1,
+      in$,
       buf,
       len,
     );
@@ -11403,12 +12060,12 @@ class VipsBindings {
           ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
   int vips_mapim(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     ffi.Pointer<VipsImage> index,
   ) {
     return _vips_mapim(
-      in1,
+      in$,
       out,
       index,
     );
@@ -11425,12 +12082,12 @@ class VipsBindings {
           ffi.Pointer<VipsImage>)>();
 
   int vips_maplut(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     ffi.Pointer<VipsImage> lut,
   ) {
     return _vips_maplut(
-      in1,
+      in$,
       out,
       lut,
     );
@@ -11793,12 +12450,12 @@ class VipsBindings {
           int)>();
 
   int vips_math(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     VipsOperationMath math,
   ) {
     return _vips_math(
-      in1,
+      in$,
       out,
       math.value,
     );
@@ -11840,14 +12497,14 @@ class VipsBindings {
           ffi.Pointer<ffi.Pointer<VipsImage>>, int)>();
 
   int vips_math2_const(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     VipsOperationMath2 math2,
     ffi.Pointer<ffi.Double> c,
     int n,
   ) {
     return _vips_math2_const(
-      in1,
+      in$,
       out,
       math2.value,
       c,
@@ -11868,13 +12525,13 @@ class VipsBindings {
           int, ffi.Pointer<ffi.Double>, int)>();
 
   int vips_math2_const1(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     VipsOperationMath2 math2,
     double c,
   ) {
     return _vips_math2_const1(
-      in1,
+      in$,
       out,
       math2.value,
       c,
@@ -11965,10 +12622,10 @@ class VipsBindings {
           ffi.Pointer<VipsSource>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_matrixprint(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
   ) {
     return _vips_matrixprint(
-      in1,
+      in$,
     );
   }
 
@@ -11979,11 +12636,11 @@ class VipsBindings {
       _vips_matrixprintPtr.asFunction<int Function(ffi.Pointer<VipsImage>)>();
 
   int vips_matrixsave(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Char> filename,
   ) {
     return _vips_matrixsave(
-      in1,
+      in$,
       filename,
     );
   }
@@ -11996,11 +12653,11 @@ class VipsBindings {
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Char>)>();
 
   int vips_matrixsave_target(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<VipsTarget> target,
   ) {
     return _vips_matrixsave_target(
-      in1,
+      in$,
       target,
     );
   }
@@ -12013,11 +12670,11 @@ class VipsBindings {
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<VipsTarget>)>();
 
   int vips_max(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Double> out,
   ) {
     return _vips_max(
-      in1,
+      in$,
       out,
     );
   }
@@ -12059,13 +12716,13 @@ class VipsBindings {
           ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_measure(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     int h,
     int v,
   ) {
     return _vips_measure(
-      in1,
+      in$,
       out,
       h,
       v,
@@ -12084,12 +12741,12 @@ class VipsBindings {
           int, int)>();
 
   int vips_median(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     int size,
   ) {
     return _vips_median(
-      in1,
+      in$,
       out,
       size,
     );
@@ -12135,11 +12792,11 @@ class VipsBindings {
           ffi.Pointer<ffi.Pointer<VipsImage>>, int, int, int)>();
 
   int vips_min(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Double> out,
   ) {
     return _vips_min(
-      in1,
+      in$,
       out,
     );
   }
@@ -12206,13 +12863,13 @@ class VipsBindings {
           ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_more_const(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     ffi.Pointer<ffi.Double> c,
     int n,
   ) {
     return _vips_more_const(
-      in1,
+      in$,
       out,
       c,
       n,
@@ -12231,12 +12888,12 @@ class VipsBindings {
           ffi.Pointer<ffi.Double>, int)>();
 
   int vips_more_const1(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     double c,
   ) {
     return _vips_more_const1(
-      in1,
+      in$,
       out,
       c,
     );
@@ -12273,13 +12930,13 @@ class VipsBindings {
           ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_moreeq_const(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     ffi.Pointer<ffi.Double> c,
     int n,
   ) {
     return _vips_moreeq_const(
-      in1,
+      in$,
       out,
       c,
       n,
@@ -12298,12 +12955,12 @@ class VipsBindings {
           ffi.Pointer<ffi.Double>, int)>();
 
   int vips_moreeq_const1(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     double c,
   ) {
     return _vips_moreeq_const1(
-      in1,
+      in$,
       out,
       c,
     );
@@ -12320,13 +12977,13 @@ class VipsBindings {
           double)>();
 
   int vips_morph(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     ffi.Pointer<VipsImage> mask,
     VipsOperationMorphology morph,
   ) {
     return _vips_morph(
-      in1,
+      in$,
       out,
       mask,
       morph.value,
@@ -12442,11 +13099,11 @@ class VipsBindings {
           int)>();
 
   int vips_msb(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_msb(
-      in1,
+      in$,
       out,
     );
   }
@@ -12530,11 +13187,11 @@ class VipsBindings {
           ffi.Pointer<VipsSource>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_niftisave(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Char> filename,
   ) {
     return _vips_niftisave(
-      in1,
+      in$,
       filename,
     );
   }
@@ -12567,13 +13224,13 @@ class VipsBindings {
           ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_notequal_const(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     ffi.Pointer<ffi.Double> c,
     int n,
   ) {
     return _vips_notequal_const(
-      in1,
+      in$,
       out,
       c,
       n,
@@ -12592,12 +13249,12 @@ class VipsBindings {
           ffi.Pointer<ffi.Double>, int)>();
 
   int vips_notequal_const1(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     double c,
   ) {
     return _vips_notequal_const1(
-      in1,
+      in$,
       out,
       c,
     );
@@ -12866,6 +13523,16 @@ class VipsBindings {
           void Function(ffi.Pointer<GObject>, int, ffi.Pointer<GValue>,
               ffi.Pointer<GParamSpec>)>();
 
+  /// Don't put spaces around void here, it breaks gtk-doc.
+  int vips_object_get_type() {
+    return _vips_object_get_type();
+  }
+
+  late final _vips_object_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_object_get_type');
+  late final _vips_object_get_type =
+      _vips_object_get_typePtr.asFunction<int Function()>();
+
   ffi.Pointer<ffi.Pointer<VipsObject>> vips_object_local_array(
     ffi.Pointer<VipsObject> parent,
     int n,
@@ -12923,13 +13590,13 @@ class VipsBindings {
 
   ffi.Pointer<VipsObject> vips_object_new(
     int type,
-    VipsObjectSetArguments set1,
+    VipsObjectSetArguments set$,
     ffi.Pointer<ffi.Void> a,
     ffi.Pointer<ffi.Void> b,
   ) {
     return _vips_object_new(
       type,
-      set1,
+      set$,
       a,
       b,
     );
@@ -13350,6 +14017,16 @@ class VipsBindings {
   late final _vips_operation_block_set = _vips_operation_block_setPtr
       .asFunction<void Function(ffi.Pointer<ffi.Char>, int)>();
 
+  int vips_operation_boolean_get_type() {
+    return _vips_operation_boolean_get_type();
+  }
+
+  late final _vips_operation_boolean_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_operation_boolean_get_type');
+  late final _vips_operation_boolean_get_type =
+      _vips_operation_boolean_get_typePtr.asFunction<int Function()>();
+
   int vips_operation_call_valist(
     ffi.Pointer<VipsOperation> operation,
     va_list ap,
@@ -13383,6 +14060,47 @@ class VipsBindings {
       _vips_operation_class_print_usagePtr
           .asFunction<void Function(ffi.Pointer<VipsOperationClass>)>();
 
+  int vips_operation_complex2_get_type() {
+    return _vips_operation_complex2_get_type();
+  }
+
+  late final _vips_operation_complex2_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_operation_complex2_get_type');
+  late final _vips_operation_complex2_get_type =
+      _vips_operation_complex2_get_typePtr.asFunction<int Function()>();
+
+  int vips_operation_complex_get_type() {
+    return _vips_operation_complex_get_type();
+  }
+
+  late final _vips_operation_complex_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_operation_complex_get_type');
+  late final _vips_operation_complex_get_type =
+      _vips_operation_complex_get_typePtr.asFunction<int Function()>();
+
+  int vips_operation_complexget_get_type() {
+    return _vips_operation_complexget_get_type();
+  }
+
+  late final _vips_operation_complexget_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_operation_complexget_get_type');
+  late final _vips_operation_complexget_get_type =
+      _vips_operation_complexget_get_typePtr.asFunction<int Function()>();
+
+  /// enumerations from "operation.h"
+  int vips_operation_flags_get_type() {
+    return _vips_operation_flags_get_type();
+  }
+
+  late final _vips_operation_flags_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_operation_flags_get_type');
+  late final _vips_operation_flags_get_type =
+      _vips_operation_flags_get_typePtr.asFunction<int Function()>();
+
   VipsOperationFlags vips_operation_get_flags(
     ffi.Pointer<VipsOperation> operation,
   ) {
@@ -13398,6 +14116,16 @@ class VipsBindings {
   late final _vips_operation_get_flags = _vips_operation_get_flagsPtr
       .asFunction<int Function(ffi.Pointer<VipsOperation>)>();
 
+  /// Don't put spaces around void here, it breaks gtk-doc.
+  int vips_operation_get_type() {
+    return _vips_operation_get_type();
+  }
+
+  late final _vips_operation_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_operation_get_type');
+  late final _vips_operation_get_type =
+      _vips_operation_get_typePtr.asFunction<int Function()>();
+
   void vips_operation_invalidate(
     ffi.Pointer<VipsOperation> operation,
   ) {
@@ -13411,6 +14139,38 @@ class VipsBindings {
       'vips_operation_invalidate');
   late final _vips_operation_invalidate = _vips_operation_invalidatePtr
       .asFunction<void Function(ffi.Pointer<VipsOperation>)>();
+
+  int vips_operation_math2_get_type() {
+    return _vips_operation_math2_get_type();
+  }
+
+  late final _vips_operation_math2_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_operation_math2_get_type');
+  late final _vips_operation_math2_get_type =
+      _vips_operation_math2_get_typePtr.asFunction<int Function()>();
+
+  /// enumerations from "arithmetic.h"
+  int vips_operation_math_get_type() {
+    return _vips_operation_math_get_type();
+  }
+
+  late final _vips_operation_math_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_operation_math_get_type');
+  late final _vips_operation_math_get_type =
+      _vips_operation_math_get_typePtr.asFunction<int Function()>();
+
+  /// enumerations from "morphology.h"
+  int vips_operation_morphology_get_type() {
+    return _vips_operation_morphology_get_type();
+  }
+
+  late final _vips_operation_morphology_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_operation_morphology_get_type');
+  late final _vips_operation_morphology_get_type =
+      _vips_operation_morphology_get_typePtr.asFunction<int Function()>();
 
   ffi.Pointer<VipsOperation> vips_operation_new(
     ffi.Pointer<ffi.Char> name,
@@ -13426,6 +14186,26 @@ class VipsBindings {
               ffi.Pointer<ffi.Char>)>>('vips_operation_new');
   late final _vips_operation_new = _vips_operation_newPtr
       .asFunction<ffi.Pointer<VipsOperation> Function(ffi.Pointer<ffi.Char>)>();
+
+  int vips_operation_relational_get_type() {
+    return _vips_operation_relational_get_type();
+  }
+
+  late final _vips_operation_relational_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_operation_relational_get_type');
+  late final _vips_operation_relational_get_type =
+      _vips_operation_relational_get_typePtr.asFunction<int Function()>();
+
+  int vips_operation_round_get_type() {
+    return _vips_operation_round_get_type();
+  }
+
+  late final _vips_operation_round_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_operation_round_get_type');
+  late final _vips_operation_round_get_type =
+      _vips_operation_round_get_typePtr.asFunction<int Function()>();
 
   int vips_orimage(
     ffi.Pointer<VipsImage> left,
@@ -13448,13 +14228,13 @@ class VipsBindings {
           ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_orimage_const(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     ffi.Pointer<ffi.Double> c,
     int n,
   ) {
     return _vips_orimage_const(
-      in1,
+      in$,
       out,
       c,
       n,
@@ -13473,12 +14253,12 @@ class VipsBindings {
           ffi.Pointer<ffi.Double>, int)>();
 
   int vips_orimage_const1(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     double c,
   ) {
     return _vips_orimage_const1(
-      in1,
+      in$,
       out,
       c,
     );
@@ -13524,6 +14304,15 @@ class VipsBindings {
               ffi.Pointer<ffi.Char>)>>('vips_path_mode7');
   late final _vips_path_mode7 = _vips_path_mode7Ptr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>();
+
+  int vips_pcs_get_type() {
+    return _vips_pcs_get_type();
+  }
+
+  late final _vips_pcs_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_pcs_get_type');
+  late final _vips_pcs_get_type =
+      _vips_pcs_get_typePtr.asFunction<int Function()>();
 
   int vips_pdfload(
     ffi.Pointer<ffi.Char> filename,
@@ -13582,12 +14371,12 @@ class VipsBindings {
           ffi.Pointer<VipsSource>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_percent(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     double percent,
     ffi.Pointer<ffi.Int> threshold,
   ) {
     return _vips_percent(
-      in1,
+      in$,
       percent,
       threshold,
     );
@@ -13710,11 +14499,11 @@ class VipsBindings {
           ffi.Pointer<VipsSource>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_pngsave(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Char> filename,
   ) {
     return _vips_pngsave(
-      in1,
+      in$,
       filename,
     );
   }
@@ -13727,12 +14516,12 @@ class VipsBindings {
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Char>)>();
 
   int vips_pngsave_buffer(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<ffi.Void>> buf,
     ffi.Pointer<ffi.Size> len,
   ) {
     return _vips_pngsave_buffer(
-      in1,
+      in$,
       buf,
       len,
     );
@@ -13749,11 +14538,11 @@ class VipsBindings {
           ffi.Pointer<ffi.Size>)>();
 
   int vips_pngsave_target(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<VipsTarget> target,
   ) {
     return _vips_pngsave_target(
-      in1,
+      in$,
       target,
     );
   }
@@ -13766,11 +14555,11 @@ class VipsBindings {
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<VipsTarget>)>();
 
   int vips_polar(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_polar(
-      in1,
+      in$,
       out,
     );
   }
@@ -13804,13 +14593,13 @@ class VipsBindings {
           ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_pow_const(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     ffi.Pointer<ffi.Double> c,
     int n,
   ) {
     return _vips_pow_const(
-      in1,
+      in$,
       out,
       c,
       n,
@@ -13829,12 +14618,12 @@ class VipsBindings {
           ffi.Pointer<ffi.Double>, int)>();
 
   int vips_pow_const1(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     double c,
   ) {
     return _vips_pow_const1(
-      in1,
+      in$,
       out,
       c,
     );
@@ -13887,11 +14676,11 @@ class VipsBindings {
           ffi.Pointer<VipsSource>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_ppmsave(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Char> filename,
   ) {
     return _vips_ppmsave(
-      in1,
+      in$,
       filename,
     );
   }
@@ -13904,11 +14693,11 @@ class VipsBindings {
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Char>)>();
 
   int vips_ppmsave_target(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<VipsTarget> target,
   ) {
     return _vips_ppmsave_target(
-      in1,
+      in$,
       target,
     );
   }
@@ -13920,12 +14709,22 @@ class VipsBindings {
   late final _vips_ppmsave_target = _vips_ppmsave_targetPtr.asFunction<
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<VipsTarget>)>();
 
+  /// enumerations from "basic.h"
+  int vips_precision_get_type() {
+    return _vips_precision_get_type();
+  }
+
+  late final _vips_precision_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_precision_get_type');
+  late final _vips_precision_get_type =
+      _vips_precision_get_typePtr.asFunction<int Function()>();
+
   int vips_premultiply(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_premultiply(
-      in1,
+      in$,
       out,
     );
   }
@@ -13939,11 +14738,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_prewitt(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_prewitt(
-      in1,
+      in$,
       out,
     );
   }
@@ -13957,12 +14756,12 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_profile(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> columns,
     ffi.Pointer<ffi.Pointer<VipsImage>> rows,
   ) {
     return _vips_profile(
-      in1,
+      in$,
       columns,
       rows,
     );
@@ -14025,12 +14824,12 @@ class VipsBindings {
       _vips_progress_setPtr.asFunction<void Function(int)>();
 
   int vips_project(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> columns,
     ffi.Pointer<ffi.Pointer<VipsImage>> rows,
   ) {
     return _vips_project(
-      in1,
+      in$,
       columns,
       rows,
     );
@@ -14072,12 +14871,12 @@ class VipsBindings {
       double Function(double, double, double, double, double, double)>();
 
   int vips_quadratic(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     ffi.Pointer<VipsImage> coeff,
   ) {
     return _vips_quadratic(
-      in1,
+      in$,
       out,
       coeff,
     );
@@ -14094,11 +14893,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>)>();
 
   int vips_rad2float(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_rad2float(
-      in1,
+      in$,
       out,
     );
   }
@@ -14168,11 +14967,11 @@ class VipsBindings {
           ffi.Pointer<VipsSource>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_radsave(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Char> filename,
   ) {
     return _vips_radsave(
-      in1,
+      in$,
       filename,
     );
   }
@@ -14185,12 +14984,12 @@ class VipsBindings {
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Char>)>();
 
   int vips_radsave_buffer(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<ffi.Void>> buf,
     ffi.Pointer<ffi.Size> len,
   ) {
     return _vips_radsave_buffer(
-      in1,
+      in$,
       buf,
       len,
     );
@@ -14207,11 +15006,11 @@ class VipsBindings {
           ffi.Pointer<ffi.Size>)>();
 
   int vips_radsave_target(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<VipsTarget> target,
   ) {
     return _vips_radsave_target(
-      in1,
+      in$,
       target,
     );
   }
@@ -14224,14 +15023,14 @@ class VipsBindings {
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<VipsTarget>)>();
 
   int vips_rank(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     int width,
     int height,
     int index,
   ) {
     return _vips_rank(
-      in1,
+      in$,
       out,
       width,
       height,
@@ -14280,11 +15079,11 @@ class VipsBindings {
           int, int, int)>();
 
   int vips_rawsave(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Char> filename,
   ) {
     return _vips_rawsave(
-      in1,
+      in$,
       filename,
     );
   }
@@ -14297,12 +15096,12 @@ class VipsBindings {
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Char>)>();
 
   int vips_rawsave_buffer(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<ffi.Void>> buf,
     ffi.Pointer<ffi.Size> len,
   ) {
     return _vips_rawsave_buffer(
-      in1,
+      in$,
       buf,
       len,
     );
@@ -14319,11 +15118,11 @@ class VipsBindings {
           ffi.Pointer<ffi.Size>)>();
 
   int vips_rawsave_target(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<VipsTarget> target,
   ) {
     return _vips_rawsave_target(
-      in1,
+      in$,
       target,
     );
   }
@@ -14336,11 +15135,11 @@ class VipsBindings {
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<VipsTarget>)>();
 
   int vips_real(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_real(
-      in1,
+      in$,
       out,
     );
   }
@@ -14369,12 +15168,12 @@ class VipsBindings {
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>();
 
   int vips_recomb(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     ffi.Pointer<VipsImage> m,
   ) {
     return _vips_recomb(
-      in1,
+      in$,
       out,
       m,
     );
@@ -14391,11 +15190,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>)>();
 
   int vips_rect(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_rect(
-      in1,
+      in$,
       out,
     );
   }
@@ -14579,13 +15378,13 @@ class VipsBindings {
           ffi.Pointer<VipsRect>)>();
 
   int vips_reduce(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     double hshrink,
     double vshrink,
   ) {
     return _vips_reduce(
-      in1,
+      in$,
       out,
       hshrink,
       vshrink,
@@ -14604,12 +15403,12 @@ class VipsBindings {
           double, double)>();
 
   int vips_reduceh(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     double hshrink,
   ) {
     return _vips_reduceh(
-      in1,
+      in$,
       out,
       hshrink,
     );
@@ -14626,12 +15425,12 @@ class VipsBindings {
           double)>();
 
   int vips_reducev(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     double vshrink,
   ) {
     return _vips_reducev(
-      in1,
+      in$,
       out,
       vshrink,
     );
@@ -14664,6 +15463,15 @@ class VipsBindings {
   late final _vips_ref_string_get = _vips_ref_string_getPtr.asFunction<
       ffi.Pointer<ffi.Char> Function(
           ffi.Pointer<VipsRefString>, ffi.Pointer<ffi.Size>)>();
+
+  int vips_ref_string_get_type() {
+    return _vips_ref_string_get_type();
+  }
+
+  late final _vips_ref_string_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_ref_string_get_type');
+  late final _vips_ref_string_get_type =
+      _vips_ref_string_get_typePtr.asFunction<int Function()>();
 
   ffi.Pointer<VipsRefString> vips_ref_string_new(
     ffi.Pointer<ffi.Char> str,
@@ -14814,6 +15622,16 @@ class VipsBindings {
   late final _vips_region_fill = _vips_region_fillPtr.asFunction<
       int Function(ffi.Pointer<_VipsRegion>, ffi.Pointer<VipsRect>,
           VipsRegionFillFn, ffi.Pointer<ffi.Void>)>();
+
+  /// Don't put spaces around void here, it breaks gtk-doc.
+  int vips_region_get_type() {
+    return _vips_region_get_type();
+  }
+
+  late final _vips_region_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_region_get_type');
+  late final _vips_region_get_type =
+      _vips_region_get_typePtr.asFunction<int Function()>();
 
   int vips_region_height(
     ffi.Pointer<VipsRegion> region,
@@ -15041,6 +15859,17 @@ class VipsBindings {
       int Function(ffi.Pointer<VipsRegion>, ffi.Pointer<VipsRegion>,
           ffi.Pointer<VipsRect>)>();
 
+  /// enumerations from "region.h"
+  int vips_region_shrink_get_type() {
+    return _vips_region_shrink_get_type();
+  }
+
+  late final _vips_region_shrink_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_region_shrink_get_type');
+  late final _vips_region_shrink_get_type =
+      _vips_region_shrink_get_typePtr.asFunction<int Function()>();
+
   int vips_region_shrink_method(
     ffi.Pointer<VipsRegion> from,
     ffi.Pointer<VipsRegion> to,
@@ -15107,14 +15936,14 @@ class VipsBindings {
           ffi.Pointer<ffi.Pointer<VipsImage>>, int)>();
 
   int vips_relational_const(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     VipsOperationRelational relational,
     ffi.Pointer<ffi.Double> c,
     int n,
   ) {
     return _vips_relational_const(
-      in1,
+      in$,
       out,
       relational.value,
       c,
@@ -15135,13 +15964,13 @@ class VipsBindings {
           int, ffi.Pointer<ffi.Double>, int)>();
 
   int vips_relational_const1(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     VipsOperationRelational relational,
     double c,
   ) {
     return _vips_relational_const1(
-      in1,
+      in$,
       out,
       relational.value,
       c,
@@ -15180,13 +16009,13 @@ class VipsBindings {
           ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_remainder_const(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     ffi.Pointer<ffi.Double> c,
     int n,
   ) {
     return _vips_remainder_const(
-      in1,
+      in$,
       out,
       c,
       n,
@@ -15205,12 +16034,12 @@ class VipsBindings {
           ffi.Pointer<ffi.Double>, int)>();
 
   int vips_remainder_const1(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     double c,
   ) {
     return _vips_remainder_const1(
-      in1,
+      in$,
       out,
       c,
     );
@@ -15227,13 +16056,13 @@ class VipsBindings {
           double)>();
 
   int vips_remosaic(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     ffi.Pointer<ffi.Char> old_str,
     ffi.Pointer<ffi.Char> new_str,
   ) {
     return _vips_remosaic(
-      in1,
+      in$,
       out,
       old_str,
       new_str,
@@ -15310,13 +16139,13 @@ class VipsBindings {
               ffi.Pointer<ffi.Pointer<VipsRegion>>, ffi.Pointer<VipsRect>)>();
 
   int vips_replicate(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     int across,
     int down,
   ) {
     return _vips_replicate(
-      in1,
+      in$,
       out,
       across,
       down,
@@ -15335,12 +16164,12 @@ class VipsBindings {
           int, int)>();
 
   int vips_resize(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     double scale,
   ) {
     return _vips_resize(
-      in1,
+      in$,
       out,
       scale,
     );
@@ -15355,11 +16184,11 @@ class VipsBindings {
           double)>();
 
   int vips_rint(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_rint(
-      in1,
+      in$,
       out,
     );
   }
@@ -15387,12 +16216,12 @@ class VipsBindings {
       _vips_rmdirfPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
 
   int vips_rot(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     VipsAngle angle,
   ) {
     return _vips_rot(
-      in1,
+      in$,
       out,
       angle.value,
     );
@@ -15409,11 +16238,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>, int)>();
 
   int vips_rot180(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_rot180(
-      in1,
+      in$,
       out,
     );
   }
@@ -15427,11 +16256,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_rot270(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_rot270(
-      in1,
+      in$,
       out,
     );
   }
@@ -15445,11 +16274,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_rot45(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_rot45(
-      in1,
+      in$,
       out,
     );
   }
@@ -15463,11 +16292,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_rot90(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_rot90(
-      in1,
+      in$,
       out,
     );
   }
@@ -15481,12 +16310,12 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_rotate(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     double angle,
   ) {
     return _vips_rotate(
-      in1,
+      in$,
       out,
       angle,
     );
@@ -15501,12 +16330,12 @@ class VipsBindings {
           double)>();
 
   int vips_round(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     VipsOperationRound round,
   ) {
     return _vips_round(
-      in1,
+      in$,
       out,
       round.value,
     );
@@ -15543,13 +16372,13 @@ class VipsBindings {
           ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_rshift_const(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     ffi.Pointer<ffi.Double> c,
     int n,
   ) {
     return _vips_rshift_const(
-      in1,
+      in$,
       out,
       c,
       n,
@@ -15568,12 +16397,12 @@ class VipsBindings {
           ffi.Pointer<ffi.Double>, int)>();
 
   int vips_rshift_const1(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     double c,
   ) {
     return _vips_rshift_const1(
-      in1,
+      in$,
       out,
       c,
     );
@@ -15590,11 +16419,11 @@ class VipsBindings {
           double)>();
 
   int vips_sRGB2HSV(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_sRGB2HSV(
-      in1,
+      in$,
       out,
     );
   }
@@ -15608,11 +16437,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_sRGB2scRGB(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_sRGB2scRGB(
-      in1,
+      in$,
       out,
     );
   }
@@ -15624,6 +16453,25 @@ class VipsBindings {
   late final _vips_sRGB2scRGB = _vips_sRGB2scRGBPtr.asFunction<
       int Function(
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
+
+  int vips_save_string_get_type() {
+    return _vips_save_string_get_type();
+  }
+
+  late final _vips_save_string_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_save_string_get_type');
+  late final _vips_save_string_get_type =
+      _vips_save_string_get_typePtr.asFunction<int Function()>();
+
+  int vips_saveable_get_type() {
+    return _vips_saveable_get_type();
+  }
+
+  late final _vips_saveable_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_saveable_get_type');
+  late final _vips_saveable_get_type =
+      _vips_saveable_get_typePtr.asFunction<int Function()>();
 
   ffi.Pointer<ffi.Char> vips_sbuf_get_line(
     ffi.Pointer<VipsSbuf> sbuf,
@@ -15669,6 +16517,15 @@ class VipsBindings {
               ffi.Pointer<VipsSbuf>)>>('vips_sbuf_get_non_whitespace');
   late final _vips_sbuf_get_non_whitespace = _vips_sbuf_get_non_whitespacePtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<VipsSbuf>)>();
+
+  int vips_sbuf_get_type() {
+    return _vips_sbuf_get_type();
+  }
+
+  late final _vips_sbuf_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_sbuf_get_type');
+  late final _vips_sbuf_get_type =
+      _vips_sbuf_get_typePtr.asFunction<int Function()>();
 
   int vips_sbuf_getc(
     ffi.Pointer<VipsSbuf> sbuf,
@@ -15758,11 +16615,11 @@ class VipsBindings {
       _vips_sbuf_ungetcPtr.asFunction<void Function(ffi.Pointer<VipsSbuf>)>();
 
   int vips_scRGB2BW(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_scRGB2BW(
-      in1,
+      in$,
       out,
     );
   }
@@ -15776,11 +16633,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_scRGB2XYZ(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_scRGB2XYZ(
-      in1,
+      in$,
       out,
     );
   }
@@ -15794,11 +16651,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_scRGB2sRGB(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_scRGB2sRGB(
-      in1,
+      in$,
       out,
     );
   }
@@ -15812,11 +16669,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_scale(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_scale(
-      in1,
+      in$,
       out,
     );
   }
@@ -15830,11 +16687,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_scharr(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_scharr(
-      in1,
+      in$,
       out,
     );
   }
@@ -15867,6 +16724,15 @@ class VipsBindings {
               ffi.Int, ffi.UnsignedInt)>>('vips_sdf');
   late final _vips_sdf = _vips_sdfPtr.asFunction<
       int Function(ffi.Pointer<ffi.Pointer<VipsImage>>, int, int, int)>();
+
+  int vips_sdf_shape_get_type() {
+    return _vips_sdf_shape_get_type();
+  }
+
+  late final _vips_sdf_shape_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_sdf_shape_get_type');
+  late final _vips_sdf_shape_get_type =
+      _vips_sdf_shape_get_typePtr.asFunction<int Function()>();
 
   void vips_semaphore_destroy(
     ffi.Pointer<VipsSemaphore> s,
@@ -15981,11 +16847,11 @@ class VipsBindings {
       .asFunction<int Function(ffi.Pointer<VipsSemaphore>, int)>();
 
   int vips_sequential(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_sequential(
-      in1,
+      in$,
       out,
     );
   }
@@ -15999,11 +16865,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_sharpen(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_sharpen(
-      in1,
+      in$,
       out,
     );
   }
@@ -16017,13 +16883,13 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_shrink(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     double hshrink,
     double vshrink,
   ) {
     return _vips_shrink(
-      in1,
+      in$,
       out,
       hshrink,
       vshrink,
@@ -16042,12 +16908,12 @@ class VipsBindings {
           double, double)>();
 
   int vips_shrinkh(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     int hshrink,
   ) {
     return _vips_shrinkh(
-      in1,
+      in$,
       out,
       hshrink,
     );
@@ -16062,12 +16928,12 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>, int)>();
 
   int vips_shrinkv(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     int vshrink,
   ) {
     return _vips_shrinkv(
-      in1,
+      in$,
       out,
       vshrink,
     );
@@ -16090,11 +16956,11 @@ class VipsBindings {
   late final _vips_shutdown = _vips_shutdownPtr.asFunction<void Function()>();
 
   int vips_sign(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_sign(
-      in1,
+      in$,
       out,
     );
   }
@@ -16108,11 +16974,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_similarity(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_similarity(
-      in1,
+      in$,
       out,
     );
   }
@@ -16126,11 +16992,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_sin(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_sin(
-      in1,
+      in$,
       out,
     );
   }
@@ -16163,11 +17029,11 @@ class VipsBindings {
       int Function(ffi.Pointer<ffi.Pointer<VipsImage>>, int, int)>();
 
   int vips_sinh(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_sinh(
-      in1,
+      in$,
       out,
     );
   }
@@ -16246,7 +17112,7 @@ class VipsBindings {
       _vips_sink_memoryPtr.asFunction<int Function(ffi.Pointer<VipsImage>)>();
 
   int vips_sink_screen(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<VipsImage> out,
     ffi.Pointer<VipsImage> mask,
     int tile_width,
@@ -16257,7 +17123,7 @@ class VipsBindings {
     ffi.Pointer<ffi.Void> a,
   ) {
     return _vips_sink_screen(
-      in1,
+      in$,
       out,
       mask,
       tile_width,
@@ -16336,6 +17202,15 @@ class VipsBindings {
           VipsStopFn,
           ffi.Pointer<ffi.Void>,
           ffi.Pointer<ffi.Void>)>();
+
+  int vips_size_get_type() {
+    return _vips_size_get_type();
+  }
+
+  late final _vips_size_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_size_get_type');
+  late final _vips_size_get_type =
+      _vips_size_get_typePtr.asFunction<int Function()>();
 
   int vips_slist_equal(
     ffi.Pointer<GSList> l1,
@@ -16508,13 +17383,13 @@ class VipsBindings {
           ffi.Pointer<ffi.Void>)>();
 
   int vips_smartcrop(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     int width,
     int height,
   ) {
     return _vips_smartcrop(
-      in1,
+      in$,
       out,
       width,
       height,
@@ -16533,11 +17408,11 @@ class VipsBindings {
           int, int)>();
 
   int vips_sobel(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_sobel(
-      in1,
+      in$,
       out,
     );
   }
@@ -16549,6 +17424,16 @@ class VipsBindings {
   late final _vips_sobel = _vips_sobelPtr.asFunction<
       int Function(
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
+
+  int vips_source_custom_get_type() {
+    return _vips_source_custom_get_type();
+  }
+
+  late final _vips_source_custom_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_source_custom_get_type');
+  late final _vips_source_custom_get_type =
+      _vips_source_custom_get_typePtr.asFunction<int Function()>();
 
   ffi.Pointer<VipsSourceCustom> vips_source_custom_new() {
     return _vips_source_custom_new();
@@ -16590,6 +17475,15 @@ class VipsBindings {
       _vips_source_g_input_stream_newPtr.asFunction<
           ffi.Pointer<VipsSourceGInputStream> Function(
               ffi.Pointer<GInputStream>)>();
+
+  int vips_source_get_type() {
+    return _vips_source_get_type();
+  }
+
+  late final _vips_source_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_source_get_type');
+  late final _vips_source_get_type =
+      _vips_source_get_typePtr.asFunction<int Function()>();
 
   int vips_source_is_file(
     ffi.Pointer<VipsSource> source,
@@ -16880,12 +17774,12 @@ class VipsBindings {
       .asFunction<int Function(ffi.Pointer<VipsSource>)>();
 
   int vips_spcor(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<VipsImage> ref,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_spcor(
-      in1,
+      in$,
       ref,
       out,
     );
@@ -16900,11 +17794,11 @@ class VipsBindings {
           ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_spectrum(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_spectrum(
-      in1,
+      in$,
       out,
     );
   }
@@ -16960,11 +17854,11 @@ class VipsBindings {
           ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
 
   int vips_stats(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_stats(
-      in1,
+      in$,
       out,
     );
   }
@@ -16978,13 +17872,13 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_stdif(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     int width,
     int height,
   ) {
     return _vips_stdif(
-      in1,
+      in$,
       out,
       width,
       height,
@@ -17078,13 +17972,13 @@ class VipsBindings {
       int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Double>)>();
 
   int vips_subsample(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     int xfac,
     int yfac,
   ) {
     return _vips_subsample(
-      in1,
+      in$,
       out,
       xfac,
       yfac,
@@ -17123,12 +18017,12 @@ class VipsBindings {
           ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_sum(
-    ffi.Pointer<ffi.Pointer<VipsImage>> in1,
+    ffi.Pointer<ffi.Pointer<VipsImage>> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     int n,
   ) {
     return _vips_sum(
-      in1,
+      in$,
       out,
       n,
     );
@@ -17251,11 +18145,11 @@ class VipsBindings {
       _vips_systemPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
 
   int vips_tan(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_tan(
-      in1,
+      in$,
       out,
     );
   }
@@ -17269,11 +18163,11 @@ class VipsBindings {
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_tanh(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_tanh(
-      in1,
+      in$,
       out,
     );
   }
@@ -17285,6 +18179,16 @@ class VipsBindings {
   late final _vips_tanh = _vips_tanhPtr.asFunction<
       int Function(
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
+
+  int vips_target_custom_get_type() {
+    return _vips_target_custom_get_type();
+  }
+
+  late final _vips_target_custom_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_target_custom_get_type');
+  late final _vips_target_custom_get_type =
+      _vips_target_custom_get_typePtr.asFunction<int Function()>();
 
   ffi.Pointer<VipsTargetCustom> vips_target_custom_new() {
     return _vips_target_custom_new();
@@ -17309,6 +18213,15 @@ class VipsBindings {
           'vips_target_end');
   late final _vips_target_end =
       _vips_target_endPtr.asFunction<int Function(ffi.Pointer<VipsTarget>)>();
+
+  int vips_target_get_type() {
+    return _vips_target_get_type();
+  }
+
+  late final _vips_target_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_target_get_type');
+  late final _vips_target_get_type =
+      _vips_target_get_typePtr.asFunction<int Function()>();
 
   ffi.Pointer<VipsTarget> vips_target_new_temp(
     ffi.Pointer<VipsTarget> target,
@@ -17540,6 +18453,25 @@ class VipsBindings {
       int Function(
           ffi.Pointer<ffi.Pointer<VipsImage>>, ffi.Pointer<ffi.Char>)>();
 
+  /// enumerations from "create.h"
+  int vips_text_wrap_get_type() {
+    return _vips_text_wrap_get_type();
+  }
+
+  late final _vips_text_wrap_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_text_wrap_get_type');
+  late final _vips_text_wrap_get_type =
+      _vips_text_wrap_get_typePtr.asFunction<int Function()>();
+
+  int vips_thing_get_type() {
+    return _vips_thing_get_type();
+  }
+
+  late final _vips_thing_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_thing_get_type');
+  late final _vips_thing_get_type =
+      _vips_thing_get_typePtr.asFunction<int Function()>();
+
   ffi.Pointer<VipsThing> vips_thing_new(
     int i,
   ) {
@@ -17590,6 +18522,17 @@ class VipsBindings {
       _lookup<ffi.NativeFunction<ffi.Void Function()>>('vips_thread_shutdown');
   late final _vips_thread_shutdown =
       _vips_thread_shutdownPtr.asFunction<void Function()>();
+
+  /// Don't put spaces around void here, it breaks gtk-doc.
+  int vips_thread_state_get_type() {
+    return _vips_thread_state_get_type();
+  }
+
+  late final _vips_thread_state_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'vips_thread_state_get_type');
+  late final _vips_thread_state_get_type =
+      _vips_thread_state_get_typePtr.asFunction<int Function()>();
 
   ffi.Pointer<VipsThreadState> vips_thread_state_new(
     ffi.Pointer<VipsImage> im,
@@ -17668,10 +18611,10 @@ class VipsBindings {
           ffi.Pointer<ffi.Void>)>();
 
   void vips_threadset_free(
-    ffi.Pointer<VipsThreadset> set1,
+    ffi.Pointer<VipsThreadset> set$,
   ) {
     return _vips_threadset_free(
-      set1,
+      set$,
     );
   }
 
@@ -17696,13 +18639,13 @@ class VipsBindings {
       .asFunction<ffi.Pointer<VipsThreadset> Function(int)>();
 
   int vips_threadset_run(
-    ffi.Pointer<VipsThreadset> set1,
+    ffi.Pointer<VipsThreadset> set$,
     ffi.Pointer<ffi.Char> domain,
     GFunc func,
     gpointer data,
   ) {
     return _vips_threadset_run(
-      set1,
+      set$,
       domain,
       func,
       data,
@@ -17763,12 +18706,12 @@ class VipsBindings {
           ffi.Pointer<ffi.Pointer<VipsImage>>, int)>();
 
   int vips_thumbnail_image(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     int width,
   ) {
     return _vips_thumbnail_image(
-      in1,
+      in$,
       out,
       width,
     );
@@ -17863,11 +18806,11 @@ class VipsBindings {
           ffi.Pointer<VipsSource>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_tiffsave(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Char> filename,
   ) {
     return _vips_tiffsave(
-      in1,
+      in$,
       filename,
     );
   }
@@ -17880,12 +18823,12 @@ class VipsBindings {
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Char>)>();
 
   int vips_tiffsave_buffer(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<ffi.Void>> buf,
     ffi.Pointer<ffi.Size> len,
   ) {
     return _vips_tiffsave_buffer(
-      in1,
+      in$,
       buf,
       len,
     );
@@ -17902,11 +18845,11 @@ class VipsBindings {
           ffi.Pointer<ffi.Size>)>();
 
   int vips_tiffsave_target(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<VipsTarget> target,
   ) {
     return _vips_tiffsave_target(
-      in1,
+      in$,
       target,
     );
   }
@@ -17919,11 +18862,11 @@ class VipsBindings {
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<VipsTarget>)>();
 
   int vips_tilecache(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_tilecache(
-      in1,
+      in$,
       out,
     );
   }
@@ -17935,6 +18878,16 @@ class VipsBindings {
   late final _vips_tilecache = _vips_tilecachePtr.asFunction<
       int Function(
           ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
+
+  /// enumerations from "util.h"
+  int vips_token_get_type() {
+    return _vips_token_get_type();
+  }
+
+  late final _vips_token_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('vips_token_get_type');
+  late final _vips_token_get_type =
+      _vips_token_get_typePtr.asFunction<int Function()>();
 
   int vips_tonelut(
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
@@ -18082,11 +19035,11 @@ class VipsBindings {
       .asFunction<int Function(ffi.Pointer<ffi.Char>, int, int)>();
 
   int vips_transpose3d(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_transpose3d(
-      in1,
+      in$,
       out,
     );
   }
@@ -18172,11 +19125,11 @@ class VipsBindings {
           int, VipsTypeMapFn, ffi.Pointer<ffi.Void>)>();
 
   int vips_unpremultiply(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_unpremultiply(
-      in1,
+      in$,
       out,
     );
   }
@@ -18683,11 +19636,11 @@ class VipsBindings {
           ffi.Pointer<VipsSource>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_vipssave(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Char> filename,
   ) {
     return _vips_vipssave(
-      in1,
+      in$,
       filename,
     );
   }
@@ -18700,11 +19653,11 @@ class VipsBindings {
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Char>)>();
 
   int vips_vipssave_target(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<VipsTarget> target,
   ) {
     return _vips_vipssave_target(
-      in1,
+      in$,
       target,
     );
   }
@@ -18773,11 +19726,11 @@ class VipsBindings {
           ffi.Pointer<VipsSource>, ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_webpsave(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Char> filename,
   ) {
     return _vips_webpsave(
-      in1,
+      in$,
       filename,
     );
   }
@@ -18790,12 +19743,12 @@ class VipsBindings {
       int Function(ffi.Pointer<VipsImage>, ffi.Pointer<ffi.Char>)>();
 
   int vips_webpsave_buffer(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<ffi.Void>> buf,
     ffi.Pointer<ffi.Size> len,
   ) {
     return _vips_webpsave_buffer(
-      in1,
+      in$,
       buf,
       len,
     );
@@ -18812,10 +19765,10 @@ class VipsBindings {
           ffi.Pointer<ffi.Size>)>();
 
   int vips_webpsave_mime(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
   ) {
     return _vips_webpsave_mime(
-      in1,
+      in$,
     );
   }
 
@@ -18826,11 +19779,11 @@ class VipsBindings {
       _vips_webpsave_mimePtr.asFunction<int Function(ffi.Pointer<VipsImage>)>();
 
   int vips_webpsave_target(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<VipsTarget> target,
   ) {
     return _vips_webpsave_target(
-      in1,
+      in$,
       target,
     );
   }
@@ -18891,13 +19844,13 @@ class VipsBindings {
           ffi.Pointer<ffi.Pointer<VipsImage>>)>();
 
   int vips_wop_const(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     ffi.Pointer<ffi.Double> c,
     int n,
   ) {
     return _vips_wop_const(
-      in1,
+      in$,
       out,
       c,
       n,
@@ -18916,12 +19869,12 @@ class VipsBindings {
           ffi.Pointer<ffi.Double>, int)>();
 
   int vips_wop_const1(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     double c,
   ) {
     return _vips_wop_const1(
-      in1,
+      in$,
       out,
       c,
     );
@@ -18957,11 +19910,11 @@ class VipsBindings {
       int Function(ffi.Pointer<ffi.Pointer<VipsImage>>, int, int)>();
 
   int vips_wrap(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
     return _vips_wrap(
-      in1,
+      in$,
       out,
     );
   }
@@ -19013,13 +19966,13 @@ class VipsBindings {
       int Function(ffi.Pointer<ffi.Pointer<VipsImage>>, int, int)>();
 
   int vips_zoom(
-    ffi.Pointer<VipsImage> in1,
+    ffi.Pointer<VipsImage> in$,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     int xfac,
     int yfac,
   ) {
     return _vips_zoom(
-      in1,
+      in$,
       out,
       xfac,
       yfac,
@@ -19848,7 +20801,7 @@ enum GIOCondition {
         8 => G_IO_ERR,
         16 => G_IO_HUP,
         32 => G_IO_NVAL,
-        _ => throw ArgumentError("Unknown value for GIOCondition: $value"),
+        _ => throw ArgumentError('Unknown value for GIOCondition: $value'),
       };
 }
 
@@ -19884,7 +20837,7 @@ enum GIOFlags {
         16 => G_IO_FLAG_IS_SEEKABLE,
         31 => G_IO_FLAG_MASK,
         3 => G_IO_FLAG_SET_MASK,
-        _ => throw ArgumentError("Unknown value for GIOFlags: $value"),
+        _ => throw ArgumentError('Unknown value for GIOFlags: $value'),
       };
 
   @override
@@ -19918,7 +20871,7 @@ enum GIOStatus {
         1 => G_IO_STATUS_NORMAL,
         2 => G_IO_STATUS_EOF,
         3 => G_IO_STATUS_AGAIN,
-        _ => throw ArgumentError("Unknown value for GIOStatus: $value"),
+        _ => throw ArgumentError('Unknown value for GIOStatus: $value'),
       };
 }
 
@@ -20051,7 +21004,7 @@ enum GLogLevelFlags {
         64 => G_LOG_LEVEL_INFO,
         128 => G_LOG_LEVEL_DEBUG,
         -4 => G_LOG_LEVEL_MASK,
-        _ => throw ArgumentError("Unknown value for GLogLevelFlags: $value"),
+        _ => throw ArgumentError('Unknown value for GLogLevelFlags: $value'),
       };
 }
 
@@ -20116,7 +21069,7 @@ enum GLogWriterOutput {
   static GLogWriterOutput fromValue(int value) => switch (value) {
         1 => G_LOG_WRITER_HANDLED,
         0 => G_LOG_WRITER_UNHANDLED,
-        _ => throw ArgumentError("Unknown value for GLogWriterOutput: $value"),
+        _ => throw ArgumentError('Unknown value for GLogWriterOutput: $value'),
       };
 }
 
@@ -20301,7 +21254,7 @@ enum GOnceStatus {
         0 => G_ONCE_STATUS_NOTCALLED,
         1 => G_ONCE_STATUS_PROGRESS,
         2 => G_ONCE_STATUS_READY,
-        _ => throw ArgumentError("Unknown value for GOnceStatus: $value"),
+        _ => throw ArgumentError('Unknown value for GOnceStatus: $value'),
       };
 }
 
@@ -20353,7 +21306,7 @@ enum GOptionArg {
         6 => G_OPTION_ARG_FILENAME_ARRAY,
         7 => G_OPTION_ARG_DOUBLE,
         8 => G_OPTION_ARG_INT64,
-        _ => throw ArgumentError("Unknown value for GOptionArg: $value"),
+        _ => throw ArgumentError('Unknown value for GOptionArg: $value'),
       };
 }
 
@@ -20527,7 +21480,7 @@ enum GParamFlags {
         128 => G_PARAM_STATIC_BLURB,
         1073741824 => G_PARAM_EXPLICIT_NOTIFY,
         -2147483648 => G_PARAM_DEPRECATED,
-        _ => throw ArgumentError("Unknown value for GParamFlags: $value"),
+        _ => throw ArgumentError('Unknown value for GParamFlags: $value'),
       };
 
   @override
@@ -20775,7 +21728,7 @@ enum GSeekType {
         0 => G_SEEK_CUR,
         1 => G_SEEK_SET,
         2 => G_SEEK_END,
-        _ => throw ArgumentError("Unknown value for GSeekType: $value"),
+        _ => throw ArgumentError('Unknown value for GSeekType: $value'),
       };
 }
 
@@ -20932,7 +21885,7 @@ enum GSignalFlags {
         128 => G_SIGNAL_MUST_COLLECT,
         256 => G_SIGNAL_DEPRECATED,
         131072 => G_SIGNAL_ACCUMULATOR_FIRST_RUN,
-        _ => throw ArgumentError("Unknown value for GSignalFlags: $value"),
+        _ => throw ArgumentError('Unknown value for GSignalFlags: $value'),
       };
 }
 
@@ -21344,7 +22297,7 @@ enum GThreadPriority {
         1 => G_THREAD_PRIORITY_NORMAL,
         2 => G_THREAD_PRIORITY_HIGH,
         3 => G_THREAD_PRIORITY_URGENT,
-        _ => throw ArgumentError("Unknown value for GThreadPriority: $value"),
+        _ => throw ArgumentError('Unknown value for GThreadPriority: $value'),
       };
 }
 
@@ -21449,7 +22402,7 @@ enum GTokenType {
         268 => G_TOKEN_COMMENT_SINGLE,
         269 => G_TOKEN_COMMENT_MULTI,
         270 => G_TOKEN_LAST,
-        _ => throw ArgumentError("Unknown value for GTokenType: $value"),
+        _ => throw ArgumentError('Unknown value for GTokenType: $value'),
       };
 }
 
@@ -21564,7 +22517,7 @@ enum GTypeFundamentalFlags {
         4 => G_TYPE_FLAG_DERIVABLE,
         8 => G_TYPE_FLAG_DEEP_DERIVABLE,
         _ => throw ArgumentError(
-            "Unknown value for GTypeFundamentalFlags: $value"),
+            'Unknown value for GTypeFundamentalFlags: $value'),
       };
 }
 
@@ -22134,7 +23087,7 @@ enum VipsAccess {
         1 => VIPS_ACCESS_SEQUENTIAL,
         2 => VIPS_ACCESS_SEQUENTIAL_UNBUFFERED,
         3 => VIPS_ACCESS_LAST,
-        _ => throw ArgumentError("Unknown value for VipsAccess: $value"),
+        _ => throw ArgumentError('Unknown value for VipsAccess: $value'),
       };
 }
 
@@ -22152,7 +23105,7 @@ enum VipsAlign {
         1 => VIPS_ALIGN_CENTRE,
         2 => VIPS_ALIGN_HIGH,
         3 => VIPS_ALIGN_LAST,
-        _ => throw ArgumentError("Unknown value for VipsAlign: $value"),
+        _ => throw ArgumentError('Unknown value for VipsAlign: $value'),
       };
 }
 
@@ -22172,7 +23125,7 @@ enum VipsAngle {
         2 => VIPS_ANGLE_D180,
         3 => VIPS_ANGLE_D270,
         4 => VIPS_ANGLE_LAST,
-        _ => throw ArgumentError("Unknown value for VipsAngle: $value"),
+        _ => throw ArgumentError('Unknown value for VipsAngle: $value'),
       };
 }
 
@@ -22200,7 +23153,7 @@ enum VipsAngle45 {
         6 => VIPS_ANGLE45_D270,
         7 => VIPS_ANGLE45_D315,
         8 => VIPS_ANGLE45_LAST,
-        _ => throw ArgumentError("Unknown value for VipsAngle45: $value"),
+        _ => throw ArgumentError('Unknown value for VipsAngle45: $value'),
       };
 }
 
@@ -22248,7 +23201,7 @@ enum VipsArgumentFlags {
         64 => VIPS_ARGUMENT_DEPRECATED,
         128 => VIPS_ARGUMENT_MODIFY,
         256 => VIPS_ARGUMENT_NON_HASHABLE,
-        _ => throw ArgumentError("Unknown value for VipsArgumentFlags: $value"),
+        _ => throw ArgumentError('Unknown value for VipsArgumentFlags: $value'),
       };
 }
 
@@ -22309,7 +23262,7 @@ enum VipsBandFormat {
         8 => VIPS_FORMAT_DOUBLE,
         9 => VIPS_FORMAT_DPCOMPLEX,
         10 => VIPS_FORMAT_LAST,
-        _ => throw ArgumentError("Unknown value for VipsBandFormat: $value"),
+        _ => throw ArgumentError('Unknown value for VipsBandFormat: $value'),
       };
 }
 
@@ -22371,7 +23324,7 @@ enum VipsBlendMode {
         23 => VIPS_BLEND_MODE_DIFFERENCE,
         24 => VIPS_BLEND_MODE_EXCLUSION,
         25 => VIPS_BLEND_MODE_LAST,
-        _ => throw ArgumentError("Unknown value for VipsBlendMode: $value"),
+        _ => throw ArgumentError('Unknown value for VipsBlendMode: $value'),
       };
 }
 
@@ -22430,7 +23383,7 @@ enum VipsCoding {
         2 => VIPS_CODING_LABQ,
         6 => VIPS_CODING_RAD,
         7 => VIPS_CODING_LAST,
-        _ => throw ArgumentError("Unknown value for VipsCoding: $value"),
+        _ => throw ArgumentError('Unknown value for VipsCoding: $value'),
       };
 }
 
@@ -22448,7 +23401,7 @@ enum VipsCombine {
         1 => VIPS_COMBINE_SUM,
         2 => VIPS_COMBINE_MIN,
         3 => VIPS_COMBINE_LAST,
-        _ => throw ArgumentError("Unknown value for VipsCombine: $value"),
+        _ => throw ArgumentError('Unknown value for VipsCombine: $value'),
       };
 }
 
@@ -22464,7 +23417,7 @@ enum VipsCombineMode {
         0 => VIPS_COMBINE_MODE_SET,
         1 => VIPS_COMBINE_MODE_ADD,
         2 => VIPS_COMBINE_MODE_LAST,
-        _ => throw ArgumentError("Unknown value for VipsCombineMode: $value"),
+        _ => throw ArgumentError('Unknown value for VipsCombineMode: $value'),
       };
 }
 
@@ -22495,7 +23448,7 @@ enum VipsCompassDirection {
         8 => VIPS_COMPASS_DIRECTION_NORTH_WEST,
         9 => VIPS_COMPASS_DIRECTION_LAST,
         _ =>
-          throw ArgumentError("Unknown value for VipsCompassDirection: $value"),
+          throw ArgumentError('Unknown value for VipsCompassDirection: $value'),
       };
 }
 
@@ -22526,7 +23479,7 @@ enum VipsDemandStyle {
         1 => VIPS_DEMAND_STYLE_FATSTRIP,
         2 => VIPS_DEMAND_STYLE_THINSTRIP,
         3 => VIPS_DEMAND_STYLE_ANY,
-        _ => throw ArgumentError("Unknown value for VipsDemandStyle: $value"),
+        _ => throw ArgumentError('Unknown value for VipsDemandStyle: $value'),
       };
 }
 
@@ -22542,7 +23495,7 @@ enum VipsDirection {
         0 => VIPS_DIRECTION_HORIZONTAL,
         1 => VIPS_DIRECTION_VERTICAL,
         2 => VIPS_DIRECTION_LAST,
-        _ => throw ArgumentError("Unknown value for VipsDirection: $value"),
+        _ => throw ArgumentError('Unknown value for VipsDirection: $value'),
       };
 }
 
@@ -22566,7 +23519,7 @@ enum VipsExtend {
         4 => VIPS_EXTEND_WHITE,
         5 => VIPS_EXTEND_BACKGROUND,
         6 => VIPS_EXTEND_LAST,
-        _ => throw ArgumentError("Unknown value for VipsExtend: $value"),
+        _ => throw ArgumentError('Unknown value for VipsExtend: $value'),
       };
 }
 
@@ -22597,7 +23550,7 @@ enum VipsFailOn {
         2 => VIPS_FAIL_ON_ERROR,
         3 => VIPS_FAIL_ON_WARNING,
         4 => VIPS_FAIL_ON_LAST,
-        _ => throw ArgumentError("Unknown value for VipsFailOn: $value"),
+        _ => throw ArgumentError('Unknown value for VipsFailOn: $value'),
       };
 }
 
@@ -22625,7 +23578,7 @@ enum VipsForeignDzContainer {
         2 => VIPS_FOREIGN_DZ_CONTAINER_SZI,
         3 => VIPS_FOREIGN_DZ_CONTAINER_LAST,
         _ => throw ArgumentError(
-            "Unknown value for VipsForeignDzContainer: $value"),
+            'Unknown value for VipsForeignDzContainer: $value'),
       };
 }
 
@@ -22650,7 +23603,7 @@ enum VipsForeignDzDepth {
         2 => VIPS_FOREIGN_DZ_DEPTH_ONE,
         3 => VIPS_FOREIGN_DZ_DEPTH_LAST,
         _ =>
-          throw ArgumentError("Unknown value for VipsForeignDzDepth: $value"),
+          throw ArgumentError('Unknown value for VipsForeignDzDepth: $value'),
       };
 }
 
@@ -22681,7 +23634,7 @@ enum VipsForeignDzLayout {
         4 => VIPS_FOREIGN_DZ_LAYOUT_IIIF3,
         5 => VIPS_FOREIGN_DZ_LAYOUT_LAST,
         _ =>
-          throw ArgumentError("Unknown value for VipsForeignDzLayout: $value"),
+          throw ArgumentError('Unknown value for VipsForeignDzLayout: $value'),
       };
 }
 
@@ -22714,7 +23667,7 @@ enum VipsForeignFlags {
         2 => VIPS_FOREIGN_BIGENDIAN,
         4 => VIPS_FOREIGN_SEQUENTIAL,
         7 => VIPS_FOREIGN_ALL,
-        _ => throw ArgumentError("Unknown value for VipsForeignFlags: $value"),
+        _ => throw ArgumentError('Unknown value for VipsForeignFlags: $value'),
       };
 }
 
@@ -22744,7 +23697,7 @@ enum VipsForeignHeifCompression {
         4 => VIPS_FOREIGN_HEIF_COMPRESSION_AV1,
         5 => VIPS_FOREIGN_HEIF_COMPRESSION_LAST,
         _ => throw ArgumentError(
-            "Unknown value for VipsForeignHeifCompression: $value"),
+            'Unknown value for VipsForeignHeifCompression: $value'),
       };
 }
 
@@ -22777,7 +23730,7 @@ enum VipsForeignHeifEncoder {
         4 => VIPS_FOREIGN_HEIF_ENCODER_X265,
         5 => VIPS_FOREIGN_HEIF_ENCODER_LAST,
         _ => throw ArgumentError(
-            "Unknown value for VipsForeignHeifEncoder: $value"),
+            'Unknown value for VipsForeignHeifEncoder: $value'),
       };
 }
 
@@ -22811,7 +23764,7 @@ enum VipsForeignKeep {
         8 => VIPS_FOREIGN_KEEP_ICC,
         16 => VIPS_FOREIGN_KEEP_OTHER,
         31 => VIPS_FOREIGN_KEEP_ALL,
-        _ => throw ArgumentError("Unknown value for VipsForeignKeep: $value"),
+        _ => throw ArgumentError('Unknown value for VipsForeignKeep: $value'),
       };
 }
 
@@ -22847,7 +23800,7 @@ enum VipsForeignPngFilter {
         128 => VIPS_FOREIGN_PNG_FILTER_PAETH,
         248 => VIPS_FOREIGN_PNG_FILTER_ALL,
         _ =>
-          throw ArgumentError("Unknown value for VipsForeignPngFilter: $value"),
+          throw ArgumentError('Unknown value for VipsForeignPngFilter: $value'),
       };
 }
 
@@ -22889,7 +23842,7 @@ enum VipsForeignPpmFormat {
         4 => VIPS_FOREIGN_PPM_FORMAT_PNM,
         5 => VIPS_FOREIGN_PPM_FORMAT_LAST,
         _ =>
-          throw ArgumentError("Unknown value for VipsForeignPpmFormat: $value"),
+          throw ArgumentError('Unknown value for VipsForeignPpmFormat: $value'),
       };
 }
 
@@ -22917,7 +23870,7 @@ enum VipsForeignSubsample {
         2 => VIPS_FOREIGN_SUBSAMPLE_OFF,
         3 => VIPS_FOREIGN_SUBSAMPLE_LAST,
         _ =>
-          throw ArgumentError("Unknown value for VipsForeignSubsample: $value"),
+          throw ArgumentError('Unknown value for VipsForeignSubsample: $value'),
       };
 }
 
@@ -22968,7 +23921,7 @@ enum VipsForeignTiffCompression {
         8 => VIPS_FOREIGN_TIFF_COMPRESSION_JP2K,
         9 => VIPS_FOREIGN_TIFF_COMPRESSION_LAST,
         _ => throw ArgumentError(
-            "Unknown value for VipsForeignTiffCompression: $value"),
+            'Unknown value for VipsForeignTiffCompression: $value'),
       };
 }
 
@@ -22994,7 +23947,7 @@ enum VipsForeignTiffPredictor {
         3 => VIPS_FOREIGN_TIFF_PREDICTOR_FLOAT,
         4 => VIPS_FOREIGN_TIFF_PREDICTOR_LAST,
         _ => throw ArgumentError(
-            "Unknown value for VipsForeignTiffPredictor: $value"),
+            'Unknown value for VipsForeignTiffPredictor: $value'),
       };
 }
 
@@ -23016,7 +23969,7 @@ enum VipsForeignTiffResunit {
         1 => VIPS_FOREIGN_TIFF_RESUNIT_INCH,
         2 => VIPS_FOREIGN_TIFF_RESUNIT_LAST,
         _ => throw ArgumentError(
-            "Unknown value for VipsForeignTiffResunit: $value"),
+            'Unknown value for VipsForeignTiffResunit: $value'),
       };
 }
 
@@ -23050,7 +24003,7 @@ enum VipsForeignWebpPreset {
         5 => VIPS_FOREIGN_WEBP_PRESET_TEXT,
         6 => VIPS_FOREIGN_WEBP_PRESET_LAST,
         _ => throw ArgumentError(
-            "Unknown value for VipsForeignWebpPreset: $value"),
+            'Unknown value for VipsForeignWebpPreset: $value'),
       };
 }
 
@@ -23076,7 +24029,7 @@ enum VipsFormatFlags {
         0 => VIPS_FORMAT_NONE,
         1 => VIPS_FORMAT_PARTIAL,
         2 => VIPS_FORMAT_BIGENDIAN,
-        _ => throw ArgumentError("Unknown value for VipsFormatFlags: $value"),
+        _ => throw ArgumentError('Unknown value for VipsFormatFlags: $value'),
       };
 }
 
@@ -23152,7 +24105,7 @@ enum VipsImageType {
         5 => VIPS_IMAGE_MMAPINRW,
         6 => VIPS_IMAGE_OPENOUT,
         7 => VIPS_IMAGE_PARTIAL,
-        _ => throw ArgumentError("Unknown value for VipsImageType: $value"),
+        _ => throw ArgumentError('Unknown value for VipsImageType: $value'),
       };
 }
 
@@ -23177,7 +24130,7 @@ enum VipsIntent {
         2 => VIPS_INTENT_SATURATION,
         3 => VIPS_INTENT_ABSOLUTE,
         4 => VIPS_INTENT_LAST,
-        _ => throw ArgumentError("Unknown value for VipsIntent: $value"),
+        _ => throw ArgumentError('Unknown value for VipsIntent: $value'),
       };
 }
 
@@ -23203,7 +24156,7 @@ enum VipsInteresting {
         5 => VIPS_INTERESTING_HIGH,
         6 => VIPS_INTERESTING_ALL,
         7 => VIPS_INTERESTING_LAST,
-        _ => throw ArgumentError("Unknown value for VipsInteresting: $value"),
+        _ => throw ArgumentError('Unknown value for VipsInteresting: $value'),
       };
 }
 
@@ -23218,13 +24171,13 @@ typedef VipsInterpolateMethod
 typedef VipsInterpolateMethodFunction = ffi.Void Function(
     ffi.Pointer<VipsInterpolate> interpolate,
     ffi.Pointer<ffi.Void> out,
-    ffi.Pointer<VipsRegion> in1,
+    ffi.Pointer<VipsRegion> in$,
     ffi.Double x,
     ffi.Double y);
 typedef DartVipsInterpolateMethodFunction = void Function(
     ffi.Pointer<VipsInterpolate> interpolate,
     ffi.Pointer<ffi.Void> out,
-    ffi.Pointer<VipsRegion> in1,
+    ffi.Pointer<VipsRegion> in$,
     double x,
     double y);
 typedef VipsInterpolate_autoptr = ffi.Pointer<VipsInterpolate>;
@@ -23281,7 +24234,7 @@ enum VipsInterpretation {
         29 => VIPS_INTERPRETATION_HSV,
         30 => VIPS_INTERPRETATION_LAST,
         _ =>
-          throw ArgumentError("Unknown value for VipsInterpretation: $value"),
+          throw ArgumentError('Unknown value for VipsInterpretation: $value'),
       };
 }
 
@@ -23305,7 +24258,7 @@ enum VipsKernel {
         4 => VIPS_KERNEL_LANCZOS2,
         5 => VIPS_KERNEL_LANCZOS3,
         6 => VIPS_KERNEL_LAST,
-        _ => throw ArgumentError("Unknown value for VipsKernel: $value"),
+        _ => throw ArgumentError('Unknown value for VipsKernel: $value'),
       };
 }
 
@@ -23350,7 +24303,7 @@ enum VipsOperationBoolean {
         4 => VIPS_OPERATION_BOOLEAN_RSHIFT,
         5 => VIPS_OPERATION_BOOLEAN_LAST,
         _ =>
-          throw ArgumentError("Unknown value for VipsOperationBoolean: $value"),
+          throw ArgumentError('Unknown value for VipsOperationBoolean: $value'),
       };
 }
 
@@ -23383,7 +24336,7 @@ enum VipsOperationComplex {
         2 => VIPS_OPERATION_COMPLEX_CONJ,
         3 => VIPS_OPERATION_COMPLEX_LAST,
         _ =>
-          throw ArgumentError("Unknown value for VipsOperationComplex: $value"),
+          throw ArgumentError('Unknown value for VipsOperationComplex: $value'),
       };
 }
 
@@ -23402,7 +24355,7 @@ enum VipsOperationComplex2 {
         0 => VIPS_OPERATION_COMPLEX2_CROSS_PHASE,
         1 => VIPS_OPERATION_COMPLEX2_LAST,
         _ => throw ArgumentError(
-            "Unknown value for VipsOperationComplex2: $value"),
+            'Unknown value for VipsOperationComplex2: $value'),
       };
 }
 
@@ -23424,7 +24377,7 @@ enum VipsOperationComplexget {
         1 => VIPS_OPERATION_COMPLEXGET_IMAG,
         2 => VIPS_OPERATION_COMPLEXGET_LAST,
         _ => throw ArgumentError(
-            "Unknown value for VipsOperationComplexget: $value"),
+            'Unknown value for VipsOperationComplexget: $value'),
       };
 }
 
@@ -23451,7 +24404,7 @@ enum VipsOperationFlags {
         32 => VIPS_OPERATION_BLOCKED,
         64 => VIPS_OPERATION_REVALIDATE,
         _ =>
-          throw ArgumentError("Unknown value for VipsOperationFlags: $value"),
+          throw ArgumentError('Unknown value for VipsOperationFlags: $value'),
       };
 }
 
@@ -23514,7 +24467,7 @@ enum VipsOperationMath {
         14 => VIPS_OPERATION_MATH_ACOSH,
         15 => VIPS_OPERATION_MATH_ATANH,
         16 => VIPS_OPERATION_MATH_LAST,
-        _ => throw ArgumentError("Unknown value for VipsOperationMath: $value"),
+        _ => throw ArgumentError('Unknown value for VipsOperationMath: $value'),
       };
 }
 
@@ -23539,7 +24492,7 @@ enum VipsOperationMath2 {
         2 => VIPS_OPERATION_MATH2_ATAN2,
         3 => VIPS_OPERATION_MATH2_LAST,
         _ =>
-          throw ArgumentError("Unknown value for VipsOperationMath2: $value"),
+          throw ArgumentError('Unknown value for VipsOperationMath2: $value'),
       };
 }
 
@@ -23556,7 +24509,7 @@ enum VipsOperationMorphology {
         1 => VIPS_OPERATION_MORPHOLOGY_DILATE,
         2 => VIPS_OPERATION_MORPHOLOGY_LAST,
         _ => throw ArgumentError(
-            "Unknown value for VipsOperationMorphology: $value"),
+            'Unknown value for VipsOperationMorphology: $value'),
       };
 }
 
@@ -23590,7 +24543,7 @@ enum VipsOperationRelational {
         5 => VIPS_OPERATION_RELATIONAL_MOREEQ,
         6 => VIPS_OPERATION_RELATIONAL_LAST,
         _ => throw ArgumentError(
-            "Unknown value for VipsOperationRelational: $value"),
+            'Unknown value for VipsOperationRelational: $value'),
       };
 }
 
@@ -23615,7 +24568,7 @@ enum VipsOperationRound {
         2 => VIPS_OPERATION_ROUND_FLOOR,
         3 => VIPS_OPERATION_ROUND_LAST,
         _ =>
-          throw ArgumentError("Unknown value for VipsOperationRound: $value"),
+          throw ArgumentError('Unknown value for VipsOperationRound: $value'),
       };
 }
 
@@ -23636,7 +24589,7 @@ enum VipsPCS {
         0 => VIPS_PCS_LAB,
         1 => VIPS_PCS_XYZ,
         2 => VIPS_PCS_LAST,
-        _ => throw ArgumentError("Unknown value for VipsPCS: $value"),
+        _ => throw ArgumentError('Unknown value for VipsPCS: $value'),
       };
 }
 
@@ -23661,7 +24614,7 @@ enum VipsPrecision {
         1 => VIPS_PRECISION_FLOAT,
         2 => VIPS_PRECISION_APPROXIMATE,
         3 => VIPS_PRECISION_LAST,
-        _ => throw ArgumentError("Unknown value for VipsPrecision: $value"),
+        _ => throw ArgumentError('Unknown value for VipsPrecision: $value'),
       };
 }
 
@@ -23708,7 +24661,7 @@ enum VipsRegionShrink {
         4 => VIPS_REGION_SHRINK_MIN,
         5 => VIPS_REGION_SHRINK_NEAREST,
         6 => VIPS_REGION_SHRINK_LAST,
-        _ => throw ArgumentError("Unknown value for VipsRegionShrink: $value"),
+        _ => throw ArgumentError('Unknown value for VipsRegionShrink: $value'),
       };
 }
 
@@ -23780,7 +24733,7 @@ enum VipsSaveable {
         4 => VIPS_SAVEABLE_RGB_CMYK,
         5 => VIPS_SAVEABLE_ANY,
         6 => VIPS_SAVEABLE_LAST,
-        _ => throw ArgumentError("Unknown value for VipsSaveable: $value"),
+        _ => throw ArgumentError('Unknown value for VipsSaveable: $value'),
       };
 }
 
@@ -23812,7 +24765,7 @@ enum VipsSdfShape {
         2 => VIPS_SDF_SHAPE_ROUNDED_BOX,
         3 => VIPS_SDF_SHAPE_LINE,
         4 => VIPS_SDF_SHAPE_LAST,
-        _ => throw ArgumentError("Unknown value for VipsSdfShape: $value"),
+        _ => throw ArgumentError('Unknown value for VipsSdfShape: $value'),
       };
 }
 
@@ -23851,7 +24804,7 @@ enum VipsSize {
         2 => VIPS_SIZE_DOWN,
         3 => VIPS_SIZE_FORCE,
         4 => VIPS_SIZE_LAST,
-        _ => throw ArgumentError("Unknown value for VipsSize: $value"),
+        _ => throw ArgumentError('Unknown value for VipsSize: $value'),
       };
 }
 
@@ -23917,7 +24870,7 @@ enum VipsTextWrap {
         2 => VIPS_TEXT_WRAP_WORD_CHAR,
         3 => VIPS_TEXT_WRAP_NONE,
         4 => VIPS_TEXT_WRAP_LAST,
-        _ => throw ArgumentError("Unknown value for VipsTextWrap: $value"),
+        _ => throw ArgumentError('Unknown value for VipsTextWrap: $value'),
       };
 }
 
@@ -23995,7 +24948,7 @@ enum VipsToken {
         3 => VIPS_TOKEN_STRING,
         4 => VIPS_TOKEN_EQUALS,
         5 => VIPS_TOKEN_COMMA,
-        _ => throw ArgumentError("Unknown value for VipsToken: $value"),
+        _ => throw ArgumentError('Unknown value for VipsToken: $value'),
       };
 }
 
@@ -25692,7 +26645,7 @@ final class _GSourceCallbackFuncs extends ffi.Struct {
   external ffi.Pointer<
       ffi.NativeFunction<
           ffi.Void Function(gpointer cb_data, ffi.Pointer<GSource> source,
-              ffi.Pointer<GSourceFunc> func, ffi.Pointer<gpointer> data)>> get1;
+              ffi.Pointer<GSourceFunc> func, ffi.Pointer<gpointer> data)>> get$;
 }
 
 final class _GSourceFuncs extends ffi.Struct {
@@ -26281,7 +27234,7 @@ enum _RegionType {
         2 => VIPS_REGION_OTHER_REGION,
         3 => VIPS_REGION_OTHER_IMAGE,
         4 => VIPS_REGION_WINDOW,
-        _ => throw ArgumentError("Unknown value for _RegionType: $value"),
+        _ => throw ArgumentError('Unknown value for _RegionType: $value'),
       };
 }
 
@@ -26419,7 +27372,7 @@ final class _VipsBuf extends ffi.Struct {
 
   /// We own the string with malloc()
   @gboolean()
-  external int dynamic1;
+  external int dynamic$;
 }
 
 /// What we track for each pixel buffer. These can move between caches and
@@ -26705,7 +27658,7 @@ final class _VipsForeignSave extends ffi.Struct {
   external int page_height;
 
   /// The image we are to save, as supplied by our caller.
-  external ffi.Pointer<VipsImage> in1;
+  external ffi.Pointer<VipsImage> in$;
 
   /// @in converted to a saveable format (eg. 8-bit RGB) according to the
   /// instructions you give in the class fields below.

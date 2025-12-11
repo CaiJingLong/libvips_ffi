@@ -1,0 +1,19 @@
+name: libvips_ffi_desktop
+description: Meta package for libvips_ffi desktop support (macOS, Windows, Linux).
+version: 1.0.0
+homepage: https://github.com/CaiJingLong/libvips_ffi
+repository: https://github.com/CaiJingLong/libvips_ffi
+
+environment:
+  sdk: ^3.5.0
+  flutter: '>=3.10.0'
+
+dependencies:
+  libvips_ffi_core:
+    path: ../libvips_ffi_core
+  libvips_ffi_macos:
+    path: ../libvips_ffi_macos
+  libvips_ffi_windows:
+    path: ../libvips_ffi_windows
+  libvips_ffi_linux:
+    path: ../libvips_ffi_linux

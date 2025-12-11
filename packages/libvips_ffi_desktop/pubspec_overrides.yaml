@@ -1,0 +1,10 @@
+# melos_managed_dependency_overrides: libvips_ffi_core,libvips_ffi_linux,libvips_ffi_macos,libvips_ffi_windows
+dependency_overrides:
+  libvips_ffi_core:
+    path: ../libvips_ffi_core
+  libvips_ffi_linux:
+    path: ../libvips_ffi_linux
+  libvips_ffi_macos:
+    path: ../libvips_ffi_macos
+  libvips_ffi_windows:
+    path: ../libvips_ffi_windows

@@ -1,0 +1,20 @@
+name: libvips_ffi_windows
+description: Pre-compiled libvips for Windows. Part of the libvips_ffi package family.
+version: 1.0.0
+homepage: https://github.com/CaiJingLong/libvips_ffi
+repository: https://github.com/CaiJingLong/libvips_ffi
+
+environment:
+  sdk: ^3.5.0
+  flutter: '>=3.10.0'
+
+dependencies:
+  libvips_ffi_core:
+    path: ../libvips_ffi_core
+
+flutter:
+  plugin:
+    platforms:
+      windows:
+        pluginClass: LibvipsFfiWindowsPluginCApi
+        ffiPlugin: true

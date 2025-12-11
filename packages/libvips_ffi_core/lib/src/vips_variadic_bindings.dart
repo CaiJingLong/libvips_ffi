@@ -1,8 +1,15 @@
+// ignore_for_file: unused_field
+// Unused fields are kept for potential future use or fallback to variadic calls
+// 保留未使用的字段以备将来使用或回退到 variadic 调用
+
 import 'dart:ffi' as ffi;
+
+import 'package:ffi/ffi.dart';
 
 import 'bindings/vips_bindings_generated.dart';
 import 'vips_ffi_types.dart';
 import 'vips_core.dart';
+import 'vips_operation.dart' as op;
 
 /// Custom bindings for variadic functions that need NULL termination.
 ///
@@ -41,12 +48,21 @@ class VipsVariadicBindings {
       .asFunction<VipsImageNewFromBufferDart>();
 
   ffi.Pointer<VipsImage> imageNewFromFile(ffi.Pointer<ffi.Char> name) {
-    return _vipsImageNewFromFile(name, ffi.nullptr);
+    // Use GObject API to avoid variadic function issues
+    final filename = name.cast<Utf8>().toDartString();
+    return op.VipsOperation.loadFromFile(filename);
   }
 
   int imageWriteToFile(
       ffi.Pointer<VipsImage> image, ffi.Pointer<ffi.Char> name) {
-    return _vipsImageWriteToFile(image, name, ffi.nullptr);
+    // Use GObject API to avoid variadic function issues
+    try {
+      final filename = name.cast<Utf8>().toDartString();
+      op.VipsOperation.saveToFile(image, filename);
+      return 0;
+    } catch (_) {
+      return -1;
+    }
   }
 
   int imageWriteToBuffer(
@@ -120,7 +136,18 @@ class VipsVariadicBindings {
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     double scale,
   ) {
-    return _vipsResize(in1, out, scale, ffi.nullptr);
+    // Use GObject API to avoid variadic function issues
+    try {
+      final result = op.VipsOperation.callWithImage(
+        'resize',
+        in1,
+        doubleArgs: {'scale': scale},
+      );
+      out.value = result;
+      return 0;
+    } catch (_) {
+      return -1;
+    }
   }
 
   int rotate(
@@ -128,7 +155,12 @@ class VipsVariadicBindings {
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     double angle,
   ) {
-    return _vipsRotate(in1, out, angle, ffi.nullptr);
+    try {
+      out.value = op.VipsOperation.callRotate(in1, angle);
+      return 0;
+    } catch (_) {
+      return -1;
+    }
   }
 
   int crop(
@@ -139,7 +171,12 @@ class VipsVariadicBindings {
     int width,
     int height,
   ) {
-    return _vipsCrop(in1, out, left, top, width, height, ffi.nullptr);
+    try {
+      out.value = op.VipsOperation.callCrop(in1, left, top, width, height);
+      return 0;
+    } catch (_) {
+      return -1;
+    }
   }
 
   int thumbnailImage(
@@ -147,7 +184,12 @@ class VipsVariadicBindings {
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     int width,
   ) {
-    return _vipsThumbnailImage(in1, out, width, ffi.nullptr);
+    try {
+      out.value = op.VipsOperation.callThumbnailImage(in1, width);
+      return 0;
+    } catch (_) {
+      return -1;
+    }
   }
 
   int thumbnail(
@@ -172,7 +214,12 @@ class VipsVariadicBindings {
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     int direction,
   ) {
-    return _vipsFlip(in1, out, direction, ffi.nullptr);
+    try {
+      out.value = op.VipsOperation.callFlip(in1, direction);
+      return 0;
+    } catch (_) {
+      return -1;
+    }
   }
 
   int embed(
@@ -183,7 +230,12 @@ class VipsVariadicBindings {
     int width,
     int height,
   ) {
-    return _vipsEmbed(in1, out, x, y, width, height, ffi.nullptr);
+    try {
+      out.value = op.VipsOperation.callEmbed(in1, x, y, width, height);
+      return 0;
+    } catch (_) {
+      return -1;
+    }
   }
 
   int extractArea(
@@ -194,7 +246,12 @@ class VipsVariadicBindings {
     int width,
     int height,
   ) {
-    return _vipsExtractArea(in1, out, left, top, width, height, ffi.nullptr);
+    try {
+      out.value = op.VipsOperation.callExtractArea(in1, left, top, width, height);
+      return 0;
+    } catch (_) {
+      return -1;
+    }
   }
 
   int smartcrop(
@@ -203,7 +260,12 @@ class VipsVariadicBindings {
     int width,
     int height,
   ) {
-    return _vipsSmartcrop(in1, out, width, height, ffi.nullptr);
+    try {
+      out.value = op.VipsOperation.callSmartcrop(in1, width, height);
+      return 0;
+    } catch (_) {
+      return -1;
+    }
   }
 
   int gravity(
@@ -213,7 +275,12 @@ class VipsVariadicBindings {
     int width,
     int height,
   ) {
-    return _vipsGravity(in1, out, direction, width, height, ffi.nullptr);
+    try {
+      out.value = op.VipsOperation.callGravity(in1, direction, width, height);
+      return 0;
+    } catch (_) {
+      return -1;
+    }
   }
 
   // ============ Filter Functions ============
@@ -248,42 +315,72 @@ class VipsVariadicBindings {
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     double sigma,
   ) {
-    return _vipsGaussblur(in1, out, sigma, ffi.nullptr);
+    try {
+      out.value = op.VipsOperation.callGaussblur(in1, sigma);
+      return 0;
+    } catch (_) {
+      return -1;
+    }
   }
 
   int sharpen(
     ffi.Pointer<VipsImage> in1,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
-    return _vipsSharpen(in1, out, ffi.nullptr);
+    try {
+      out.value = op.VipsOperation.callSharpen(in1);
+      return 0;
+    } catch (_) {
+      return -1;
+    }
   }
 
   int invert(
     ffi.Pointer<VipsImage> in1,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
-    return _vipsInvert(in1, out, ffi.nullptr);
+    try {
+      out.value = op.VipsOperation.callInvert(in1);
+      return 0;
+    } catch (_) {
+      return -1;
+    }
   }
 
   int flatten(
     ffi.Pointer<VipsImage> in1,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
-    return _vipsFlatten(in1, out, ffi.nullptr);
+    try {
+      out.value = op.VipsOperation.callFlatten(in1);
+      return 0;
+    } catch (_) {
+      return -1;
+    }
   }
 
   int gamma(
     ffi.Pointer<VipsImage> in1,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
-    return _vipsGamma(in1, out, ffi.nullptr);
+    try {
+      out.value = op.VipsOperation.callGamma(in1);
+      return 0;
+    } catch (_) {
+      return -1;
+    }
   }
 
   int autorot(
     ffi.Pointer<VipsImage> in1,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
-    return _vipsAutorot(in1, out, ffi.nullptr);
+    try {
+      out.value = op.VipsOperation.callAutorot(in1);
+      return 0;
+    } catch (_) {
+      return -1;
+    }
   }
 
   // ============ Color Functions ============
@@ -306,7 +403,12 @@ class VipsVariadicBindings {
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     int space,
   ) {
-    return _vipsColourspace(in1, out, space, ffi.nullptr);
+    try {
+      out.value = op.VipsOperation.callColourspace(in1, space);
+      return 0;
+    } catch (_) {
+      return -1;
+    }
   }
 
   int cast(
@@ -314,7 +416,12 @@ class VipsVariadicBindings {
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
     int format,
   ) {
-    return _vipsCast(in1, out, format, ffi.nullptr);
+    try {
+      out.value = op.VipsOperation.callCast(in1, format);
+      return 0;
+    } catch (_) {
+      return -1;
+    }
   }
 
   int linear1(
@@ -323,7 +430,12 @@ class VipsVariadicBindings {
     double a,
     double b,
   ) {
-    return _vipsLinear1(in1, out, a, b, ffi.nullptr);
+    try {
+      out.value = op.VipsOperation.callLinear1(in1, a, b);
+      return 0;
+    } catch (_) {
+      return -1;
+    }
   }
 
   // ============ Utility Functions ============
@@ -337,7 +449,12 @@ class VipsVariadicBindings {
     ffi.Pointer<VipsImage> in1,
     ffi.Pointer<ffi.Pointer<VipsImage>> out,
   ) {
-    return _vipsCopy(in1, out, ffi.nullptr);
+    try {
+      out.value = op.VipsOperation.callCopy(in1);
+      return 0;
+    } catch (_) {
+      return -1;
+    }
   }
 }
 

@@ -26,6 +26,16 @@ Flutter FFI 方式集成 [libvips](https://www.libvips.org/) —— 一个高性
 - **平台特定库加载自动处理**：根据平台自动加载对应原生库
 - **异步 API 支持**：通过 Dart Isolates 避免阻塞 UI 线程
 
+## 库大小
+
+| 平台 | 下载大小 |
+|------|----------|
+| Android (arm64-v8a) | ~3.20 MB |
+| iOS (arm64) | ~7.48 MB |
+
+详细的架构分解请参见：
+[原生库大小](https://github.com/CaiJingLong/libvips_ffi/blob/main/docs/NATIVE_LIBRARY_SIZES_CN.md)
+
 ## 安装
 
 在你的项目 `pubspec.yaml` 中添加依赖：

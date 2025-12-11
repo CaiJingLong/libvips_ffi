@@ -26,6 +26,16 @@ Example: `0.0.1+8.16.0` means plugin version 0.0.1 with libvips 8.16.0
 - Platform-specific library loading handled automatically
 - Async API using Dart Isolates to avoid UI blocking
 
+## Library Size
+
+| Platform | Download Size |
+|----------|---------------|
+| Android (arm64-v8a) | ~3.20 MB |
+| iOS (arm64) | ~7.48 MB |
+
+For detailed size breakdown by architecture, see:
+[Native Library Sizes](https://github.com/CaiJingLong/libvips_ffi/blob/main/docs/NATIVE_LIBRARY_SIZES.md)
+
 ## Installation
 
 Add this to your package's `pubspec.yaml` file:

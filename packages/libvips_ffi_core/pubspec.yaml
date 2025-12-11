@@ -1,0 +1,23 @@
+name: libvips_ffi_core
+description: Pure Dart FFI bindings for libvips image processing library. No Flutter dependency.
+version: 1.0.0
+homepage: https://github.com/CaiJingLong/libvips_ffi
+repository: https://github.com/CaiJingLong/libvips_ffi
+issue_tracker: https://github.com/CaiJingLong/libvips_ffi/issues
+
+topics:
+  - image
+  - image-processing
+  - ffi
+  - libvips
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  ffi: ^2.1.0
+
+dev_dependencies:
+  ffigen: ^16.0.0
+  lints: ^4.0.0
+  test: ^1.24.0

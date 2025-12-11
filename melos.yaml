@@ -1,0 +1,39 @@
+name: libvips_ffi
+repository: https://github.com/CaiJingLong/libvips_ffi
+
+packages:
+  - packages/**
+  - examples/**
+
+command:
+  version:
+    linkToCommits: true
+    workspaceChangelog: true
+
+  bootstrap:
+    runPubGetInParallel: true
+
+scripts:
+  analyze:
+    run: melos exec -- dart analyze .
+    description: Analyze all packages
+
+  format:
+    run: melos exec -- dart format .
+    description: Format all packages
+
+  test:
+    run: melos exec -- dart test
+    description: Run tests in all packages
+    packageFilters:
+      dirExists: test
+
+  publish:dry:
+    run: melos exec -- dart pub publish --dry-run
+    description: Dry run publish for all packages
+
+  ffigen:
+    run: melos exec -- dart run ffigen
+    description: Generate FFI bindings
+    packageFilters:
+      fileExists: ffigen.yaml

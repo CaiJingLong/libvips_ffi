@@ -25,7 +25,6 @@ library libvips_ffi_desktop;
 
 import 'dart:io';
 
-import 'package:libvips_ffi_core/libvips_ffi_core.dart';
 import 'package:libvips_ffi_linux/libvips_ffi_linux.dart';
 import 'package:libvips_ffi_macos/libvips_ffi_macos.dart';
 import 'package:libvips_ffi_windows/libvips_ffi_windows.dart';

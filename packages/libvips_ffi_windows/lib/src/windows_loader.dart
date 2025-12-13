@@ -54,6 +54,8 @@ class WindowsVipsLoader implements VipsLibraryLoader {
     final dllDir = _findDllDirectory();
     if (dllDir != null) {
       _addDllDirectory(dllDir);
+      // 预加载关键依赖 DLL
+      _preloadDependencies(dllDir);
     }
 
     // 尝试加载预编译库
@@ -73,6 +75,71 @@ class WindowsVipsLoader implements VipsLibraryLoader {
     return SystemVipsLoader().load();
   }
 
+  /// 预加载所有依赖 DLL
+  /// 这是必需的，因为 FFI 绑定会尝试从 libvips 中查找 GLib 函数（如 g_free）
+  static void _preloadDependencies(String dllDir) {
+    // 按依赖顺序加载所有 DLL
+    // 注意：顺序很重要，被依赖的库必须先加载
+    final dependencies = [
+      // 基础库
+      'libffi-8.dll',
+      'libz1.dll',
+      'libintl-8.dll',
+      'libiconv-2.dll',
+      // GLib 相关
+      'libglib-2.0-0.dll',
+      'libgmodule-2.0-0.dll',
+      'libgobject-2.0-0.dll',
+      'libgio-2.0-0.dll',
+      // 图像格式库
+      'libpng16-16.dll',
+      'libjpeg-62.dll',
+      'libtiff-6.dll',
+      'libwebp-7.dll',
+      'libwebpdemux-2.dll',
+      'libwebpmux-3.dll',
+      'libheif.dll',
+      'libspng-0.dll',
+      'libcgif-0.dll',
+      // 其他依赖
+      'libexpat-1.dll',
+      'libexif-12.dll',
+      'liblcms2-2.dll',
+      'libxml2-16.dll',
+      'libarchive-13.dll',
+      'libimagequant.dll',
+      // 字体和渲染
+      'libfreetype-6.dll',
+      'libfontconfig-1.dll',
+      'libharfbuzz-0.dll',
+      'libfribidi-0.dll',
+      'libpixman-1-0.dll',
+      'libcairo-2.dll',
+      'libpango-1.0-0.dll',
+      'libpangocairo-1.0-0.dll',
+      'libpangoft2-1.0-0.dll',
+      'librsvg-2-2.dll',
+      // 视频编解码
+      'libhwy.dll',
+      'libsharpyuv-0.dll',
+      'libaom.dll',
+      // C++ 运行时
+      'libc++.dll',
+      'libunwind.dll',
+    ];
+
+    for (final dll in dependencies) {
+      final dllPath = '$dllDir/$dll';
+      if (File(dllPath).existsSync()) {
+        try {
+          DynamicLibrary.open(dllPath);
+        } catch (_) {
+          // 忽略加载失败，某些 DLL 可能不存在
+        }
+      }
+    }
+  }
+
   @override
   bool isAvailable() {
     if (!Platform.isWindows) return false;
@@ -85,22 +152,16 @@ class WindowsVipsLoader implements VipsLibraryLoader {
   }
 
   /// 添加 DLL 搜索目录
+  /// 使用 SetDllDirectoryW 设置 DLL 搜索路径
   static void _addDllDirectory(String path) {
     try {
       final kernel32 = DynamicLibrary.open('kernel32.dll');
-      final addDllDirectory = kernel32.lookupFunction<
-          IntPtr Function(Pointer<Utf16>),
-          int Function(Pointer<Utf16>)>('AddDllDirectory');
-      final setDefaultDllDirectories = kernel32.lookupFunction<
-          Int32 Function(Uint32),
-          int Function(int)>('SetDefaultDllDirectories');
-      
-      // LOAD_LIBRARY_SEARCH_DEFAULT_DIRS = 0x00001000
-      // LOAD_LIBRARY_SEARCH_USER_DIRS = 0x00000400
-      setDefaultDllDirectories(0x00001000 | 0x00000400);
+      final setDllDirectory = kernel32.lookupFunction<
+          Int32 Function(Pointer<Utf16>),
+          int Function(Pointer<Utf16>)>('SetDllDirectoryW');
       
       final pathPtr = path.toNativeUtf16();
-      addDllDirectory(pathPtr);
+      setDllDirectory(pathPtr);
       calloc.free(pathPtr);
     } catch (_) {
       // 如果 API 不可用，忽略错误

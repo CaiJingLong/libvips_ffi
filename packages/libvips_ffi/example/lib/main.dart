@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:libvips_ffi/libvips_ffi.dart';
 import 'package:libvips_flutter_example_base/libvips_flutter_example_base.dart';
 
 void main() {
@@ -17,9 +16,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home: HomePage(
-        onInit: () => initVips(),
-      ),
+      home: const HomePage(),
     );
   }
 }

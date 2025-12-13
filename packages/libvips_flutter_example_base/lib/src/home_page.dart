@@ -8,15 +8,12 @@ import 'pages/examples_page.dart';
 ///
 /// This widget displays the libvips version and provides navigation
 /// to examples and developer tools.
-///
-/// The [onInit] callback is called during initialization and should
-/// be used to initialize libvips with the appropriate platform loader.
 class HomePage extends StatefulWidget {
-  /// Callback to initialize libvips.
-  /// If null, uses the default initVips() from libvips_ffi.
-  final VoidCallback? onInit;
+  /// Custom library loader for platform-specific initialization.
+  /// If null, uses the default loader based on platform.
+  final VipsLibraryLoader? loader;
 
-  const HomePage({super.key, this.onInit});
+  const HomePage({super.key, this.loader});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -34,11 +31,7 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> _initVips() async {
     try {
-      if (widget.onInit != null) {
-        widget.onInit!();
-      } else {
-        initVips();
-      }
+      initVips(loader: widget.loader);
       final major = vipsVersion(0);
       final minor = vipsVersion(1);
       final micro = vipsVersion(2);

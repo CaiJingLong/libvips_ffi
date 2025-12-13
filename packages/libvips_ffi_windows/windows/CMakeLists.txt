@@ -39,15 +39,7 @@ target_include_directories(${PLUGIN_NAME} INTERFACE
   "${CMAKE_CURRENT_SOURCE_DIR}/include")
 target_link_libraries(${PLUGIN_NAME} PRIVATE flutter flutter_wrapper_plugin)
 
-# List of absolute paths to libraries that should be bundled with the plugin.
-# This list could contain prebuilt libraries, or libraries created by an
-# external build triggered from this build file.
-set(libvips_ffi_windows_bundled_libraries
-  ""
-  PARENT_SCOPE
-)
-
-# === Copy DLL files to the executable directory ===
+# === Bundle DLL files with the plugin ===
 
 # DLL source directory
 set(DLL_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/dll")
@@ -55,9 +47,9 @@ set(DLL_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/dll")
 # Get all DLL files
 file(GLOB LIBVIPS_DLL_FILES "${DLL_SOURCE_DIR}/*.dll")
 
-# Install DLL files - they will be copied to the executable directory
-install(
-  FILES ${LIBVIPS_DLL_FILES}
-  DESTINATION "${CMAKE_INSTALL_PREFIX}"
-  COMPONENT Runtime
+# List of absolute paths to libraries that should be bundled with the plugin.
+# Flutter will automatically copy these to the executable directory.
+set(libvips_ffi_windows_bundled_libraries
+  ${LIBVIPS_DLL_FILES}
+  PARENT_SCOPE
 )

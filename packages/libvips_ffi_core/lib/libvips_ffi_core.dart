@@ -56,6 +56,7 @@ export 'src/vips_core.dart'
         vipsLibrary,
         initVipsSystem,
         initVipsWithLoader,
+        initVipsWithLookup,
         initVipsWithLibrary,
         shutdownVips,
         getVipsError,

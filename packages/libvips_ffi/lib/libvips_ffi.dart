@@ -64,9 +64,9 @@ library libvips_ffi;
 // 重新导出 core 包的所有内容
 export 'package:libvips_ffi_core/libvips_ffi_core.dart';
 
-// Export mobile-specific loader and initVips function
-// 导出移动端特定的加载器和 initVips 函数
-export 'src/mobile_loader.dart' show MobileVipsLoader, initVips;
+// Export platform loader and initVips function
+// 导出平台加载器和 initVips 函数
+export 'src/platform_loader.dart' show PlatformVipsLoader, initVips;
 
 // Export compute-based async API (simpler, uses Flutter's compute).
 // 导出基于 compute 的异步 API（更简单，使用 Flutter 的 compute）。

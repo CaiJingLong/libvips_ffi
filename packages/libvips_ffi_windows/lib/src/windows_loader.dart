@@ -4,6 +4,9 @@ import 'dart:io';
 import 'package:ffi/ffi.dart';
 import 'package:libvips_ffi_core/libvips_ffi_core.dart';
 
+/// 存储已加载的 DLL，用于多库符号查找
+final List<DynamicLibrary> _loadedLibraries = [];
+
 /// Windows 库加载器
 ///
 /// 加载预编译的 Windows libvips 库。
@@ -52,6 +55,7 @@ class WindowsVipsLoader implements VipsLibraryLoader {
   DynamicLibrary load() {
     // 首先尝试将 DLL 目录添加到搜索路径
     final dllDir = _findDllDirectory();
+    
     if (dllDir != null) {
       _addDllDirectory(dllDir);
       // 预加载关键依赖 DLL
@@ -60,6 +64,7 @@ class WindowsVipsLoader implements VipsLibraryLoader {
 
     // 尝试加载预编译库
     final paths = _getBundledLibraryPaths();
+    
     for (final path in paths) {
       try {
         final file = File(path);
@@ -75,69 +80,49 @@ class WindowsVipsLoader implements VipsLibraryLoader {
     return SystemVipsLoader().load();
   }
 
-  /// 预加载所有依赖 DLL
+  /// 预加载所有依赖 DLL 并存储引用
   /// 这是必需的，因为 FFI 绑定会尝试从 libvips 中查找 GLib 函数（如 g_free）
   static void _preloadDependencies(String dllDir) {
-    // 按依赖顺序加载所有 DLL
-    // 注意：顺序很重要，被依赖的库必须先加载
-    final dependencies = [
-      // 基础库
-      'libffi-8.dll',
-      'libz1.dll',
-      'libintl-8.dll',
-      'libiconv-2.dll',
-      // GLib 相关
+    // 清空之前加载的库
+    _loadedLibraries.clear();
+    
+    // 列出目录中的所有 DLL 文件
+    final dir = Directory(dllDir);
+    if (!dir.existsSync()) {
+      return;
+    }
+    
+    // 按依赖顺序加载关键 DLL 并存储引用
+    final priorityDlls = [
       'libglib-2.0-0.dll',
-      'libgmodule-2.0-0.dll',
       'libgobject-2.0-0.dll',
       'libgio-2.0-0.dll',
-      // 图像格式库
-      'libpng16-16.dll',
-      'libjpeg-62.dll',
-      'libtiff-6.dll',
-      'libwebp-7.dll',
-      'libwebpdemux-2.dll',
-      'libwebpmux-3.dll',
-      'libheif.dll',
-      'libspng-0.dll',
-      'libcgif-0.dll',
-      // 其他依赖
-      'libexpat-1.dll',
-      'libexif-12.dll',
-      'liblcms2-2.dll',
-      'libxml2-16.dll',
-      'libarchive-13.dll',
-      'libimagequant.dll',
-      // 字体和渲染
-      'libfreetype-6.dll',
-      'libfontconfig-1.dll',
-      'libharfbuzz-0.dll',
-      'libfribidi-0.dll',
-      'libpixman-1-0.dll',
-      'libcairo-2.dll',
-      'libpango-1.0-0.dll',
-      'libpangocairo-1.0-0.dll',
-      'libpangoft2-1.0-0.dll',
-      'librsvg-2-2.dll',
-      // 视频编解码
-      'libhwy.dll',
-      'libsharpyuv-0.dll',
-      'libaom.dll',
-      // C++ 运行时
-      'libc++.dll',
-      'libunwind.dll',
     ];
-
-    for (final dll in dependencies) {
+    
+    for (final dll in priorityDlls) {
       final dllPath = '$dllDir/$dll';
       if (File(dllPath).existsSync()) {
         try {
-          DynamicLibrary.open(dllPath);
+          final lib = DynamicLibrary.open(dllPath);
+          _loadedLibraries.add(lib);
         } catch (_) {
-          // 忽略加载失败，某些 DLL 可能不存在
+          // 忽略加载失败
         }
       }
     }
+  }
+
+  /// 从多个库中查找符号
+  static Pointer<T> _multiLibraryLookup<T extends NativeType>(String symbolName) {
+    // 首先尝试从已加载的库中查找（按逆序，libvips 优先）
+    for (final lib in _loadedLibraries.reversed) {
+      try {
+        return lib.lookup<T>(symbolName);
+      } catch (_) {
+        // 继续尝试下一个库
+      }
+    }
+    throw ArgumentError('Failed to lookup symbol \'$symbolName\' in any loaded library');
   }
 
   @override
@@ -170,6 +155,18 @@ class WindowsVipsLoader implements VipsLibraryLoader {
 }
 
 /// 初始化 libvips (Windows)
+/// 使用多库符号查找，支持从 libvips 和 GLib 等依赖库中查找符号
 void initVipsWindows([String appName = 'libvips_ffi']) {
-  initVipsWithLoader(WindowsVipsLoader(), appName);
+  final loader = WindowsVipsLoader();
+  final library = loader.load();
+  
+  // 将 libvips 添加到已加载库列表的末尾（最高优先级）
+  _loadedLibraries.add(library);
+  
+  // 使用多库查找初始化
+  initVipsWithLookup(
+    WindowsVipsLoader._multiLibraryLookup,
+    library,
+    appName,
+  );
 }

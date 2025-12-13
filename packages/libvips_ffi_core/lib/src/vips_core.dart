@@ -88,6 +88,32 @@ void initVipsWithLibrary(
   }
 }
 
+/// 使用自定义 lookup 函数初始化 libvips
+///
+/// Initialize libvips with a custom symbol lookup function.
+/// This is useful when symbols are spread across multiple libraries (e.g., Windows).
+void initVipsWithLookup(
+  ffi.Pointer<T> Function<T extends ffi.NativeType>(String symbolName) lookup,
+  ffi.DynamicLibrary library, [
+  String appName = 'libvips_ffi',
+]) {
+  if (_initialized) return;
+
+  _vipsLibrary = library;
+  _vipsBindings = VipsBindings.fromLookup(lookup);
+
+  final appNamePtr = appName.toNativeUtf8();
+  try {
+    final result = _vipsBindings!.vips_init(appNamePtr.cast());
+    if (result != 0) {
+      throw VipsException('Failed to initialize libvips: ${getVipsError()}');
+    }
+    _initialized = true;
+  } finally {
+    calloc.free(appNamePtr);
+  }
+}
+
 /// Shuts down libvips and frees resources.
 ///
 /// 关闭 libvips 并释放资源。

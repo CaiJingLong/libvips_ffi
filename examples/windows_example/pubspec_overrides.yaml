@@ -1,0 +1,10 @@
+# melos_managed_dependency_overrides: libvips_ffi_windows,libvips_flutter_example_base
+dependency_overrides:
+  libvips_ffi:
+    path: ../../packages/libvips_ffi
+  libvips_ffi_core:
+    path: ../../packages/libvips_ffi_core
+  libvips_ffi_windows:
+    path: ..\\..\\packages\\libvips_ffi_windows
+  libvips_flutter_example_base:
+    path: ..\\..\\packages\\libvips_flutter_example_base

@@ -1,0 +1,24 @@
+name: windows_example
+description: "libvips_ffi Windows example app."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  libvips_ffi_windows:
+    path: ../../packages/libvips_ffi_windows
+  libvips_flutter_example_base:
+    path: ../../packages/libvips_flutter_example_base
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
